@@ -1,0 +1,1 @@
+This is the repository for upload the source code of Sinqly's Website. The Website deployed is builded with Next(React) with Typescript like Main Language.
