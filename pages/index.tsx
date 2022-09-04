@@ -1,4 +1,4 @@
-function Index() {
+const Index: React.FC = () => {
   return <div>Welcome to Next.ts!</div>
 }
 
