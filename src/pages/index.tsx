@@ -6,7 +6,7 @@ const Index: React.FC = () => {
   return (
     <Container>
       <h1>Sinqly Website</h1>
-      <p>Template done using Next and Typescript!</p>
+      <p>Template donggfge using Next and Typescript! </p>
     </Container>
   )
 }

@@ -1,12 +1,8 @@
 {
-  "name": "sinqlywebsite",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next build"
   },
   "dependencies": {
     "next": "12.2.5",

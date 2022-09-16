@@ -1,10 +1,15 @@
-version: '3.5'
+version: "3"
 
 services:
-  client:
+  web:
     build:
-      context: ./client
+      context: .
+      dockerfile: Dockerfile
+    container_name: test
+    restart: always
     volumes:
-      - staticbuild:/app/out
-    networks:
-      - dev
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - 3000:3000
