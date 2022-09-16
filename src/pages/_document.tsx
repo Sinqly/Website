@@ -7,7 +7,7 @@ import Document, {
   Main,
   NextScript
 } from 'next/document'
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -39,16 +39,10 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang='pt'>
+      <Html lang="pt">
         <Head>
-          <meta charSet='utf-8' />
-
-          <link
-            href='https://fonts.googleapis.com/css?family=Roboto:400,500,700'
-            rel='stylesheet'
-          />
-
-          <link rel='icon' href='https://rocketseat.com.br/favicon.ico' />
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
         <body>
           <Main />
