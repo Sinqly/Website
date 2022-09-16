@@ -1,18 +1,10 @@
 version: '3.5'
 
 services:
-  website:
-    container_name: website
-    build: .
-    ports:
-      - "8000:3000"
-    networks:
-      - postgres-network
+  client:
+    build:
+      context: ./client
     volumes:
-      - .:/usr/src/app/
-      - /usr/src/app/node_modules
-
-
-networks:
-  postgres-network:
-    driver: bridge
+      - staticbuild:/app/out
+    networks:
+      - dev
