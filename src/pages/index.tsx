@@ -6,7 +6,7 @@ import { Container } from '../styles/pages/Index'
 const Index: React.FC = () => {
   return (
     <Container>
-      <Header headerType={"Index"}/>
+      <Header headerType={'Index'} />
     </Container>
   )
 }
