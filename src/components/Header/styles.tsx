@@ -6,6 +6,7 @@ export const IndexContainer = styled.div`
   height: 100px;
   padding: 32px 48px;
   background-color: var(--white);
+  position: fixed;
 
   display: flex;
   align-items: center;
@@ -123,7 +124,6 @@ export const Menu = styled.ul`
   display: flex;
   list-style: none;
   width: 100%;
-
   & > li {
     margin-right: 16px;
   }
@@ -165,7 +165,7 @@ export const ButtonLogin = styled.button`
   }
 `
 
-export const ContainerLoginCadastro = styled.div`
+export const ContainerSignInSignUp = styled.div`
   width: 100%;
   height: 100px;
   padding: 32px 48px;

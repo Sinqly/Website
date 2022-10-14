@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="pt">
+      <Html style={{scrollBehavior: "smooth"}} lang="pt">
         <Head>
           <meta charSet="utf-8" />
         </Head>

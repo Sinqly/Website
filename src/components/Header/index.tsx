@@ -12,7 +12,7 @@ import {
   LogoSpace,
   ButtonLogin,
   ButtonSpace,
-  ContainerLoginCadastro,
+  ContainerSignInSignUp,
 } from './styles'
 
 interface HeaderProps {
@@ -63,17 +63,17 @@ const RenderIndex = () => {
 
 const RenderSignInSignUp = () => {
   return (
-    <IndexContainer>
+    <ContainerSignInSignUp>
       <Input />
       <Image style={{ width: '20%' }} src={Logo} alt="Logo" />
       <ButtonLogin>voltar</ButtonLogin>
-    </IndexContainer>
+    </ContainerSignInSignUp>
   )
 }
 
 const RenderGeneral = () => {
   return (
-    <ContainerLoginCadastro>
+    <ContainerSignInSignUp>
       <Input />
       <Image
         style={{ width: '20', justifySelf: 'center' }}
@@ -81,7 +81,7 @@ const RenderGeneral = () => {
         alt="Logo"
       />
       <ButtonLogin>voltar</ButtonLogin>
-    </ContainerLoginCadastro>
+    </ContainerSignInSignUp>
   )
 }
 
