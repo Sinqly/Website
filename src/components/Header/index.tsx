@@ -6,7 +6,7 @@ import Input from '../Input'
 
 import {
   IndexContainer,
-  MobileButton ,
+  MobileButton,
   Nav,
   Menu,
   LogoSpace,
@@ -20,24 +20,21 @@ interface HeaderProps {
 }
 
 const RenderIndex = () => {
-
   const [active, setActive] = useState(false)
 
-  const toggleMenu = ()=>{
-
-    if(active === true) setActive(false)
+  const toggleMenu = () => {
+    if (active === true) setActive(false)
     else setActive(true)
-
   }
-  
+
   return (
     <IndexContainer>
       <Nav active={active}>
-        <MobileButton id={"botao-mobile"} onClick={toggleMenu}>
-          <span id={"hamburguer"}></span>
-        </MobileButton >
+        <MobileButton id={'botao-mobile'} onClick={toggleMenu}>
+          <span id={'hamburguer'}></span>
+        </MobileButton>
 
-        <Menu id={"menu"}>
+        <Menu id={'menu'}>
           <li>
             <a href="./">Início</a>
           </li>
@@ -52,15 +49,14 @@ const RenderIndex = () => {
           </li>
         </Menu>
       </Nav>
-      
-      <LogoSpace className={"logo-space"}>
-        <Image className={"logo"} src={Logo} alt="Logo" />
+
+      <LogoSpace className={'logo-space'}>
+        <Image className={'logo'} src={Logo} alt="Logo" />
       </LogoSpace>
 
-      <ButtonSpace className={"button-space"} >
-        <ButtonLogin onClick={() => console.log("OI")}>Login</ButtonLogin>
+      <ButtonSpace className={'button-space'}>
+        <ButtonLogin onClick={() => console.log('OI')}>Login</ButtonLogin>
       </ButtonSpace>
-
     </IndexContainer>
   )
 }
@@ -90,7 +86,6 @@ const RenderGeneral = () => {
 }
 
 const Header: React.FC<HeaderProps> = ({ headerType = 'General' }) => {
-
   const HeaderColection = {
     Index: RenderIndex,
     LoginCadastro: RenderSignInSignUp,

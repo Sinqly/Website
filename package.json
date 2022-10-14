@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "npx prettier --write ."
   },
   "dependencies": {
     "next": "12.2.5",
