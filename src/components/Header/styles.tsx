@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { active } from '../../utils/Header/activeInterface'
 
 export const IndexContainer = styled.div`
   width: 100%;
@@ -90,10 +91,6 @@ export const MobileButton = styled.button`
     cursor: pointer;
   }
 `
-
-interface active {
-  active?: boolean
-}
 
 export const Nav = styled.nav`
   width: 33%;
