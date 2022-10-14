@@ -20,7 +20,7 @@ interface HeaderProps {
 }
 
 const RenderIndex = () => {
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState<boolean>(false)
 
   const toggleMenu = () => {
     if (active === true) setActive(false)

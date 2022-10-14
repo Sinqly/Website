@@ -91,9 +91,13 @@ export const MobileButton = styled.button`
   }
 `
 
+interface active {
+  active?: boolean
+}
+
 export const Nav = styled.nav`
   width: 33%;
-  ${({ active }) =>
+  ${({ active }: active) =>
     active
       ? `
     #hamburguer{
