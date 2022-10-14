@@ -17,7 +17,7 @@ export const Container = styled.div`
 `
 export const SearchIcon = styled(BiSearchAlt2)`
     margin-right:8px;
-    color:var(--dark-purple)
+    color:var(--dark-purple);
     width:20px;
     height:20px;
 `
