@@ -15,6 +15,8 @@ import {
   ContainerLoginCadastro,
 } from './styles'
 
+import Link from "next/link"
+
 interface HeaderProps {
   headerType?: string
 }
@@ -45,7 +47,7 @@ const RenderIndex = () => {
             <a href="#about">Sobre</a>
           </li>
           <li>
-            <a href="#areas">Áreas</a>
+            <Link href={"/login"}><a>Login</a></Link>
           </li>
         </Menu>
       </Nav>
