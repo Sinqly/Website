@@ -172,5 +172,13 @@ export const ContainerSignInSignUp = styled.div`
   background-color: var(--white);
 
   display: flex;
-  align-items: center;
+`
+
+export const ContainerGeneral = styled.div`
+  width: 100%;
+  height: 100px;
+  padding: 32px 48px;
+  background-color: var(--white);
+
+  display: flex;
 `

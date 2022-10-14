@@ -13,6 +13,7 @@ import {
   ButtonLogin,
   ButtonSpace,
   ContainerSignInSignUp,
+  ContainerGeneral,
 } from './styles'
 
 import Link from 'next/link'
@@ -78,29 +79,33 @@ const RenderSignInSignUp = () => {
     <ContainerSignInSignUp>
       <Input />
       <Image style={{ width: '20%' }} src={Logo} alt="Logo" />
-      <ButtonLogin>voltar</ButtonLogin>
-    </IndexContainer>
+      <Link href={'/back'}>
+        <ButtonLogin>voltar</ButtonLogin>
+      </Link>
+    </ContainerSignInSignUp>
   )
 }
 
 const RenderGeneral = () => {
   return (
-    <ContainerSignInSignUp>
+    <ContainerGeneral>
       <Input />
       <Image
         style={{ width: '20', justifySelf: 'center' }}
         src={Logo}
         alt="Logo"
       />
-      <ButtonLogin>voltar</ButtonLogin>
-    </ContainerLoginCadastro>
+      <Link href={'/login'}>
+        <ButtonLogin>Login</ButtonLogin>
+      </Link>
+    </ContainerGeneral>
   )
 }
 
 const Header: React.FC<HeaderProps> = ({ headerType = 'General' }) => {
   const HeaderColection = {
     Index: RenderIndex,
-    LoginCadastro: RenderSignInSignUp,
+    SignInSignUp: RenderSignInSignUp,
     General: RenderGeneral,
   }
 
