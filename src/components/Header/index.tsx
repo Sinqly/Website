@@ -15,7 +15,7 @@ import {
   ContainerLoginCadastro,
 } from './styles'
 
-import Link from "next/link"
+import Link from 'next/link'
 
 interface HeaderProps {
   headerType?: string
@@ -38,16 +38,24 @@ const RenderIndex = () => {
 
         <Menu id={'menu'}>
           <li>
-            <a href="./">Início</a>
+            <Link href={'/'}>
+              <a>Início</a>
+            </Link>
           </li>
           <li>
-            <a href="#resume">Resumo</a>
+            <Link href={'#resume'}>
+              <a>Resumo</a>
+            </Link>
           </li>
           <li>
-            <a href="#about">Sobre</a>
+            <Link href={'#about'}>
+              <a>Sobre</a>
+            </Link>
           </li>
           <li>
-            <Link href={"/login"}><a>Login</a></Link>
+            <Link href={'#areas'}>
+              <a>Áreas</a>
+            </Link>
           </li>
         </Menu>
       </Nav>
@@ -57,7 +65,9 @@ const RenderIndex = () => {
       </LogoSpace>
 
       <ButtonSpace className={'button-space'}>
-        <ButtonLogin onClick={() => console.log('OI')}>Login</ButtonLogin>
+        <Link href={'/login'}>
+          <ButtonLogin>Login</ButtonLogin>
+        </Link>
       </ButtonSpace>
     </IndexContainer>
   )
@@ -68,7 +78,9 @@ const RenderSignInSignUp = () => {
     <IndexContainer>
       <Input />
       <Image style={{ width: '20%' }} src={Logo} alt="Logo" />
-      <ButtonLogin>voltar</ButtonLogin>
+      <Link href={'/back'}>
+        <ButtonLogin>voltar</ButtonLogin>
+      </Link>
     </IndexContainer>
   )
 }
@@ -82,7 +94,9 @@ const RenderGeneral = () => {
         src={Logo}
         alt="Logo"
       />
-      <ButtonLogin>voltar</ButtonLogin>
+      <Link href={'/login'}>
+        <ButtonLogin>Login</ButtonLogin>
+      </Link>
     </ContainerLoginCadastro>
   )
 }
