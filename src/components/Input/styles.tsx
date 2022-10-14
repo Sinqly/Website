@@ -16,10 +16,10 @@ export const Container = styled.div`
   color: var(--dark-purple);
 `
 export const SearchIcon = styled(BiSearchAlt2)`
-    margin-right:8px;
-    color:var(--dark-purple);
-    width:20px;
-    height:20px;
+  margin-right: 8px;
+  color: var(--dark-purple);
+  width: 20px;
+  height: 20px;
 `
 
 export const InputSearch = styled.input`
