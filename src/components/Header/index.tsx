@@ -15,6 +15,8 @@ import {
   ContainerSignInSignUp,
 } from './styles'
 
+import Link from 'next/link'
+
 interface HeaderProps {
   headerType?: string
 }
@@ -36,16 +38,24 @@ const RenderIndex = () => {
 
         <Menu id={'menu'}>
           <li>
-            <a href="./">Início</a>
+            <Link href={'/'}>
+              <a>Início</a>
+            </Link>
           </li>
           <li>
-            <a href="#resume">Resumo</a>
+            <Link href={'#resume'}>
+              <a>Resumo</a>
+            </Link>
           </li>
           <li>
-            <a href="#about">Sobre</a>
+            <Link href={'#about'}>
+              <a>Sobre</a>
+            </Link>
           </li>
           <li>
-            <a href="#areas">Áreas</a>
+            <Link href={'#areas'}>
+              <a>Áreas</a>
+            </Link>
           </li>
         </Menu>
       </Nav>
@@ -55,7 +65,9 @@ const RenderIndex = () => {
       </LogoSpace>
 
       <ButtonSpace className={'button-space'}>
-        <ButtonLogin onClick={() => console.log('OI')}>Login</ButtonLogin>
+        <Link href={'/login'}>
+          <ButtonLogin>Login</ButtonLogin>
+        </Link>
       </ButtonSpace>
     </IndexContainer>
   )
@@ -67,7 +79,7 @@ const RenderSignInSignUp = () => {
       <Input />
       <Image style={{ width: '20%' }} src={Logo} alt="Logo" />
       <ButtonLogin>voltar</ButtonLogin>
-    </ContainerSignInSignUp>
+    </IndexContainer>
   )
 }
 
@@ -81,7 +93,7 @@ const RenderGeneral = () => {
         alt="Logo"
       />
       <ButtonLogin>voltar</ButtonLogin>
-    </ContainerSignInSignUp>
+    </ContainerLoginCadastro>
   )
 }
 
