@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { active } from '../../utils/Header/activeInterface'
+import { FaArrowLeft } from 'react-icons/fa'
 
 export const IndexContainer = styled.div`
   width: 100%;
@@ -168,10 +169,49 @@ export const ButtonLogin = styled.button`
 export const ContainerSignInSignUp = styled.div`
   width: 100%;
   height: 100px;
-  padding: 32px 48px;
   background-color: var(--white);
-
   display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+
+  & .arrow-left{
+    display: none;
+  } 
+
+  @media screen and (max-width: 550px) {
+    & .back{
+      left: 16px;
+    }
+    & .arrow-left{
+      display: block;
+    }
+    & .go-back-link{
+      display: none;
+    }
+  }
+`
+export const ImageView = styled.div`
+  position: absolute;
+  width: 180px;
+`
+
+export const Back = styled.div`
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 48px;
+  & > a{
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--dark-purple);
+  }
+`
+
+export const ArrowLeft = styled(FaArrowLeft)`
+  width:24px;
+  height:24px;
+  color: var(--dark-purple);
 `
 
 export const ContainerGeneral = styled.div`

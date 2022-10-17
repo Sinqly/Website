@@ -14,6 +14,9 @@ import {
   ButtonSpace,
   ContainerSignInSignUp,
   ContainerGeneral,
+  ImageView,
+  Back,
+  ArrowLeft,
 } from './styles'
 
 import Link from 'next/link'
@@ -77,11 +80,15 @@ const RenderIndex = () => {
 const RenderSignInSignUp = () => {
   return (
     <ContainerSignInSignUp>
-      <Input />
-      <Image style={{ width: '20%' }} src={Logo} alt="Logo" />
-      <Link href={'/back'}>
-        <ButtonLogin>voltar</ButtonLogin>
-      </Link>
+      <ImageView>
+        <Image className={'logo'} src={Logo} alt="Logo"/>
+      </ImageView>
+      <Back className='back'>
+        <ArrowLeft className={'arrow-left'}/>
+        <Link href={'/back'}>
+          <a className={'go-back-link'}>Voltar</a>
+        </Link>
+      </Back>
     </ContainerSignInSignUp>
   )
 }
