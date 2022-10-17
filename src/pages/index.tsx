@@ -6,11 +6,14 @@ import { Container } from '../styles/pages/Index'
 const Index: React.FC = () => {
   return (
     <Container>
-      <Header headerType={'General'} />
-
+      <Header headerType={'Index'} />
       <div
         id="resume"
-        style={{ backgroundColor: 'red', height: '1000px', width: '100%' }}
+        style={{
+          backgroundColor: 'transparent',
+          height: '1000px',
+          width: '100%',
+        }}
       >
         Resume
       </div>

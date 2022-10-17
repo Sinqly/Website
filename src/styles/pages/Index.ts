@@ -5,7 +5,6 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   scroll-behavior: smooth;
-
   h1 {
     font-size: 54px;
     color: ${(props) => props.theme.colors.primary};

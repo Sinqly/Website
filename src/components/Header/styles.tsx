@@ -11,7 +11,9 @@ export const IndexContainer = styled.div`
   padding: 32px 48px;
   background-color: var(--white);
   position: fixed;
-
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -157,7 +159,6 @@ export const ButtonLogin = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: var(--white);
   background-color: var(--dark-purple);
   border-radius: 32px;
@@ -173,11 +174,13 @@ export const ContainerSignInSignUp = styled.div`
   width: 100%;
   height: 100px;
   background-color: var(--white);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-
   & .arrow-left {
     display: none;
   }
@@ -222,7 +225,9 @@ export const ContainerGeneral = styled.div`
   height: 100px;
   padding: 32px 16px 32px 64px;
   background-color: var(--white);
-
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: space-between;
