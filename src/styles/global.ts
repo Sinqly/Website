@@ -1,10 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 100%;
+    font-family: 'Poppins', sans-serif;
   }
   :root{
     --black:#151515;
@@ -15,10 +19,6 @@ export default createGlobalStyle`
   }
   body {
     background: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
-    font: 400 16px Roboto, sans-serif;
-  }
-  p {
     color: ${(props) => props.theme.colors.text};
   }
 `
