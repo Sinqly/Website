@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container, SearchIcon, InputSearch as SearchInput } from './styles'
 
 export interface InputProps {
-  inputType?: string,
+  inputType?: string
   styles?: object
 }
 

@@ -178,18 +178,18 @@ export const ContainerSignInSignUp = styled.div`
   justify-content: center;
   position: fixed;
 
-  & .arrow-left{
+  & .arrow-left {
     display: none;
-  } 
+  }
 
   @media screen and (max-width: 550px) {
-    & .back{
+    & .back {
       left: 16px;
     }
-    & .arrow-left{
+    & .arrow-left {
       display: block;
     }
-    & .go-back-link{
+    & .go-back-link {
       display: none;
     }
   }
@@ -204,7 +204,7 @@ export const Back = styled.div`
   align-items: center;
   position: absolute;
   right: 48px;
-  & > a{
+  & > a {
     text-decoration: none;
     font-size: 18px;
     color: var(--dark-purple);
@@ -212,8 +212,8 @@ export const Back = styled.div`
 `
 
 export const ArrowLeft = styled(FaArrowLeft)`
-  width:24px;
-  height:24px;
+  width: 24px;
+  height: 24px;
   color: var(--dark-purple);
 `
 
@@ -235,7 +235,7 @@ export const InputDiv = styled.div`
 export const ImageDiv = styled.div`
   width: 33%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 `
 
 export const IconsDiv = styled.div`
@@ -251,8 +251,8 @@ export const HomeIcon = styled(IoHomeSharp)`
   margin-right: 20px;
 
   color: var(--dark-purple);
-  
-  &:hover{
+
+  &:hover {
     cursor: pointer;
   }
 `
@@ -264,7 +264,7 @@ export const BellIcon = styled(BsFillBellFill)`
 
   color: var(--dark-purple);
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `
@@ -274,7 +274,7 @@ export const UserIcon = styled.div`
   height: 48px;
   margin-right: 16px;
   border-radius: 100%;
-  
+
   background-color: var(--dark-purple);
 `
 

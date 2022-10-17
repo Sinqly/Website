@@ -90,10 +90,10 @@ const RenderSignInSignUp = () => {
   return (
     <ContainerSignInSignUp>
       <ImageView>
-        <Image className={'logo'} src={Logo} alt="Logo"/>
+        <Image className={'logo'} src={Logo} alt="Logo" />
       </ImageView>
-      <Back className='back'>
-        <ArrowLeft className={'arrow-left'}/>
+      <Back className="back">
+        <ArrowLeft className={'arrow-left'} />
         <Link href={'/back'}>
           <a className={'go-back-link'}>Voltar</a>
         </Link>
@@ -103,32 +103,29 @@ const RenderSignInSignUp = () => {
 }
 
 const RenderGeneral = () => {
-  
   const InputStyles = {
-    width: "100%",
-    minWidth:"300px"
+    width: '100%',
+    minWidth: '300px',
   }
 
   return (
     <ContainerGeneral>
       <InputDiv>
-        <Input styles={InputStyles}/>
+        <Input styles={InputStyles} />
       </InputDiv>
 
       <ImageDiv>
-        <Image src={Logo} alt="Logo"/> 
+        <Image src={Logo} alt="Logo" />
       </ImageDiv>
- 
+
       <IconsDiv>
         <HomeIcon />
-        <BellIcon/>
+        <BellIcon />
 
         <UserPlace>
           <UserIcon />
-          <UserName>
-            Igor Ribeiro
-          </UserName>
-          <DropdownIcon/>
+          <UserName>Igor Ribeiro</UserName>
+          <DropdownIcon />
         </UserPlace>
       </IconsDiv>
     </ContainerGeneral>

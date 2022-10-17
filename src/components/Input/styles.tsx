@@ -20,8 +20,8 @@ export const SearchIcon = styled(BiSearchAlt2)`
   color: var(--dark-purple);
   width: 20px;
   height: 20px;
-  
-  &:hover{
+
+  &:hover {
     cursor: pointer;
   }
 `
