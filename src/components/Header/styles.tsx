@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import { active } from '../../utils/Header/activeInterface'
 import { FaArrowLeft } from 'react-icons/fa'
+import { IoHomeSharp } from 'react-icons/io5'
+import { IoMdArrowDropdown } from 'react-icons/io'
+import { BsFillBellFill } from 'react-icons/bs'
 
 export const IndexContainer = styled.div`
   width: 100%;
@@ -217,8 +220,78 @@ export const ArrowLeft = styled(FaArrowLeft)`
 export const ContainerGeneral = styled.div`
   width: 100%;
   height: 100px;
-  padding: 32px 48px;
+  padding: 32px 16px 32px 64px;
   background-color: var(--white);
 
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export const InputDiv = styled.div`
+  width: 33%;
+`
+
+export const ImageDiv = styled.div`
+  width: 33%;
+  display: flex;
+  justify-content:center;
+`
+
+export const IconsDiv = styled.div`
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const HomeIcon = styled(IoHomeSharp)`
+  width: 32px;
+  height: 32px;
+  margin-right: 20px;
+
+  color: var(--dark-purple);
+  
+  &:hover{
+    cursor: pointer;
+  }
+`
+
+export const BellIcon = styled(BsFillBellFill)`
+  width: 32px;
+  height: 28px;
+  margin-right: 20px;
+
+  color: var(--dark-purple);
+
+  &:hover{
+    cursor: pointer;
+  }
+`
+
+export const UserIcon = styled.div`
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+  border-radius: 100%;
+  
+  background-color: var(--dark-purple);
+`
+
+export const UserPlace = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const UserName = styled.div`
+  color: var(--dark-purple);
+  font-size: 20px;
+  font-weight: 400;
+`
+
+export const DropdownIcon = styled(IoMdArrowDropdown)`
+  width: 30px;
+  height: 30px;
+  color: var(--dark-purple);
 `

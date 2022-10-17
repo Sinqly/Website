@@ -17,6 +17,15 @@ import {
   ImageView,
   Back,
   ArrowLeft,
+  InputDiv,
+  HomeIcon,
+  BellIcon,
+  UserIcon,
+  ImageDiv,
+  IconsDiv,
+  DropdownIcon,
+  UserPlace,
+  UserName,
 } from './styles'
 
 import Link from 'next/link'
@@ -94,17 +103,34 @@ const RenderSignInSignUp = () => {
 }
 
 const RenderGeneral = () => {
+  
+  const InputStyles = {
+    width: "100%",
+    minWidth:"300px"
+  }
+
   return (
     <ContainerGeneral>
-      <Input />
-      <Image
-        style={{ width: '20', justifySelf: 'center' }}
-        src={Logo}
-        alt="Logo"
-      />
-      <Link href={'/login'}>
-        <ButtonLogin>Login</ButtonLogin>
-      </Link>
+      <InputDiv>
+        <Input styles={InputStyles}/>
+      </InputDiv>
+
+      <ImageDiv>
+        <Image src={Logo} alt="Logo"/> 
+      </ImageDiv>
+ 
+      <IconsDiv>
+        <HomeIcon />
+        <BellIcon/>
+
+        <UserPlace>
+          <UserIcon />
+          <UserName>
+            Igor Ribeiro
+          </UserName>
+          <DropdownIcon/>
+        </UserPlace>
+      </IconsDiv>
     </ContainerGeneral>
   )
 }
