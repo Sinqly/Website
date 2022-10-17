@@ -20,6 +20,10 @@ export const SearchIcon = styled(BiSearchAlt2)`
   color: var(--dark-purple);
   width: 20px;
   height: 20px;
+  
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 export const InputSearch = styled.input`
@@ -28,4 +32,8 @@ export const InputSearch = styled.input`
   background: transparent;
   border: none;
   outline: none;
+  color: var(--dark-purple);
+  &::placeholder {
+    color: var(--dark-purple);
+  }
 `
