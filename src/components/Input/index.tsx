@@ -3,15 +3,20 @@ import { Container, SearchIcon, InputSearch as SearchInput } from './styles'
 
 export interface InputProps {
   inputType?: string
+  classNameProps?: string
   styles?: object
 }
 
-const Input: React.FC<InputProps> = ({ inputType = 'Search', styles }) => {
+const Input: React.FC<InputProps> = ({
+  inputType = 'Search',
+  styles,
+  classNameProps,
+}) => {
   const [searchInput, setSearchInput] = useState('')
 
   const Search = () => {
     return (
-      <Container style={styles}>
+      <Container className={classNameProps} style={styles}>
         <SearchIcon />
         <SearchInput
           value={searchInput}
