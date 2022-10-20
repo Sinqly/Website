@@ -22,7 +22,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ styles }) => {
       </div>
 
       <UserPlace>
-        <UserIcon className={"user-icon"} />
+        <UserIcon className={'user-icon'} />
         <UserName className={'hidden'}>Igor Ribeiro</UserName>
         <DropdownIcon className={'hidden'} />
       </UserPlace>

@@ -6,7 +6,7 @@ export const IndexContainer = styled.div`
   width: 100%;
   height: 100px;
   padding: 32px 48px;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,7 +102,8 @@ export const MobileButton = styled.button`
 export const Nav = styled.nav`
   width: 33%;
   ${({ active }: active) =>
-    active ? `
+    active
+      ? `
     #hamburguer{
       border-top-color: transparent;
     }
@@ -121,7 +122,8 @@ export const Nav = styled.nav`
       visibility: visible;
       overflow-y: auto;
     }
-  ` : ''}
+  `
+      : ''}
 `
 
 export const Menu = styled.ul`
@@ -171,12 +173,12 @@ export const ButtonLogin = styled.button`
 export const ContainerSignInSignUp = styled.div`
   width: 100%;
   height: 100px;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  
+
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
@@ -225,11 +227,11 @@ export const ContainerGeneral = styled.div`
   width: 100%;
   height: 100px;
   padding: 32px 16px 32px 64px;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
@@ -245,13 +247,13 @@ export const ContainerGeneral = styled.div`
     }
   }
   @media screen and (max-width: 864px) {
-    .user-icon{
+    .user-icon {
       margin: 0;
     }
     .hidden {
       display: none;
     }
-    
+
     #botao-mobile {
       display: block;
       padding: 0;
@@ -268,7 +270,8 @@ export const InputDiv = styled.div`
   width: 33%;
 
   ${({ active }: active) =>
-    active ? `
+    active
+      ? `
     #hamburguer{
       border-top-color: transparent;
     }
@@ -287,7 +290,8 @@ export const InputDiv = styled.div`
       visibility: visible;
       overflow-y: auto;
     }
-  ` : ''}
+  `
+      : ''}
 `
 
 export const ImageDiv = styled.div`
