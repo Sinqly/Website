@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import Backline from '../../assets/Images/Index/Backline.png'
 
 export const Container = styled.div`
   overflow-x: hidden;
+  overflow-y: hidden;
   scroll-behavior: smooth;
 `
 
@@ -24,44 +26,47 @@ export const TextContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  h2{
+  h2 {
     width: 75%;
-    font-size 3.2rem;
+    font-size: 3.2rem;
     color: ${(props) => props.theme.colors.primary};
   }
 
-  h4{
+  h4 {
     width: 70%;
-    font-size 1.4rem;
+    font-size: 1.4rem;
   }
 
-  p{
+  p {
     font-size: 1rem;
     font-weight: 600;
     color: ${(props) => props.theme.colors.grey};
   }
 
   @media screen and (max-width: 1280px) {
-    width: 50%; 
+    width: 50%;
   }
 
   @media screen and (max-width: 992px) {
     width: 100%;
-    margin-top 10px;
+    margin-top: 10px;
     align-items: center;
 
-    h2, h4, p{
+    h2,
+    h4,
+    p {
       width: 80%;
       margin-top: 2rem;
     }
   }
-  
+
   @media screen and (max-width: 768px) {
-    h2, h4, p{
+    h2,
+    h4,
+    p {
       width: 100%;
     }
   }
-
 `
 
 export const BackpackContainer = styled.div`
@@ -110,4 +115,16 @@ export const SignUpButton = styled.button`
   @media screen and (max-width: 768px) {
     width: 100%;
   }
+`
+export const SocialContainer = styled.div`
+  height: 500px;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(${() => Backline.src});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `

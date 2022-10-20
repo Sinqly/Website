@@ -6,9 +6,9 @@ import {
   SignUpButton,
   BackpackContainer,
   TextContainer,
+  SocialContainer,
 } from '../styles/pages/Index'
 import BackpackSvg from '../assets/Images/Index/Backpack.svg'
-
 import { BsArrowRightShort } from 'react-icons/bs'
 
 interface indexProps {}
@@ -34,6 +34,9 @@ const index: React.FC<indexProps> = (props) => {
           <BackpackSvg />
         </BackpackContainer>
       </WelcomeContainer>
+      <SocialContainer>
+        <h1>teste</h1>
+      </SocialContainer>
     </Container>
   )
 }
