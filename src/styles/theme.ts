@@ -4,7 +4,7 @@ const theme = {
     text: 'var(--black)',
     whiteText: 'var(--white)',
     primary: 'var(--dark-purple)',
-    grey: 'var(--grey)'
+    grey: 'var(--grey)',
   },
 }
 
