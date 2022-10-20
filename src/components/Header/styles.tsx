@@ -1,22 +1,22 @@
 import styled from 'styled-components'
 import { active } from '../../utils/Header/activeInterface'
 import { FaArrowLeft } from 'react-icons/fa'
-import { IoHomeSharp } from 'react-icons/io5'
-import { IoMdArrowDropdown } from 'react-icons/io'
-import { BsFillBellFill } from 'react-icons/bs'
 
 export const IndexContainer = styled.div`
   width: 100%;
   height: 100px;
   padding: 32px 48px;
-  background-color: var(--white);
-  position: fixed;
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  background-color: var(--white);
+
   @media screen and (max-width: 1024px) {
     #menu {
       display: none;
@@ -102,8 +102,7 @@ export const MobileButton = styled.button`
 export const Nav = styled.nav`
   width: 33%;
   ${({ active }: active) =>
-    active
-      ? `
+    active ? `
     #hamburguer{
       border-top-color: transparent;
     }
@@ -122,8 +121,7 @@ export const Nav = styled.nav`
       visibility: visible;
       overflow-y: auto;
     }
-  `
-      : ''}
+  ` : ''}
 `
 
 export const Menu = styled.ul`
@@ -173,14 +171,17 @@ export const ButtonLogin = styled.button`
 export const ContainerSignInSignUp = styled.div`
   width: 100%;
   height: 100px;
-  background-color: var(--white);
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
+  
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  background-color: var(--white);
+
   & .arrow-left {
     display: none;
   }
@@ -224,79 +225,74 @@ export const ContainerGeneral = styled.div`
   width: 100%;
   height: 100px;
   padding: 32px 16px 32px 64px;
-  background-color: var(--white);
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+  background-color: var(--white);
+
+  @media screen and (max-width: 1024px) {
+    & {
+      padding: 32px 16px 32px 16px;
+    }
+
+    .icons-user {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 864px) {
+    .user-icon{
+      margin: 0;
+    }
+    .hidden {
+      display: none;
+    }
+    
+    #botao-mobile {
+      display: block;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 380px) {
+    & {
+      padding: 16px 8px 16px 8px;
+    }
+  }
 `
 
 export const InputDiv = styled.div`
   width: 33%;
+
+  ${({ active }: active) =>
+    active ? `
+    #hamburguer{
+      border-top-color: transparent;
+    }
+  
+    #hamburguer::before{
+      transform: rotate(135deg);
+    }
+  
+    #hamburguer::after{
+      transform: rotate(-135deg);
+      top: -7px;
+    }   
+
+    #menu{
+      height: calc(100vh - 10vh);
+      visibility: visible;
+      overflow-y: auto;
+    }
+  ` : ''}
 `
 
 export const ImageDiv = styled.div`
   width: 33%;
   display: flex;
   justify-content: center;
-`
-
-export const IconsDiv = styled.div`
-  width: 33%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
-export const HomeIcon = styled(IoHomeSharp)`
-  width: 32px;
-  height: 32px;
-  margin-right: 20px;
-
-  color: var(--dark-purple);
-
-  &:hover {
-    cursor: pointer;
-  }
-`
-
-export const BellIcon = styled(BsFillBellFill)`
-  width: 32px;
-  height: 28px;
-  margin-right: 20px;
-
-  color: var(--dark-purple);
-
-  &:hover {
-    cursor: pointer;
-  }
-`
-
-export const UserIcon = styled.div`
-  width: 48px;
-  height: 48px;
-  margin-right: 16px;
-  border-radius: 100%;
-
-  background-color: var(--dark-purple);
-`
-
-export const UserPlace = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
-export const UserName = styled.div`
-  color: var(--dark-purple);
-  font-size: 20px;
-  font-weight: 400;
-`
-
-export const DropdownIcon = styled(IoMdArrowDropdown)`
-  width: 30px;
-  height: 30px;
-  color: var(--dark-purple);
+  min-width: 150px;
 `

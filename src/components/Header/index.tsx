@@ -18,17 +18,11 @@ import {
   Back,
   ArrowLeft,
   InputDiv,
-  HomeIcon,
-  BellIcon,
-  UserIcon,
   ImageDiv,
-  IconsDiv,
-  DropdownIcon,
-  UserPlace,
-  UserName,
 } from './styles'
 
 import Link from 'next/link'
+import UserDropdown from '../UserDropdown'
 
 interface HeaderProps {
   headerType?: string
@@ -103,31 +97,32 @@ const RenderSignInSignUp = () => {
 }
 
 const RenderGeneral = () => {
+  const [active, setActive] = useState<boolean>(false)
+
+  const toggleMenu = () => {
+    if (active === true) setActive(false)
+    else setActive(true)
+  }
+
   const InputStyles = {
     width: '100%',
-    minWidth: '300px',
+    minWidth: '150px',
   }
 
   return (
     <ContainerGeneral>
-      <InputDiv>
-        <Input styles={InputStyles} />
+      <InputDiv className={'input-div'} active={active}>
+        <MobileButton id={'botao-mobile'} onClick={toggleMenu}>
+          <span id={'hamburguer'}></span>
+        </MobileButton>
+        <Input classNameProps={'hidden'} styles={InputStyles} />
       </InputDiv>
 
       <ImageDiv>
         <Image src={Logo} alt="Logo" />
       </ImageDiv>
 
-      <IconsDiv>
-        <HomeIcon />
-        <BellIcon />
-
-        <UserPlace>
-          <UserIcon />
-          <UserName>Igor Ribeiro</UserName>
-          <DropdownIcon />
-        </UserPlace>
-      </IconsDiv>
+      <UserDropdown />
     </ContainerGeneral>
   )
 }
