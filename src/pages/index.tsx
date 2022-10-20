@@ -34,6 +34,7 @@ const index: React.FC<indexProps> = (props) => {
           <BackpackSvg />
         </BackpackContainer>
       </WelcomeContainer>
+      
     </Container>
   )
 }

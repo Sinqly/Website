@@ -26,13 +26,13 @@ export const TextContainer = styled.div`
   justify-content: space-between;
   h2{
     width: 75%;
-    font-size 3.2rem;
+    font-size: 3.2rem;
     color: ${(props) => props.theme.colors.primary};
   }
 
   h4{
     width: 70%;
-    font-size 1.4rem;
+    font-size: 1.4rem;
   }
 
   p{
@@ -47,7 +47,7 @@ export const TextContainer = styled.div`
 
   @media screen and (max-width: 992px) {
     width: 100%;
-    margin-top 10px;
+    margin-top: 10px;
     align-items: center;
 
     h2, h4, p{
