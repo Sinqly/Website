@@ -1,0 +1,20 @@
+{
+  "tsrsc": {
+    "prefix": "tsrsc",
+    "body": [
+      "import * as React from 'react';",
+      "",
+      "interface ${1:${TM_FILENAME_BASE}}Props {}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}: React.FC<${1:${TM_FILENAME_BASE}}Props> = props => {",
+      "  return (",
+      "   <h1>${1:${TM_FILENAME_BASE}}</h1>",
+      "  )",
+      "};",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}};",
+      ""
+    ],
+    "description": ""
+  }
+}

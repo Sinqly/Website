@@ -127,7 +127,7 @@ const RenderGeneral = () => {
   )
 }
 
-const Header: React.FC<HeaderProps> = ({ headerType = 'General' }) => {
+const Header: React.FC<HeaderProps> = ({ headerType }) => {
   const HeaderColection = {
     Index: RenderIndex,
     SignInSignUp: RenderSignInSignUp,
