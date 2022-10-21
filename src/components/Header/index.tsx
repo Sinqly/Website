@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-
-import Logo from '../../assets/Images/Logo.png'
-import Input from '../Input'
+import Link from 'next/link'
 
 import {
   IndexContainer,
@@ -21,8 +19,10 @@ import {
   ImageDiv,
 } from './styles'
 
-import Link from 'next/link'
+import Logo from '../../assets/Images/Logo.png'
+import Input from '../Input'
 import UserDropdown from '../UserDropdown'
+
 
 interface HeaderProps {
   headerType?: string
@@ -107,6 +107,7 @@ const RenderGeneral = () => {
   const InputStyles = {
     width: '100%',
     minWidth: '150px',
+    maxWidth: '500px',
   }
 
   return (
