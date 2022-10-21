@@ -1,3 +1,5 @@
+/* eslint @typescript-eslint/no-empty-interface: "off" */
+
 import * as React from 'react'
 import Header from '../components/Header/index'
 import {
