@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import Backline from '../../assets/Images/Index/Backline.png'
 
 export const Container = styled.div`
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   scroll-behavior: smooth;
 `
 
@@ -117,6 +116,7 @@ export const SignUpButton = styled.button`
   }
 `
 export const SocialContainer = styled.div`
+  width: 100%;
   height: 500px;
   position: relative;
   z-index: 0;
@@ -125,6 +125,6 @@ export const SocialContainer = styled.div`
   justify-content: center;
   background-image: url(${() => Backline.src});
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
 `
