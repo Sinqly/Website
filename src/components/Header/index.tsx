@@ -23,7 +23,6 @@ import Logo from '../../assets/Images/Logo.png'
 import Input from '../Input'
 import UserDropdown from '../UserDropdown'
 
-
 interface HeaderProps {
   headerType?: string
 }

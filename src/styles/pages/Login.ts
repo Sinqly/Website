@@ -6,7 +6,7 @@ export const Main = styled.div`
   justify-content: center;
 
   padding: auto 64px;
-  
+
   height: calc(100vh - 100px);
   width: 100%;
   position: relative;
@@ -18,22 +18,19 @@ export const SectionLeft = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  
 
   width: 50%;
   height: 100%;
   padding: 5%;
 `
 
-export const Texts = styled.div`
-
-`
+export const Texts = styled.div``
 
 export const SectionRight = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   width: 50%;
   height: 100%;
 
@@ -77,7 +74,7 @@ export const ButtonDiv = styled.div`
 export const Button = styled.button`
   width: 100%;
   padding: 16px 0;
-  
+
   border: none;
   border-radius: 32px;
 
@@ -85,6 +82,4 @@ export const Button = styled.button`
   color: var(--white);
 `
 
-export const NoAccount = styled.p`
-
-`
+export const NoAccount = styled.p``
