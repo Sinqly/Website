@@ -11,7 +11,7 @@ export const IndexContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   position: fixed;
-
+  z-index: 999;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);

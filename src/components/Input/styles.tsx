@@ -5,7 +5,6 @@ export const Container = styled.div`
   width: 30%;
   height: 48px;
   padding: 13px;
-  max-width: 500px;
 
   border: 1px solid var(--dark-purple);
   border-radius: 32px;

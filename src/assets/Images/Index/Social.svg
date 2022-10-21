@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <svg width="475" height="515" viewBox="0 0 475 515" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+=======
+<svg width="100%" height="100%" viewBox="0 0 475 515" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+>>>>>>> 26f3fc994a1948c63d2fa2e7b4b0950c9bf89245
 <rect width="475" height="515" fill="url(#pattern0)"/>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
