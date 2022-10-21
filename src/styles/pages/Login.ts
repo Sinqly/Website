@@ -11,16 +11,16 @@ export const Main = styled.div`
   width: 100%;
   position: relative;
   top: 100px;
-  
+
   @media screen and (max-width: 992px) {
     flex-direction: column;
     z-index: 0;
-    .section-left{
+    .section-left {
       width: 100%;
       margin-top: 400px;
       align-items: center;
     }
-    .section-right{
+    .section-right {
       width: 100%;
       align-items: center;
     }

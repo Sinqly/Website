@@ -24,8 +24,8 @@ const login: React.FC<loginProps> = ({ ...props }) => {
     <>
       <Header headerType={'SignInSignUp'} />
       <Main>
-        <SectionLeft className={"section-left"}>
-          <div style={{width: "80%", margin: "auto"}}>
+        <SectionLeft className={'section-left'}>
+          <div style={{ width: '80%', margin: 'auto' }}>
             <PeopleSVG />
           </div>
           <Texts>
@@ -37,7 +37,7 @@ const login: React.FC<loginProps> = ({ ...props }) => {
           </Texts>
         </SectionLeft>
 
-        <SectionRight className={"section-right"}>
+        <SectionRight className={'section-right'}>
           <InputGroup>
             <Input styles={{ width: '100%' }} />
             <PasswordDiv>
