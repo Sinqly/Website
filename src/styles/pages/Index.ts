@@ -126,5 +126,5 @@ export const SocialContainer = styled.div`
   background-image: url(${() => Backline.src});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
 `
