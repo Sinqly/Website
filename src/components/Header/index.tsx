@@ -87,7 +87,7 @@ const RenderSignInSignUp = () => {
       </ImageView>
       <Back className="back">
         <ArrowLeft className={'arrow-left'} />
-        <Link href={'/back'}>
+        <Link href={'/'}>
           <a className={'go-back-link'}>Voltar</a>
         </Link>
       </Back>
