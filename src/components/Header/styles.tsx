@@ -170,7 +170,7 @@ export const ButtonLogin = styled.button`
   }
 `
 
-export const ContainerSignInSignUp = styled.div`
+export const SignInSignUpContainer = styled.div`
   width: 100%;
   height: 100px;
 
@@ -178,6 +178,7 @@ export const ContainerSignInSignUp = styled.div`
   align-items: center;
   justify-content: center;
   position: fixed;
+  z-index: 999;
 
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
@@ -231,6 +232,7 @@ export const ContainerGeneral = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
 
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);

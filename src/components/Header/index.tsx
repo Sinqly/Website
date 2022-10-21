@@ -10,7 +10,7 @@ import {
   LogoSpace,
   ButtonLogin,
   ButtonSpace,
-  ContainerSignInSignUp,
+  SignInSignUpContainer,
   ContainerGeneral,
   ImageView,
   Back,
@@ -81,7 +81,7 @@ const RenderIndex = () => {
 
 const RenderSignInSignUp = () => {
   return (
-    <ContainerSignInSignUp>
+    <SignInSignUpContainer>
       <ImageView>
         <Image className={'logo'} src={Logo} alt="Logo" />
       </ImageView>
@@ -91,7 +91,7 @@ const RenderSignInSignUp = () => {
           <a className={'go-back-link'}>Voltar</a>
         </Link>
       </Back>
-    </ContainerSignInSignUp>
+    </SignInSignUpContainer>
   )
 }
 
