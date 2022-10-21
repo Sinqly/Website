@@ -17,11 +17,12 @@ export const SectionLeft = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   
+
   width: 50%;
   height: 100%;
-  padding: 5% 5% 5% 5%;
+  padding: 5%;
 `
 
 export const Texts = styled.div`
