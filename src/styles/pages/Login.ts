@@ -11,9 +11,23 @@ export const Main = styled.div`
   width: 100%;
   position: relative;
   top: 100px;
+  
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    z-index: 0;
+    .section-left{
+      width: 100%;
+      margin-top: 400px;
+      align-items: center;
+    }
+    .section-right{
+      width: 100%;
+      align-items: center;
+    }
+  }
 `
 
-export const SectionLeft = styled.div`
+export const SectionLeft = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,7 +40,7 @@ export const SectionLeft = styled.div`
 
 export const Texts = styled.div``
 
-export const SectionRight = styled.div`
+export const SectionRight = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;

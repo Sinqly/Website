@@ -1,5 +1,5 @@
+/* eslint @typescript-eslint/no-empty-interface: "off" */
 import * as React from 'react'
-import Image from 'next/image'
 import PeopleSVG from '../assets/Images/Login/people.svg'
 
 import {
@@ -17,7 +17,6 @@ import {
 import Input from '../components/Input'
 import Header from '../components/Header'
 
-/* eslint @typescript-eslint/no-empty-interface: "off" */
 interface loginProps {}
 
 const login: React.FC<loginProps> = ({ ...props }) => {
@@ -25,8 +24,10 @@ const login: React.FC<loginProps> = ({ ...props }) => {
     <>
       <Header headerType={'SignInSignUp'} />
       <Main>
-        <SectionLeft>
-          <PeopleSVG />
+        <SectionLeft className={"section-left"}>
+          <div style={{width: "80%", margin: "auto"}}>
+            <PeopleSVG />
+          </div>
           <Texts>
             <h3>Login!</h3>
             <p>
@@ -36,7 +37,7 @@ const login: React.FC<loginProps> = ({ ...props }) => {
           </Texts>
         </SectionLeft>
 
-        <SectionRight>
+        <SectionRight className={"section-right"}>
           <InputGroup>
             <Input styles={{ width: '100%' }} />
             <PasswordDiv>
