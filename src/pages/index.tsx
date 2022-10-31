@@ -24,7 +24,7 @@ const index: React.FC<indexProps> = (props) => {
   return (
     <Container>
       <Header headerType="Index" />
-      <WelcomeContainer>
+      <WelcomeContainer id='resume'>
         <TextContainer>
           <h2>Rede social de Portfólios</h2>
           <h4>
@@ -41,7 +41,7 @@ const index: React.FC<indexProps> = (props) => {
           <BackpackSvg />
         </BackpackContainer>
       </WelcomeContainer>
-      <SocialContainer>
+      <SocialContainer  id='about'>
         <div className='intern'>
           <SocialLeftCol>
             <SocialSvg />
