@@ -122,9 +122,41 @@ export const SocialContainer = styled.div`
   z-index: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-image: url(${() => Backline.src});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 `
+
+export const SocialLeftCol = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const SocialRightCol = styled.div`
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  div{
+    background-color: rgba(255, 255, 255, 0.001);
+    width: 60%;
+    margin: 1vw 0 ;
+  }
+
+  div h2{
+    font-size: 2rem;
+    color: var(--dark-purple);
+  }
+
+  div h4{
+    font-size: 1rem;
+  }
+`
+
+

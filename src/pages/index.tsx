@@ -9,9 +9,14 @@ import {
   BackpackContainer,
   TextContainer,
   SocialContainer,
+  SocialLeftCol,
+  SocialRightCol
 } from '../styles/pages/Index'
 import BackpackSvg from '../assets/Images/Index/Backpack.svg'
 import { BsArrowRightShort } from 'react-icons/bs'
+import Image from 'next/image'
+
+import SocialSvg from '../assets/Images/Index/Social.svg'
 
 interface indexProps {}
 
@@ -37,7 +42,19 @@ const index: React.FC<indexProps> = (props) => {
         </BackpackContainer>
       </WelcomeContainer>
       <SocialContainer>
-        <h1>teste</h1>
+        <SocialLeftCol>
+          <SocialSvg />
+        </SocialLeftCol>
+        <SocialRightCol>
+          <div>
+            <h2>Rede para conexão de estudantes</h2>
+            <h4>A maior rede de conexão para estudante de todas as escolas</h4>
+          </div>
+          <div>
+            <h2>Compartilhamento de projetos estudantis</h2>
+            <h4>A maior rede de conexão para estudante de todas as escolas</h4>
+          </div>
+        </SocialRightCol>
       </SocialContainer>
     </Container>
   )
