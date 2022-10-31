@@ -116,22 +116,27 @@ export const SignUpButton = styled.button`
   }
 `
 export const SocialContainer = styled.div`
-  width: 100%;
-  height: 500px;
-  position: relative;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-image: url(${() => Backline.src});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  .intern {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255,255,255, 0.05);
+  }
 
   @media screen and (max-width: 992px) {
-    margin-top: 100px;
-    flex-direction: column-reverse;
-    height: auto;
+    .intern {
+      margin-top: 100px;
+      flex-direction: column-reverse;
+      height: auto;
+    }
   }
 `
 
@@ -156,7 +161,6 @@ export const SocialRightCol = styled.div`
   flex-direction: column;
 
   div {
-    background-color: rgba(255, 255, 255, 0.05);
     width: 60%;
     margin: 1vw 0;
   }
