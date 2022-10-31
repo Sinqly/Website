@@ -127,6 +127,12 @@ export const SocialContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media screen and (max-width: 992px) {
+    margin-top: 100px;
+    flex-direction: column-reverse;
+    height: auto;
+  }
 `
 
 export const SocialLeftCol = styled.div`
@@ -135,6 +141,12 @@ export const SocialLeftCol = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 992px) {
+    width: 125%;
+    height: auto;
+    margin-top: 5rem;
+  }
 `
 
 export const SocialRightCol = styled.div`
@@ -143,20 +155,29 @@ export const SocialRightCol = styled.div`
   display: flex;
   flex-direction: column;
 
-  div{
-    background-color: rgba(255, 255, 255, 0.001);
+  div {
+    background-color: rgba(255, 255, 255, 0.05);
     width: 60%;
-    margin: 1vw 0 ;
+    margin: 1vw 0;
   }
 
-  div h2{
-    font-size: 2rem;
+  div h2 {
+    font-size: 2.4rem;
     color: var(--dark-purple);
+    margin-bottom: 1rem;
   }
 
-  div h4{
-    font-size: 1rem;
+  div h4 {
+    font-size: 1.4rem;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    flex-direction: column-reverse;
+    div {
+      width: 75%;
+    }
   }
 `
-
-
