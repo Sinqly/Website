@@ -4,6 +4,7 @@ import Backline from '../../assets/Images/Index/Backline.png'
 export const Container = styled.div`
   overflow: hidden;
   scroll-behavior: smooth;
+  padding-bottom: 200px;
 `
 
 export const WelcomeContainer = styled.div`
