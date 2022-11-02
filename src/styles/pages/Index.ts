@@ -116,50 +116,51 @@ export const SignUpButton = styled.button`
     width: 100%;
   }
 `
+
 export const SocialContainer = styled.div`
-  width: 100vw;
-  background-image: url(${() => Backline.src});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0);
 
-  .intern {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    z-index: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(255,255,255, 0.15);
-  }
-
-  @media screen and (max-width: 992px) {
-
-    .intern {
-      margin-top: 100px;
-      flex-direction: column-reverse;
-      height: auto;
-    }
+  @media screen and (max-width: 992px){
+    margin-top: 5rem;
+    flex-direction: column-reverse;
   }
 `
 
-export const SocialLeftCol = styled.div`
-  width: 50%;
-  height: 100%;
+export const SocialSvgContainer = styled.div`
+  min-width: 35%;
+  max-width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 992px) {
-    width: 125%;
-    height: auto;
+  @media screen and (max-width: 1600px) {
     margin-top: 5rem;
+    min-width: 30%;
+    max-width: 30%;
+  }
+
+  @media screen and (max-width: 992px) {
+    min-width: 60%;
+    max-width: 60%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 70%;
+    max-width: 70%;
   }
 `
 
 export const SocialRightCol = styled.div`
-  width: 40%;
+  width: 35%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -176,7 +177,7 @@ export const SocialRightCol = styled.div`
   }
 
   div h4 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   @media screen and (max-width: 992px) {
