@@ -118,11 +118,7 @@ export const SignUpButton = styled.button`
 `
 export const SocialContainer = styled.div`
   width: 100vw;
-  background-image: url(${() => Backline.src});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
+  
   .intern {
     width: 100%;
     height: 500px;
@@ -131,11 +127,10 @@ export const SocialContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255,255,255, 0.15);
+    background-color: rgba(255, 255, 255, 0);
   }
 
   @media screen and (max-width: 992px) {
-
     .intern {
       margin-top: 100px;
       flex-direction: column-reverse;
@@ -176,7 +171,7 @@ export const SocialRightCol = styled.div`
   }
 
   div h4 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   @media screen and (max-width: 992px) {

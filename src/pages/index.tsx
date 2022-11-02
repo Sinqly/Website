@@ -13,10 +13,8 @@ import {
   SocialRightCol,
 } from '../styles/pages/Index'
 import BackpackSvg from '../assets/Images/Index/Backpack.svg'
-import { BsArrowRightShort } from 'react-icons/bs'
-import Image from 'next/image'
-
 import SocialSvg from '../assets/Images/Index/Social.svg'
+import { BsArrowRightShort } from 'react-icons/bs'
 
 interface indexProps {}
 
@@ -41,7 +39,7 @@ const index: React.FC<indexProps> = (props) => {
           <BackpackSvg />
         </BackpackContainer>
       </WelcomeContainer>
-      <SocialContainer  id='about'>
+      <SocialContainer id='about'>
         <div className='intern'>
           <SocialLeftCol>
             <SocialSvg />
