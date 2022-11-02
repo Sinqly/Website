@@ -1,28 +1,36 @@
 import styled from 'styled-components'
 
 export const Main = styled.div`
+  height: calc(100vh- 100px);
+  width: 100%;
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 10%;
 
-  padding: auto 64px;
-
-  height: calc(100vh - 100px);
-  width: 100%;
-  position: relative;
-  top: 100px;
+  @media screen and (max-width: 1400px) {
+    padding: 0 3%;
+  }
 
   @media screen and (max-width: 992px) {
+    height: auto;
     flex-direction: column;
-    z-index: 0;
     .section-left {
-      width: 100%;
-      margin-top: 400px;
+      width: auto;
+      margin-top: 3%;
       align-items: center;
+      text-align: center;
+      gap: 10px;
     }
     .section-right {
-      width: 100%;
       align-items: center;
+      height: 100%;
+      width: 100%;
+      gap: 50px;      
+      & > p {
+        font-size: 1.3em ;
+      }
     }
   }
 `
@@ -38,17 +46,46 @@ export const SectionLeft = styled.section`
   padding: 5%;
 `
 
-export const Texts = styled.div``
+export const Texts = styled.div`
+  & > h3 {
+    font-size: 1.5em;
+  }
+  
+  & > p {
+    color: var(--grey);
+    font-family: poppins;
+    font-size: 1.2em;
+  }
+
+  @media screen and (max-width: 992px){
+    & > h3 {
+      font-size: 1.8em;
+    }
+
+    & > p {
+      font-size: 1.4em;
+    }
+  }
+`
 
 export const SectionRight = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  gap: 20%;
 
   width: 50%;
-  height: 100%;
-
+  height: calc(100vh - 100px);
   padding: 5%;
 `
 
-export const NoAccount = styled.p``
+export const LoginImage = styled.image`
+  width: 80%;
+`
+export const NoAccount = styled.p`
+  font-size: 1.1em ;
+  align-self: center;
+  & > span{
+    color: var(--light-purple);
+  }
+`
