@@ -18,7 +18,7 @@ import { BsArrowRightShort } from 'react-icons/bs'
 
 interface indexProps {}
 
-const index: React.FC<indexProps> = (props) => {
+const Index: React.FC<indexProps> = () => {
   return (
     <Container>
       <Header headerType="Index" />
@@ -58,4 +58,4 @@ const index: React.FC<indexProps> = (props) => {
   )
 }
 
-export default index
+export default Index
