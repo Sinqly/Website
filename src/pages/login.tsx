@@ -1,5 +1,5 @@
 /* eslint @typescript-eslint/no-empty-interface: "off" */
-import * as React from 'react'
+import React from 'react'
 import PeopleSVG from '../assets/Images/Login/people.svg'
 
 import {
@@ -7,19 +7,16 @@ import {
   SectionLeft,
   Texts,
   SectionRight,
-  InputGroup,
-  PasswordDiv,
-  StayConnected,
-  Button,
-  ButtonDiv,
   NoAccount,
 } from '../styles/pages/Login'
-import Input from '../components/Input'
+
 import Header from '../components/Header'
+import LoginForm from '../components/LoginForm';
 
 interface loginProps {}
 
-const login: React.FC<loginProps> = ({ ...props }) => {
+const Login: React.FC<loginProps> = ({ ...props }) => {
+
   return (
     <>
       <Header headerType={'SignInSignUp'} />
@@ -38,29 +35,14 @@ const login: React.FC<loginProps> = ({ ...props }) => {
         </SectionLeft>
 
         <SectionRight className={'section-right'}>
-          <InputGroup>
-            <Input styles={{ width: '100%' }} />
-            <PasswordDiv>
-              <Input styles={{ width: '100%' }} />
-              <span>Esqueceu a senha?</span>
-            </PasswordDiv>
-          </InputGroup>
-
-          <StayConnected>
-            <input type="checkbox" name="sadf" id="sdfg" />
-            <label>Deseja continuar conectado?</label>
-          </StayConnected>
-
-          <ButtonDiv>
-            <Button>Logar</Button>
-            <NoAccount>
-              Ainda não possui conta? <span>Cadastre-se</span>
-            </NoAccount>
-          </ButtonDiv>
+          <LoginForm/>
+          <NoAccount>
+            Ainda não possui conta? <span>Cadastre-se</span>
+          </NoAccount>
         </SectionRight>
       </Main>
     </>
   )
 }
 
-export default login
+export default Login;
