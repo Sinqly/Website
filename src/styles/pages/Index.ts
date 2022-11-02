@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Backline from '../../assets/Images/Index/Backline.png'
 
 export const Container = styled.div`
   overflow: hidden;
