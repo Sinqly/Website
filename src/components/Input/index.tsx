@@ -1,37 +1,22 @@
-import React, { useState } from 'react'
-import { Container, SearchIcon, InputSearch as SearchInput } from './styles'
+import React, { useState, InputHTMLAttributes } from 'react'
+import { Container, SearchIcon, SearchInput } from './styles'
 
-export interface InputProps {
+interface InputProps extends InputHTMLAttributes<InputProps>{
   inputType?: string
-  classNameProps?: string
   styles?: object
 }
 
-const Input: React.FC<InputProps> = ({
-  inputType = 'Search',
-  styles,
-  classNameProps,
-}) => {
-  const [searchInput, setSearchInput] = useState('')
-
-  const Search = () => {
-    return (
-      <Container className={classNameProps} style={styles}>
-        <SearchIcon />
-        <SearchInput
-          value={searchInput}
-          onChange={(event) => setSearchInput(event.target.value)}
-          placeholder="Pesquise"
-        />
-      </Container>
-    )
-  }
-
-  const RenderInput = {
-    Search,
-  }
-
-  return RenderInput[inputType as keyof typeof RenderInput]()
+export const InputSearch: React.FC<InputProps> = ({ styles }) => {
+  const [searchInput, setSearchInput] = useState<string>('')
+  return (
+    <Container style={styles}>
+      <SearchIcon />
+      <SearchInput
+        value={searchInput}
+        onChange={(event) => setSearchInput(event.target.value)}
+        placeholder="Pesquise"
+      />
+    </Container>
+  )
 }
 
-export default Input

@@ -20,8 +20,8 @@ import {
 } from './styles'
 
 import Logo from '../../assets/Images/Logo.png'
-import Input from '../Input'
 import UserDropdown from '../UserDropdown'
+import { InputSearch } from '../Input'
 
 interface HeaderProps {
   headerType?: string
@@ -115,7 +115,7 @@ const RenderGeneral = () => {
         <MobileButton id={'botao-mobile'} onClick={toggleMenu}>
           <span id={'hamburguer'}></span>
         </MobileButton>
-        <Input classNameProps={'hidden'} styles={InputStyles} />
+        <InputSearch classNameProps={'hidden'} styles={InputStyles} />
       </InputDiv>
 
       <ImageDiv>

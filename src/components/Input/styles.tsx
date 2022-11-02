@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { BiSearchAlt2 } from 'react-icons/bi'
+import { MdEmail } from 'react-icons/md'
 
 export const Container = styled.div`
   width: 30%;
@@ -25,7 +26,7 @@ export const SearchIcon = styled(BiSearchAlt2)`
   }
 `
 
-export const InputSearch = styled.input`
+export const SearchInput = styled.input`
   height: 48px;
   width: 100%;
   background: transparent;
