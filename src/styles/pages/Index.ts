@@ -117,7 +117,6 @@ export const SignUpButton = styled.button`
   }
 `
 
-
 export const SocialContainer = styled.div`
   width: 100%;
   min-height: 500px;
@@ -127,6 +126,11 @@ export const SocialContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   background-color: rgba(255, 255, 255, 0);
+
+  @media screen and (max-width: 992px){
+    margin-top: 5rem;
+    flex-direction: column-reverse;
+  }
 `
 
 export const SocialSvgContainer = styled.div`
@@ -135,6 +139,24 @@ export const SocialSvgContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 1600px) {
+    margin-top: 5rem;
+    min-width: 30%;
+    max-width: 30%;
+  }
+
+  @media screen and (max-width: 992px) {
+    min-width: 60%;
+    max-width: 60%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 70%;
+    max-width: 70%;
+  }
 `
 
 export const SocialRightCol = styled.div`
