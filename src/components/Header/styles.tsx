@@ -177,8 +177,6 @@ export const SignInSignUpContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  z-index: 999;
 
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
