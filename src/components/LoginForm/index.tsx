@@ -31,6 +31,10 @@ const LoginForm: React.FC<formProps> = () => {
     alert(email + ": " + password);
   }
 
+  const handleFocusInput = (id: string): void => {
+    document.getElementById(id)?.focus()
+  }
+
   return (
     <Formik 
       validateOnBlur={ false } 
@@ -41,38 +45,43 @@ const LoginForm: React.FC<formProps> = () => {
     >
       { // Chave para manipular tsx
         ({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} style={{width: '100%', maxWidth: 557}}>
             <InputGroup>
               <div>
                 <InputField>
-                  <EmailIcon />
+                  <EmailIcon onClick={() => handleFocusInput('inputEmail')}/>
                   <Input
                     type="text"
                     name="email"
-                    onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
+                    onChange={handleChange}
+                    placeholder={"Insira seu E-mail"}
+                    id={"inputEmail"}
                   />
                 </InputField>
                 <small className='error'>{errors.email && touched.email && errors.email}</small>
               </div>
               <div>
                 <InputField>
-                  <PasswordIcon />
+                  <PasswordIcon onClick={() => handleFocusInput('inputPassword')}/>
                   <Input
                     type="password"
                     name="password"
-                    onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.password}
+                    onChange={handleChange}
+                    placeholder={"Insira sua Senha"}
+                    id={"inputPassword"}
                   />
                 </InputField>
                 <small className='error'>{errors.password && touched.password && errors.password}</small>
+                {/* <Link href={"https://www.google.com.br"}>Esqueceu a senha?</Link> */}
               </div>
 
               <StayConnected>
                 <input type="checkbox" name="stayConnected" id="stayConnected" />
-                <label>Deseja continuar conectado?</label>
+                <label htmlFor='stayConnected'>Deseja continuar conectado?</label>
               </StayConnected>
             </InputGroup>
                   
