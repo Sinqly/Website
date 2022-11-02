@@ -116,45 +116,29 @@ export const SignUpButton = styled.button`
     width: 100%;
   }
 `
-export const SocialContainer = styled.div`
-  width: 100vw;
-  
-  .intern {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    z-index: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0);
-  }
 
-  @media screen and (max-width: 992px) {
-    .intern {
-      margin-top: 100px;
-      flex-direction: column-reverse;
-      height: auto;
-    }
-  }
+
+export const SocialContainer = styled.div`
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0);
 `
 
-export const SocialLeftCol = styled.div`
-  width: 50%;
-  height: 100%;
+export const SocialSvgContainer = styled.div`
+  min-width: 35%;
+  max-width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media screen and (max-width: 992px) {
-    width: 125%;
-    height: auto;
-    margin-top: 5rem;
-  }
 `
 
 export const SocialRightCol = styled.div`
-  width: 40%;
+  width: 35%;
   height: 100%;
   display: flex;
   flex-direction: column;
