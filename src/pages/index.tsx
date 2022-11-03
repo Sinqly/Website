@@ -31,6 +31,7 @@ import Svg6 from '../assets/Images/Index/Group 142.svg'
 import CircleSvg from '../assets/Images/Index/Circle.svg'
 
 import { BsArrowRightShort } from 'react-icons/bs'
+import Link from 'next/link'
 
 interface indexProps {}
 
@@ -47,7 +48,9 @@ const Index: React.FC<indexProps> = () => {
           </h4>
           <p>Faça parte dessa comunidade!</p>
           <SignUpButton>
-            Cadastre-se
+            <Link href={"/register"}>
+              Cadastre-se
+            </Link>
             <BsArrowRightShort size={32} />
           </SignUpButton>
         </TextContainer>
