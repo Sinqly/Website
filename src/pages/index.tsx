@@ -103,7 +103,7 @@ const Index: React.FC<indexProps> = () => {
           <GraphSvg />
         </FunctionRightCol>
       </FunctionContainer>
-      <LoreAreas>
+      <LoreAreas id='areas'>
         <CircleSvgContainer>
           <CircleSvg />
         </CircleSvgContainer>
