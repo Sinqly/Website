@@ -9,6 +9,7 @@ import {
   SectionRight,
   NoAccount,
 } from '../styles/pages/SignInSignUp'
+import Link from 'next/link'
 
 import Header from '../components/Header'
 import RegisterForm from '../components/RegisterForm'
@@ -37,7 +38,7 @@ const Register: React.FC<loginProps> = () => {
         <SectionRight className={'section-right'}>
           <RegisterForm />
           <NoAccount>
-            Já possui conta? <span>Logar</span>
+            Já possui conta? <Link href={'/login'}>Logar</Link>
           </NoAccount>
         </SectionRight>
       </Main>
