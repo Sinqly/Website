@@ -86,7 +86,7 @@ export const BackpackContainer = styled.div`
   @media screen and (max-width: 992px) {
     min-width: 80%;
     max-width: 80%;
-    min-height: 50%;
+    min-height: 25vh;
     align-items: center;
     justify-content: center;
   }
