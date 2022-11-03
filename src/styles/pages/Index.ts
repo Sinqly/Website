@@ -118,7 +118,7 @@ export const SignUpButton = styled.button`
 
 export const SocialContainer = styled.div`
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 7.5rem;
   width: 80%;
   min-height: 500px;
   position: relative;
@@ -199,7 +199,6 @@ export const FunctionContainer = styled.section`
   padding: 0 15%;
 
   @media screen and (max-width: 992px) {
-    margin-top: 5rem;
     flex-direction: column;
     padding: 0 7.5%;
   }
@@ -376,8 +375,8 @@ export const AreasContainer = styled.div`
       justify-content: center;
     }
     div > svg {
-      margin: 2rem 0;
-      flex: 0 52.5%;
+      margin: 2rem 2rem;
+      flex: 0 45%;
     }
   }
 `

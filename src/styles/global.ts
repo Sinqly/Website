@@ -21,6 +21,12 @@ export default createGlobalStyle`
     color: ${(props) => props.theme.colors.text};
   }
 
+  @media screen and (min-width: 2000px) {
+    html{
+      font-size: 115%;
+    }
+  }
+
   @media screen and (max-width: 1600px) {
     html{
       font-size: 90%;
