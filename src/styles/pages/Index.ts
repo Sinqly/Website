@@ -107,10 +107,9 @@ export const SignUpButton = styled.button`
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.whiteText};
 
-  a{
-  font-size: 1.4rem;
-  color: ${(props) => props.theme.colors.whiteText};
-
+  a {
+    font-size: 1.4rem;
+    color: ${(props) => props.theme.colors.whiteText};
   }
 
   @media screen and (max-width: 992px) {

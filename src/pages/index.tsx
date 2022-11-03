@@ -48,9 +48,7 @@ const Index: React.FC<indexProps> = () => {
           </h4>
           <p>Faça parte dessa comunidade!</p>
           <SignUpButton>
-            <Link href={"/register"}>
-              Cadastre-se
-            </Link>
+            <Link href={'/register'}>Cadastre-se</Link>
             <BsArrowRightShort size={32} />
           </SignUpButton>
         </TextContainer>
