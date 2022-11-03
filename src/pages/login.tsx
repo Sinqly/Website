@@ -8,7 +8,7 @@ import {
   Texts,
   SectionRight,
   NoAccount,
-} from '../styles/pages/Login'
+} from '../styles/pages/SignInSignUp'
 
 import Header from '../components/Header'
 import LoginForm from '../components/LoginForm';

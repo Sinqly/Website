@@ -16,6 +16,9 @@ export const Main = styled.div`
   @media screen and (max-width: 992px) {
     height: auto;
     flex-direction: column;
+    .hidden{
+      display: none;
+    }
     .section-left {
       width: auto;
       margin-top: 3%;
@@ -52,12 +55,15 @@ export const Texts = styled.div`
   }
   
   & > p {
-    color: var(--grey);
+    color: var(--light-grey);
     font-family: poppins;
     font-size: 1.2em;
   }
 
   @media screen and (max-width: 992px){
+    .registerTitle{
+      font-size: 3.5em;
+    }
     & > h3 {
       font-size: 1.8em;
     }
