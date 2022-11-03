@@ -8,6 +8,7 @@ export const Container = styled.div`
 
 export const WelcomeContainer = styled.div`
   width: 80%;
+  padding-top: 100px;
   min-height: 600px;
   margin: 0 auto;
   margin-top: 150px;
@@ -123,7 +124,8 @@ export const SignUpButton = styled.button`
 
 export const SocialContainer = styled.div`
   margin: auto;
-  margin-top: 7.5rem;
+  padding-top: 100px;
+  margin-top: 5.5rem;
   width: 80%;
   min-height: 500px;
   position: relative;
@@ -194,7 +196,8 @@ export const SocialRightCol = styled.div`
 `
 
 export const FunctionContainer = styled.section`
-  margin-top: 7.5rem;
+  padding-top: 100px;
+  margin-top: 5.5rem;
   width: 100%;
   min-height: 60vh;
   background-color: var(--dark-purple);
@@ -264,6 +267,8 @@ export const FunctionRightCol = styled.div`
 `
 
 export const LoreAreas = styled.section`
+  padding-top: 100px;
+  margin-top: 5.5rem;
   padding: 0 15%;
   width: 100%;
   min-height: 500px;
@@ -311,7 +316,7 @@ export const CircleSvgContainer = styled.div`
 `
 
 export const AreasContainer = styled.div`
-  margin-top: 7.5rem;
+  margin-top: 5.5rem;
   width: 100%;
   height: 100%;
   display: flex;
