@@ -8,9 +8,9 @@ export const Container = styled.div`
 
 export const WelcomeContainer = styled.div`
   width: 80%;
-  min-height: 700px;
+  min-height: 600px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 150px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -118,6 +118,7 @@ export const SignUpButton = styled.button`
 
 export const SocialContainer = styled.div`
   margin: auto;
+  margin-top: 5rem;
   width: 80%;
   min-height: 500px;
   position: relative;
@@ -128,7 +129,6 @@ export const SocialContainer = styled.div`
   background-color: rgba(255, 255, 255, 0);
 
   @media screen and (max-width: 992px) {
-    margin-top: 5rem;
     flex-direction: column-reverse;
   }
 `
@@ -189,9 +189,9 @@ export const SocialRightCol = styled.div`
 `
 
 export const FunctionContainer = styled.section`
-  margin-top: 5rem;
+  margin-top: 7.5rem;
   width: 100%;
-  min-height: 650px;
+  min-height: 60vh;
   background-color: var(--dark-purple);
   display: flex;
   align-items: center;
@@ -235,9 +235,12 @@ export const FunctionLeftCol = styled.div`
 export const FunctionRightCol = styled.div`
   width: 45%;
   height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   svg {
-    width: 85%;
+    width: 75%;
   }
 
   @media screen and (max-width: 1600px) {
@@ -257,6 +260,7 @@ export const FunctionRightCol = styled.div`
 `
 
 export const LoreAreas = styled.section`
+  padding: 0 15%;
   width: 100%;
   min-height: 500px;
   position: relative;
@@ -264,13 +268,17 @@ export const LoreAreas = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 992px){
+    padding: 0 7.5%;
+  }
 `
 
 export const CircleSvgContainer = styled.div`
   width: 20%;
   position: absolute;
   left: 0;
-  top: 12.5%;
+  top: 17.5%;
   z-index: -1;
 
   @media screen and (max-width: 1600px) {
@@ -279,25 +287,27 @@ export const CircleSvgContainer = styled.div`
 
   @media screen and (max-width: 992px) {
     width: 30%;
-    top: 45%;
-    transform: translateY(-50%);
+    top: 25%;
   }
 
-  @media screen and (max-width: 656px) {
-    width: 50%;
+  @media screen and (max-width: 768px) {
+    width: 35%;
+    top: 30%;
   }
 
   @media screen and (max-width: 575px) {
-    width: 55%;
+    width: 50%;
+    top: 25%;
   }
 
   @media screen and (max-width: 425px) {
     width: 65%;
+    top: 27.5%;
   }
 `
 
 export const AreasContainer = styled.div`
-  margin-top: 5rem;
+  margin-top: 7.5rem;
   width: 100%;
   height: 100%;
   display: flex;
@@ -314,16 +324,16 @@ export const AreasContainer = styled.div`
   }
 
   div {
-    width: 65%;
+    width: 100%;
     min-height: 550px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 15%;
+    justify-content: space-between;
   }
 
   div > svg {
+    margin: 2% 5%;
     flex: 0 20%;
     display: flex;
     align-items: center;
@@ -338,6 +348,12 @@ export const AreasContainer = styled.div`
 
   @media screen and (max-width: 992px) {
     div > svg {
+      flex: 0 25%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    div > svg {
       flex: 0 30%;
     }
   }
@@ -350,14 +366,18 @@ export const AreasContainer = styled.div`
 
   @media screen and (max-width: 575px) {
     div > svg {
-      flex: 0 45%;
+      margin: 0;
+      flex: 0 40%;
     }
   }
 
   @media screen and (max-width: 425px) {
+    div{
+      justify-content: center;
+    }
     div > svg {
-      flex: 0 70%;
       margin: 2rem 0;
+      flex: 0 52.5%;
     }
   }
 `
