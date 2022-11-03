@@ -246,3 +246,16 @@ export const FunctionRightCol = styled.div`
     margin-bottom: 2.8rem;
   }
 `
+
+export const LoreAreas = styled.section`
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+`
+
+export const CircleSvgContainer = styled.div`
+  width: 25%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+`

@@ -13,11 +13,22 @@ import {
   SocialRightCol,
   FunctionContainer,
   FunctionLeftCol,
-  FunctionRightCol
+  FunctionRightCol,
+  LoreAreas,
+  CircleSvgContainer,
 } from '../styles/pages/Index'
 import BackpackSvg from '../assets/Images/Index/Backpack.svg'
 import SocialSvg from '../assets/Images/Index/Social.svg'
 import GraphSvg from '../assets/Images/Index/Graph.svg'
+import Svg1 from '../assets/Images/Index/Group 137.svg'
+import Svg2 from '../assets/Images/Index/Group 138.svg'
+import Svg3 from '../assets/Images/Index/Group 139.svg'
+import Svg4 from '../assets/Images/Index/Group 140.svg'
+import Svg5 from '../assets/Images/Index/Group 141.svg'
+import Svg6 from '../assets/Images/Index/Group 142.svg'
+
+import CircleSvg from '../assets/Images/Index/Circle.svg'
+
 import { BsArrowRightShort } from 'react-icons/bs'
 
 interface indexProps {}
@@ -74,17 +85,36 @@ const Index: React.FC<indexProps> = () => {
           </div>
           <div>
             <h2>Conecte-se</h2>
-            <p>Conecte-se com a rede de sua escola e acesse o que seus colegas estão produzindo</p>
+            <p>
+              Conecte-se com a rede de sua escola e acesse o que seus colegas
+              estão produzindo
+            </p>
           </div>
           <div>
             <h2>Comente</h2>
-            <p>Interaja com outras publicações e usuários através de comentários</p>
+            <p>
+              Interaja com outras publicações e usuários através de comentários
+            </p>
           </div>
         </FunctionLeftCol>
         <FunctionRightCol>
           <GraphSvg />
         </FunctionRightCol>
       </FunctionContainer>
+      <LoreAreas>
+        <CircleSvgContainer>
+          <CircleSvg />
+        </CircleSvgContainer>
+        <div>
+          <h2>Áreas de conhecimento</h2>
+          <Svg1 />
+          <Svg2 />
+          <Svg3 />
+          <Svg4 />
+          <Svg5 />
+          <Svg6 />
+        </div>
+      </LoreAreas>
     </Container>
   )
 }
