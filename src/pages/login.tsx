@@ -12,6 +12,7 @@ import {
 
 import Header from '../components/Header'
 import LoginForm from '../components/LoginForm'
+import Link from 'next/link'
 
 interface loginProps {}
 
@@ -36,7 +37,7 @@ const Login: React.FC<loginProps> = () => {
         <SectionRight className={'section-right'}>
           <LoginForm />
           <NoAccount>
-            Ainda não possui conta? <span>Cadastre-se</span>
+            Ainda não possui conta? <Link href={"/register"}>Cadastre-se</Link>
           </NoAccount>
         </SectionRight>
       </Main>
