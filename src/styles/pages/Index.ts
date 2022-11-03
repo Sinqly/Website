@@ -191,6 +191,7 @@ export const SocialRightCol = styled.div`
 `
 
 export const FunctionContainer = styled.section`
+  margin-top: 5rem;
   width: 100%;
   min-height: 650px;
   background-color: var(--dark-purple);
