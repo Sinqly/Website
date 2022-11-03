@@ -9,7 +9,7 @@ export const Container = styled.div`
 export const WelcomeContainer = styled.div`
   width: 80%;
   min-height: 700px;
-  margin: auto;
+  margin: 0 auto;
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -147,8 +147,8 @@ export const SocialSvgContainer = styled.div`
   }
 
   @media screen and (max-width: 992px) {
-    min-width: 60%;
-    max-width: 60%;
+    min-width: 75%;
+    max-width: 75%;
     align-items: center;
     justify-content: center;
   }
@@ -185,9 +185,6 @@ export const SocialRightCol = styled.div`
     height: auto;
     align-items: center;
     flex-direction: column-reverse;
-    div {
-      width: 75%;
-    }
   }
 `
 
@@ -198,16 +195,18 @@ export const FunctionContainer = styled.section`
   background-color: var(--dark-purple);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 15%;
 
   @media screen and (max-width: 992px) {
     margin-top: 5rem;
     flex-direction: column;
+    padding: 0 7.5%;
   }
 `
 
 export const FunctionLeftCol = styled.div`
-  width: 25%;
+  width: 35%;
   min-height: 600px;
   display: flex;
   flex-direction: column;
@@ -217,8 +216,8 @@ export const FunctionLeftCol = styled.div`
     font-size: 2rem;
   }
   p {
-    color: var(--grey);
-    font-size: 1.3rem;
+    color: var(--light-grey);
+    font-size: 1rem;
   }
 
   @media screen and (max-width: 992px) {
@@ -234,10 +233,17 @@ export const FunctionLeftCol = styled.div`
 `
 
 export const FunctionRightCol = styled.div`
-  width: 37.5%;
+  width: 45%;
   height: 75%;
+
   svg {
     width: 85%;
+  }
+
+  @media screen and (max-width: 1600px) {
+    svg {
+      width: 90%;
+    }
   }
 
   @media screen and (max-width: 992px) {
@@ -299,10 +305,11 @@ export const AreasContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  h2 {
+  h2 {  
     width: 75%;
     text-align: center;
     font-size: 3.2rem;
+    color: var(--dark-purple);
     margin-bottom: 2.5rem;
   }
 
