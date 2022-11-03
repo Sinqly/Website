@@ -1,30 +1,33 @@
 /* eslint @typescript-eslint/no-empty-interface: "off" */
-import { Formik } from 'formik';
-import React from 'react';
-import * as yup from 'yup';
-import { Button, ButtonDiv, EmailIcon, Input, InputField, InputGroup, StayConnected, PasswordIcon } from './styles';
+import { Formik } from 'formik'
+import React from 'react'
+import * as yup from 'yup'
+import {
+  Button,
+  ButtonDiv,
+  EmailIcon,
+  Input,
+  InputField,
+  InputGroup,
+  StayConnected,
+  PasswordIcon,
+} from './styles'
 
-interface formProps { }
+interface formProps {}
 
 const LoginForm: React.FC<formProps> = () => {
-
   const yupValidationSchema = yup.object().shape({
+    email: yup.string().email('Email inválido!').required('Email Obrigatório'),
 
-    email:
-      yup.string()
-        .email("Email inválido!")
-        .required("Email Obrigatório"),
-
-    password:
-      yup.string()
-        .min(6, "A senha deve possuir pelo menos 6 caracteres")
-        .required("Senha obrigatória!"),
-
-  });
+    password: yup
+      .string()
+      .min(6, 'A senha deve possuir pelo menos 6 caracteres')
+      .required('Senha obrigatória!'),
+  })
 
   const initialValues = {
-    email: "",
-    password: ""
+    email: '',
+    password: '',
   }
 
   const handleSubmitForm = ({ email, password }): void => {
@@ -43,9 +46,20 @@ const LoginForm: React.FC<formProps> = () => {
       initialValues={initialValues}
       validationSchema={yupValidationSchema}
     >
-      { // Chave para manipular tsx
-        ({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
-          <form onSubmit={handleSubmit} style={{ width: '100%', maxWidth: 557 }}>
+      {
+        // Chave para manipular tsx
+        ({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        }) => (
+          <form
+            onSubmit={handleSubmit}
+            style={{ width: '100%', maxWidth: 557 }}
+          >
             <InputGroup>
               <div>
                 <InputField>
@@ -66,7 +80,9 @@ const LoginForm: React.FC<formProps> = () => {
               </div>
               <div>
                 <InputField>
-                  <PasswordIcon onClick={() => handleFocusInput('inputPassword')} />
+                  <PasswordIcon
+                    onClick={() => handleFocusInput('inputPassword')}
+                  />
                   <Input
                     type="password"
                     name="password"

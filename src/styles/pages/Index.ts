@@ -268,7 +268,7 @@ export const LoreAreas = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 992px){
+  @media screen and (max-width: 992px) {
     padding: 0 7.5%;
   }
 `
@@ -314,7 +314,7 @@ export const AreasContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  h2 {  
+  h2 {
     text-align: center;
     font-size: 3.2rem;
     color: var(--dark-purple);
@@ -370,7 +370,7 @@ export const AreasContainer = styled.div`
   }
 
   @media screen and (max-width: 425px) {
-    div{
+    div {
       justify-content: center;
     }
     div > svg {
