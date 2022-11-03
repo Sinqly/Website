@@ -37,7 +37,7 @@ const Login: React.FC<loginProps> = () => {
         <SectionRight className={'section-right'}>
           <LoginForm />
           <NoAccount>
-            Ainda não possui conta? <Link href={"/register"}>Cadastre-se</Link>
+            Ainda não possui conta? <Link href={'/register'}>Cadastre-se</Link>
           </NoAccount>
         </SectionRight>
       </Main>
