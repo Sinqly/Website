@@ -22,6 +22,7 @@ export const InputGroup = styled.div`
   }
 
   & > div > .error{
+    margin-right: 4%;
     color: red;
   }
 `
