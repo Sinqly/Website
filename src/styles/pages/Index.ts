@@ -126,7 +126,7 @@ export const SocialContainer = styled.div`
   justify-content: space-around;
   background-color: rgba(255, 255, 255, 0);
 
-  @media screen and (max-width: 992px){
+  @media screen and (max-width: 992px) {
     margin-top: 5rem;
     flex-direction: column-reverse;
   }
@@ -187,5 +187,62 @@ export const SocialRightCol = styled.div`
     div {
       width: 75%;
     }
+  }
+`
+
+export const FunctionContainer = styled.section`
+  width: 100%;
+  min-height: 650px;
+  background-color: var(--dark-purple);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  @media screen and (max-width: 992px) {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+`
+export const FunctionLeftCol = styled.div`
+  width: 25%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--white);
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    color: var(--grey);
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 75%;
+    h2 {
+      text-align: right;
+    }
+    p {
+      text-align: right;
+    }
+    margin-bottom: 2.8rem;
+  }
+`
+
+export const FunctionRightCol = styled.div`
+  width: 37.5%;
+  height: 75%;
+  svg {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 992px) {
+    svg {
+      width: 100%;
+    }
+    width: 65%;
+    height: auto;
+    margin-bottom: 2.8rem;
   }
 `
