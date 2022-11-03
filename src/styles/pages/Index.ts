@@ -117,7 +117,8 @@ export const SignUpButton = styled.button`
 `
 
 export const SocialContainer = styled.div`
-  width: 100%;
+  margin: auto;
+  width: 80%;
   min-height: 500px;
   position: relative;
   z-index: 0;
@@ -133,16 +134,16 @@ export const SocialContainer = styled.div`
 `
 
 export const SocialSvgContainer = styled.div`
-  min-width: 35%;
-  max-width: 35%;
+  min-width: 30%;
+  max-width: 30%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   @media screen and (max-width: 1600px) {
     margin-top: 5rem;
-    min-width: 30%;
-    max-width: 30%;
+    min-width: 40%;
+    max-width: 40%;
   }
 
   @media screen and (max-width: 992px) {
@@ -165,7 +166,7 @@ export const SocialRightCol = styled.div`
   flex-direction: column;
 
   div {
-    width: 75%;
+    width: 100%;
     margin: 1vw 0;
   }
 
