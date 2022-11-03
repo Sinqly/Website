@@ -7,6 +7,8 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-size: 100%;
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
   }
   :root{
     --black:#151515;
