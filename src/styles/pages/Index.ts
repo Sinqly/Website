@@ -165,7 +165,7 @@ export const SocialRightCol = styled.div`
   flex-direction: column;
 
   div {
-    width: 60%;
+    width: 75%;
     margin: 1vw 0;
   }
 
