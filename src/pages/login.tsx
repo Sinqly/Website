@@ -11,30 +11,30 @@ import {
 } from '../styles/pages/SignInSignUp'
 
 import Header from '../components/Header'
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/LoginForm'
 
 interface loginProps {}
 
 const Login: React.FC<loginProps> = () => {
-
   return (
     <>
       <Header headerType={'SignInSignUp'} />
       <Main>
         <SectionLeft className={'section-left'}>
-          <div style={{ width: '80%'}}>
+          <div style={{ width: '80%' }}>
             <PeopleSVG />
           </div>
           <Texts>
             <h3>Login!</h3>
             <p>
-              Acesse com sua conta Sinqly e recebe todos os recursos da plataforma!
+              Acesse com sua conta Sinqly e recebe todos os recursos da
+              plataforma!
             </p>
           </Texts>
         </SectionLeft>
 
         <SectionRight className={'section-right'}>
-          <LoginForm/>
+          <LoginForm />
           <NoAccount>
             Ainda não possui conta? <span>Cadastre-se</span>
           </NoAccount>
@@ -44,4 +44,4 @@ const Login: React.FC<loginProps> = () => {
   )
 }
 
-export default Login;
+export default Login

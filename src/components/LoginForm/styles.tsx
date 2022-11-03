@@ -8,20 +8,20 @@ export const InputGroup = styled.div`
   gap: 24px;
 
   width: 100%;
-  
+
   margin-bottom: 24px;
 
-  & > div{
+  & > div {
     text-align: right;
   }
 
-  & > div > a{
+  & > div > a {
     text-decoration: none;
     font-size: 1.3em;
     color: var(--dark-purple);
   }
 
-  & > div > .error{
+  & > div > .error {
     margin-right: 4%;
     color: red;
   }
@@ -47,7 +47,6 @@ export const Button = styled.button`
 export const InputField = styled.div`
   height: 48px;
   width: 100%;
-  
 
   display: flex;
   justify-content: center;
@@ -89,19 +88,19 @@ export const Input = styled.input`
   height: 48px;
   width: 90%;
   background: none;
-  
+
   -webkit-border-top-right-radius: 30px;
   -webkit-border-bottom-right-radius: 30px;
   outline: none;
   border: 1px solid var(--dark-purple);
   border-left: 0;
-  
+
   font-size: 1em;
   color: var(--dark-purple);
   &::placeholder {
     color: var(--dark-purple);
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       font-size: 1.3em;
     }
   }
@@ -119,7 +118,7 @@ export const StayConnected = styled.div`
     height: 30px;
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     font-size: 1.3em;
 
     & > input {
