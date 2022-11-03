@@ -205,6 +205,7 @@ export const FunctionContainer = styled.section`
     flex-direction: column;
   }
 `
+
 export const FunctionLeftCol = styled.div`
   width: 25%;
   min-height: 600px;
