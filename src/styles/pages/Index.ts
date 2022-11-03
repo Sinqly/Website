@@ -258,31 +258,32 @@ export const LoreAreas = styled.section`
 `
 
 export const CircleSvgContainer = styled.div`
-  width: 25%;
+  width: 20%;
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 12.5%;
   z-index: -1;
 
   @media screen and (max-width: 1600px) {
-    width: 45%;
+    width: 25%;
   }
 
   @media screen and (max-width: 992px) {
-    width: 50%;
+    width: 30%;
+    top: 45%;
+    transform: translateY(-50%);
   }
 
   @media screen and (max-width: 656px) {
-    width: 55%;
+    width: 50%;
   }
 
   @media screen and (max-width: 575px) {
-    width: 60%;
+    width: 55%;
   }
 
   @media screen and (max-width: 425px) {
-    width: 70%;
+    width: 65%;
   }
 `
 
