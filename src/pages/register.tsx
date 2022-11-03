@@ -11,28 +11,31 @@ import {
 } from '../styles/pages/SignInSignUp'
 
 import Header from '../components/Header'
-import RegisterForm from '../components/RegisterForm';
+import RegisterForm from '../components/RegisterForm'
 
 interface loginProps {}
 
 const Register: React.FC<loginProps> = () => {
-
   return (
     <>
       <Header headerType={'SignInSignUp'} />
       <Main>
         <SectionLeft className={'section-left'}>
-          <div style={{ width: '80%'}} className={"hidden"}>
+          <div style={{ width: '80%' }} className={'hidden'}>
             <RegisterImage />
           </div>
           <Texts>
-            <h3 className={"registerTitle"}>Crie uma conta!</h3>
-            <p> Venha fazer parte de nossa rede. Divulgue seus projetos e faça parte dessa comunidade! </p>
+            <h3 className={'registerTitle'}>Crie uma conta!</h3>
+            <p>
+              {' '}
+              Venha fazer parte de nossa rede. Divulgue seus projetos e faça
+              parte dessa comunidade!{' '}
+            </p>
           </Texts>
         </SectionLeft>
 
         <SectionRight className={'section-right'}>
-          <RegisterForm/>
+          <RegisterForm />
           <NoAccount>
             Já possui conta? <span>Logar</span>
           </NoAccount>
@@ -42,4 +45,4 @@ const Register: React.FC<loginProps> = () => {
   )
 }
 
-export default Register;
+export default Register

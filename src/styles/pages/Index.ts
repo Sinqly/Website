@@ -126,7 +126,7 @@ export const SocialContainer = styled.div`
   justify-content: space-around;
   background-color: rgba(255, 255, 255, 0);
 
-  @media screen and (max-width: 992px){
+  @media screen and (max-width: 992px) {
     margin-top: 5rem;
     flex-direction: column-reverse;
   }
@@ -186,6 +186,167 @@ export const SocialRightCol = styled.div`
     flex-direction: column-reverse;
     div {
       width: 75%;
+    }
+  }
+`
+
+export const FunctionContainer = styled.section`
+  width: 100%;
+  min-height: 650px;
+  background-color: var(--dark-purple);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  @media screen and (max-width: 992px) {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+`
+export const FunctionLeftCol = styled.div`
+  width: 25%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--white);
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    color: var(--grey);
+    font-size: 1.3rem;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 75%;
+    h2 {
+      text-align: right;
+    }
+    p {
+      text-align: right;
+    }
+    margin-bottom: 2.8rem;
+  }
+`
+
+export const FunctionRightCol = styled.div`
+  width: 37.5%;
+  height: 75%;
+  svg {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 992px) {
+    svg {
+      width: 100%;
+    }
+    width: 65%;
+    height: auto;
+    margin-bottom: 2.8rem;
+  }
+`
+
+export const LoreAreas = styled.section`
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+export const CircleSvgContainer = styled.div`
+  width: 25%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+
+  @media screen and (max-width: 1600px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 656px) {
+    width: 55%;
+  }
+
+  @media screen and (max-width: 575px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 70%;
+  }
+`
+
+export const AreasContainer = styled.div`
+  margin-top: 5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  h2 {
+    width: 75%;
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  div {
+    width: 65%;
+    min-height: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+  }
+
+  div > svg {
+    flex: 0 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1600px) {
+    div > svg {
+      flex: 0 22.5%;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    div > svg {
+      flex: 0 30%;
+    }
+  }
+
+  @media screen and (max-width: 656px) {
+    div > svg {
+      flex: 0 35%;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    div > svg {
+      flex: 0 45%;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    div > svg {
+      flex: 0 70%;
+      margin: 2rem 0;
     }
   }
 `

@@ -11,30 +11,30 @@ export const InputGroup = styled.div`
   gap: 24px;
 
   width: 100%;
-  
+
   margin-bottom: 24px;
 
-  & > div{
+  & > div {
     text-align: right;
   }
 
-  & > div > a{
+  & > div > a {
     text-decoration: none;
     font-size: 1.3em;
     color: var(--dark-purple);
   }
 
-  .error{
+  .error {
     margin-right: 4%;
     color: red;
   }
 
-  .input-right{
+  .input-right {
     margin-left: 16px;
   }
 
   @media screen and (max-width: 992px) {
-    .double{
+    .double {
       flex-direction: column;
       width: 100%;
       gap: 25px;
@@ -72,12 +72,10 @@ export const InputAndError = styled.div``
 
 export const InputField = styled.div`
   width: 100%;
-  
 
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-
 
   color: var(--dark-purple);
   &::placeholder {
@@ -126,27 +124,27 @@ export const UserIcon = styled(FaUserAlt)`
 
 export const Input = styled.input`
   height: 48px;
-  width: 90%; 
-  
+  width: 90%;
+
   -webkit-border-top-right-radius: 30px;
   -webkit-border-bottom-right-radius: 30px;
   outline: none;
   border: 1px solid var(--dark-purple);
   border-left: 0;
-  
+
   font-size: 1em;
   color: var(--dark-purple);
-  
+
   background: transparent;
 
   &:-webkit-autofill {
-  -webkit-background-clip: text;
-}
+    -webkit-background-clip: text;
+  }
 
   &::placeholder {
     color: var(--dark-purple);
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       font-size: 1.3em;
     }
   }
@@ -164,7 +162,7 @@ export const StayConnected = styled.div`
     height: 30px;
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     font-size: 1.3em;
 
     & > input {

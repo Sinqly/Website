@@ -16,7 +16,7 @@ export const Main = styled.div`
   @media screen and (max-width: 992px) {
     height: auto;
     flex-direction: column;
-    .hidden{
+    .hidden {
       display: none;
     }
     .section-left {
@@ -30,9 +30,9 @@ export const Main = styled.div`
       align-items: center;
       height: 100%;
       width: 100%;
-      gap: 50px;      
+      gap: 50px;
       & > p {
-        font-size: 1.3em ;
+        font-size: 1.3em;
       }
     }
   }
@@ -53,15 +53,15 @@ export const Texts = styled.div`
   & > h3 {
     font-size: 1.5em;
   }
-  
+
   & > p {
     color: var(--light-grey);
     font-family: poppins;
     font-size: 1.2em;
   }
 
-  @media screen and (max-width: 992px){
-    .registerTitle{
+  @media screen and (max-width: 992px) {
+    .registerTitle {
       font-size: 3.5em;
     }
     & > h3 {
@@ -89,9 +89,9 @@ export const LoginImage = styled.image`
   width: 80%;
 `
 export const NoAccount = styled.p`
-  font-size: 1.1em ;
+  font-size: 1.1em;
   align-self: center;
-  & > span{
+  & > span {
     color: var(--light-purple);
   }
 `

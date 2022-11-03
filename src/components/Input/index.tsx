@@ -1,7 +1,7 @@
 import React, { useState, InputHTMLAttributes } from 'react'
 import { Container, SearchIcon, SearchInput } from './styles'
 
-interface InputProps extends InputHTMLAttributes<InputProps>{
+interface InputProps extends InputHTMLAttributes<InputProps> {
   inputType?: string
   styles?: object
 }
@@ -19,4 +19,3 @@ export const InputSearch: React.FC<InputProps> = ({ styles }) => {
     </Container>
   )
 }
-

@@ -28,7 +28,7 @@ const LoginForm: React.FC<formProps> = () => {
   }
 
   const handleSubmitForm = ({ email, password }): void => {
-    alert(email + ": " + password);
+    alert(email + ': ' + password)
   }
 
   const handleFocusInput = (id: string): void => {
@@ -56,11 +56,13 @@ const LoginForm: React.FC<formProps> = () => {
                     onBlur={handleBlur}
                     value={values.email}
                     onChange={handleChange}
-                    placeholder={"Insira seu E-mail"}
-                    id={"inputEmail"}
+                    placeholder={'Insira seu E-mail'}
+                    id={'inputEmail'}
                   />
                 </InputField>
-                <small className='error'>{errors.email && touched.email && errors.email}</small>
+                <small className="error">
+                  {errors.email && touched.email && errors.email}
+                </small>
               </div>
               <div>
                 <InputField>
@@ -71,17 +73,25 @@ const LoginForm: React.FC<formProps> = () => {
                     onBlur={handleBlur}
                     value={values.password}
                     onChange={handleChange}
-                    placeholder={"Insira sua Senha"}
-                    id={"inputPassword"}
+                    placeholder={'Insira sua Senha'}
+                    id={'inputPassword'}
                   />
                 </InputField>
-                <small className='error'>{errors.password && touched.password && errors.password}</small>
+                <small className="error">
+                  {errors.password && touched.password && errors.password}
+                </small>
                 {/* <Link href={"https://www.google.com.br"}>Esqueceu a senha?</Link> */}
               </div>
 
               <StayConnected>
-                <input type="checkbox" name="stayConnected" id="stayConnected" />
-                <label htmlFor='stayConnected'>Deseja continuar conectado?</label>
+                <input
+                  type="checkbox"
+                  name="stayConnected"
+                  id="stayConnected"
+                />
+                <label htmlFor="stayConnected">
+                  Deseja continuar conectado?
+                </label>
               </StayConnected>
             </InputGroup>
 
@@ -93,6 +103,6 @@ const LoginForm: React.FC<formProps> = () => {
       }
     </Formik>
   )
-};
+}
 
-export default LoginForm;
+export default LoginForm
