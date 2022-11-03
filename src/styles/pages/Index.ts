@@ -251,6 +251,10 @@ export const LoreAreas = styled.section`
   width: 100%;
   min-height: 500px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 
 export const CircleSvgContainer = styled.div`
@@ -258,4 +262,91 @@ export const CircleSvgContainer = styled.div`
   position: absolute;
   left: 0;
   top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+
+  @media screen and (max-width: 1600px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 656px) {
+    width: 55%;
+  }
+
+  @media screen and (max-width: 575px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 70%;
+  }
+`
+
+export const AreasContainer = styled.div`
+  margin-top: 5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  h2 {
+    width: 75%;
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  div {
+    width: 65%;
+    min-height: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+  }
+
+  div > svg {
+    flex: 0 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1600px) {
+    div > svg {
+      flex: 0 22.5%;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    div > svg {
+      flex: 0 30%;
+    }
+  }
+
+  @media screen and (max-width: 656px) {
+    div > svg {
+      flex: 0 35%;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    div > svg {
+      flex: 0 45%;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    div > svg {
+      flex: 0 70%;
+      margin: 2rem 0;
+    }
+  }
 `

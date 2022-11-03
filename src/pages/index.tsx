@@ -16,6 +16,7 @@ import {
   FunctionRightCol,
   LoreAreas,
   CircleSvgContainer,
+  AreasContainer,
 } from '../styles/pages/Index'
 import BackpackSvg from '../assets/Images/Index/Backpack.svg'
 import SocialSvg from '../assets/Images/Index/Social.svg'
@@ -105,15 +106,17 @@ const Index: React.FC<indexProps> = () => {
         <CircleSvgContainer>
           <CircleSvg />
         </CircleSvgContainer>
-        <div>
+        <AreasContainer>
           <h2>Áreas de conhecimento</h2>
-          <Svg1 />
-          <Svg2 />
-          <Svg3 />
-          <Svg4 />
-          <Svg5 />
-          <Svg6 />
-        </div>
+          <div>
+            <Svg1 />
+            <Svg2 />
+            <Svg3 />
+            <Svg4 />
+            <Svg5 />
+            <Svg6 />
+          </div>
+        </AreasContainer>
       </LoreAreas>
     </Container>
   )
