@@ -215,7 +215,7 @@ export const FunctionLeftCol = styled.div`
   }
   p {
     color: var(--grey);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   @media screen and (max-width: 992px) {
