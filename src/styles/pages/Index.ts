@@ -315,7 +315,6 @@ export const AreasContainer = styled.div`
   justify-content: space-evenly;
 
   h2 {  
-    width: 75%;
     text-align: center;
     font-size: 3.2rem;
     color: var(--dark-purple);
