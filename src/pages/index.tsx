@@ -17,7 +17,7 @@ import {
   LoreAreas,
   CircleSvgContainer,
   AreasContainer,
-  RegisterContainer
+  RegisterContainer,
 } from '../styles/pages/Index'
 import BackpackSvg from '../assets/Images/Index/Backpack.svg'
 import SocialSvg from '../assets/Images/Index/Social.svg'
@@ -34,7 +34,7 @@ import CircleSvg from '../assets/Images/Index/Circle.svg'
 import { BsArrowRightShort } from 'react-icons/bs'
 import Link from 'next/link'
 
-interface indexProps { }
+interface indexProps {}
 
 const Index: React.FC<indexProps> = () => {
   return (
