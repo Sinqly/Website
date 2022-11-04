@@ -23,12 +23,12 @@ import {
 import BackpackSvg from '../assets/Images/Index/Backpack.svg'
 import SocialSvg from '../assets/Images/Index/Social.svg'
 import GraphSvg from '../assets/Images/Index/Graph.svg'
-import Svg1 from '../assets/Images/Index/Group 137.svg'
-import Svg2 from '../assets/Images/Index/Group 138.svg'
-import Svg3 from '../assets/Images/Index/Group 139.svg'
-import Svg4 from '../assets/Images/Index/Group 140.svg'
-import Svg5 from '../assets/Images/Index/Group 141.svg'
-import Svg6 from '../assets/Images/Index/Group 142.svg'
+import Svg1 from '../assets/Images/Index/Leaf.svg'
+import Svg2 from '../assets/Images/Index/Globe.svg'
+import Svg3 from '../assets/Images/Index/Monument.svg'
+import Svg4 from '../assets/Images/Index/Carrot.svg'
+import Svg5 from '../assets/Images/Index/PC.svg'
+import Svg6 from '../assets/Images/Index/Math.svg'
 
 import CircleSvg from '../assets/Images/Index/Circle.svg'
 
