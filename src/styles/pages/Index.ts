@@ -11,7 +11,7 @@ export const WelcomeContainer = styled.div`
   padding-top: 100px;
   min-height: 600px;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -269,9 +269,9 @@ export const FunctionRightCol = styled.div`
 `
 
 export const LoreAreas = styled.section`
-  padding-top: 100px;
   margin-top: 5.5rem;
   padding: 0 15%;
+  padding-top: 30px;
   width: 100%;
   min-height: 500px;
   position: relative;
