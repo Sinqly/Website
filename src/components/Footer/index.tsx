@@ -1,9 +1,20 @@
 import * as React from 'react'
 
-interface headerProps {}
-
-const Header: React.FC<headerProps> = (props) => {
-  return <h1>Header</h1>
+interface FooterProps {
+  footerType?: string
 }
 
-export default Header
+const Footer: React.FC<FooterProps> = ({footerType}) => {
+  const Index = () => {
+    return <h1>Sou o Index</h1>
+  }
+  const Feed = () => {
+    return <h1>Sou o Feed</h1>
+  }
+
+  const FooterColection = { Index, Feed}
+
+  return FooterColection[footerType as keyof typeof FooterColection]()
+}
+
+export default Footer

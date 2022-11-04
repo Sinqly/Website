@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Header from '../components/Header/index'
+import Footer from '../components/Footer/index'
 import {
   Container,
   WelcomeContainer,
@@ -128,6 +129,8 @@ const Index: React.FC<indexProps> = () => {
           <BsArrowRightShort size={32} />
         </SignUpButton>
       </RegisterContainer>
+      <Footer footerType="Index" />
+      <Footer footerType="Feed" />
     </Container>
   )
 }
