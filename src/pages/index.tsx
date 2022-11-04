@@ -17,6 +17,7 @@ import {
   LoreAreas,
   CircleSvgContainer,
   AreasContainer,
+  RegisterContainer
 } from '../styles/pages/Index'
 import BackpackSvg from '../assets/Images/Index/Backpack.svg'
 import SocialSvg from '../assets/Images/Index/Social.svg'
@@ -33,7 +34,7 @@ import CircleSvg from '../assets/Images/Index/Circle.svg'
 import { BsArrowRightShort } from 'react-icons/bs'
 import Link from 'next/link'
 
-interface indexProps {}
+interface indexProps { }
 
 const Index: React.FC<indexProps> = () => {
   return (
@@ -119,6 +120,14 @@ const Index: React.FC<indexProps> = () => {
           </div>
         </AreasContainer>
       </LoreAreas>
+      <RegisterContainer>
+        <h2>Junte-se a nós</h2>
+        <p>Faça parte da maior plataforma de conectividade estudantil!</p>
+        <SignUpButton>
+          <Link href={'/register'}>Cadastre-se</Link>
+          <BsArrowRightShort size={32} />
+        </SignUpButton>
+      </RegisterContainer>
     </Container>
   )
 }

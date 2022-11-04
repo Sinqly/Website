@@ -391,3 +391,42 @@ export const AreasContainer = styled.div`
     }
   }
 `
+
+export const RegisterContainer = styled.section`
+  width: 80%;
+  margin: auto;
+  padding-top: 125px;
+
+  h2{
+    font-size: 2.4rem;
+    color: var(--dark-purple);
+  }
+
+  button{
+    width: 40%;
+  }
+
+  @media screen and (max-width: 768px){
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button{
+      width: 75%;
+    }
+  }
+
+  @media screen and (max-width: 575px){
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button{
+      width: 90%;
+    }
+  }
+`
