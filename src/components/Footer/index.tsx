@@ -7,6 +7,8 @@ import Svg4 from '../../assets/Images/Index/math-circle.svg'
 import Svg5 from '../../assets/Images/Index/laptop-circle.svg'
 import Svg6 from '../../assets/Images/Index/carrot-circle.svg'
 
+import * as F from './styles'
+
 interface FooterProps {
   footerType?: string
 }
@@ -14,7 +16,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ footerType }) => {
   const Index = () => {
     return (
-      <footer>
+      <F.Container>
         <div>
           <h2>Sinqly</h2>
           <p>
@@ -58,7 +60,7 @@ const Footer: React.FC<FooterProps> = ({ footerType }) => {
           </div>
         </div>
         <h5>©Todos os direitos reservados por Sinqly 2022</h5>
-      </footer>
+      </F.Container>
     )
   }
   const Feed = () => {

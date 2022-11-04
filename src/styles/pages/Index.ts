@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
   overflow: hidden;
   scroll-behavior: smooth;
-  padding-bottom: 200px;
 `
 
 export const WelcomeContainer = styled.div`
@@ -127,7 +126,6 @@ export const SignUpButton = styled.button`
 export const SocialContainer = styled.div`
   margin: auto;
   padding-top: 100px;
-  margin-top: 5.5rem;
   width: 80%;
   min-height: 500px;
   position: relative;
@@ -198,8 +196,8 @@ export const SocialRightCol = styled.div`
 `
 
 export const FunctionContainer = styled.section`
-  padding-top: 100px;
-  margin-top: 5.5rem;
+  padding-top: 125px;
+  margin-top: 5rem;
   width: 100%;
   min-height: 60vh;
   background-color: var(--dark-purple);
@@ -269,9 +267,7 @@ export const FunctionRightCol = styled.div`
 `
 
 export const LoreAreas = styled.section`
-  margin-top: 5.5rem;
   padding: 0 15%;
-  padding-top: 30px;
   width: 100%;
   min-height: 500px;
   position: relative;
