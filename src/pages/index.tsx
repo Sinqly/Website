@@ -130,7 +130,6 @@ const Index: React.FC<indexProps> = () => {
         </SignUpButton>
       </RegisterContainer>
       <Footer footerType="Index" />
-      <Footer footerType="Feed" />
     </Container>
   )
 }

@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ footerType }) => {
     )
   }
   const Feed = () => {
-    return <h1>Sou o Feed</h1>
+    return <></>
   }
 
   const FooterColection = { Index, Feed }
