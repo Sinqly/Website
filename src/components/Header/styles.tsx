@@ -43,7 +43,7 @@ export const IndexContainer = styled.div`
 
     #menu li {
       padding: 1rem 0;
-      margin: 0 1rem;
+      margin: 0 1rem 0 3rem;
       border-bottom: 2px solid #6a6da62a;
     }
 
@@ -239,7 +239,7 @@ export const ContainerGeneral = styled.div`
 
   @media screen and (max-width: 1024px) {
     & {
-      padding: 32px 16px 32px 16px;
+      padding: 32px 16px;
     }
 
     .icons-user {

@@ -115,7 +115,9 @@ const RenderGeneral = () => {
         <MobileButton id={'botao-mobile'} onClick={toggleMenu}>
           <span id={'hamburguer'}></span>
         </MobileButton>
-        <InputSearch styles={InputStyles} />
+        <div className={"hidden"} >
+          <InputSearch className={"hidden"} styles={InputStyles} />
+        </div>
       </InputDiv>
 
       <ImageDiv>
