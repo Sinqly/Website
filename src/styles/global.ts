@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
+  html, body, #__next{
+    height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+  }
   *, html {
     margin: 0;
     padding: 0;
@@ -19,6 +24,7 @@ export default createGlobalStyle`
     --light-purple:#6A6DA6;
   }
   body {
+    width: 100%;
     background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
   }
