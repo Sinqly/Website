@@ -8,7 +8,6 @@ import { ImArrowRight2 } from 'react-icons/im'
 export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
 
   width: 100%;
 
@@ -37,7 +36,6 @@ export const InputGroup = styled.div`
     .double {
       flex-direction: column;
       width: 100%;
-      gap: 25px;
     }
     .double > input {
       width: 100%;
