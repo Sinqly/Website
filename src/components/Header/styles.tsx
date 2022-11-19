@@ -177,6 +177,7 @@ export const SignInSignUpContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
@@ -209,6 +210,7 @@ export const Back = styled.div`
   align-items: center;
   position: absolute;
   right: 48px;
+  
   & > a {
     text-decoration: none;
     font-size: 18px;
