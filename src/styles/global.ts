@@ -19,7 +19,7 @@ export default createGlobalStyle`
     --black:#151515;
     --white:#F9F9F9;
     --grey:#6C6C6C;
-    --light-grey:#B4BABB;
+    --light-grey:#AEAEAE;
     --dark-purple:#3A3E8C;
     --light-purple:#6A6DA6;
   }
