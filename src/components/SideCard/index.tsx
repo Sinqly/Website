@@ -106,13 +106,13 @@ interface SideCardProps {
   sideCardType?: string
 }
 
-const SideCard: React.FC<SideCardProps> = ({ sideCardType = "Visitant" }) => {
+const SideCard: React.FC<SideCardProps> = ({ sideCardType = "Home" }) => {
   const SideCardColection = {
-    Home: SideCardHome,
-    Visitant: SideCardVisitant,
+    Home: SideCardHome(),
+    Visitant: SideCardVisitant(),
   }
 
-  return SideCardColection[sideCardType as keyof typeof SideCardColection]()
+  return SideCardColection[sideCardType as keyof typeof SideCardColection]
 }
 
 export default SideCard;
