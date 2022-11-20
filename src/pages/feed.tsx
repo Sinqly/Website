@@ -1,4 +1,5 @@
-import * as React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 import Header from '../components/Header';
 import PostCard from '../components/PostCard';
@@ -6,21 +7,42 @@ import SideCard from '../components/SideCard';
 import UserList from '../components/UserList';
 
 import { Container, Content } from '../styles/pages/feed';
-
+import { PostCardInterface } from '../utils/feed/PostCardInterface';
 // interface feedProps {}
 
 const Feed: React.FC = () => {
+  
 
+  const [posts, setPosts] = useState<PostCardInterface[]>([])
+  
+  useEffect(() => {
+    axios.get('http://localhost:3000/posts')
+      .then(posts => setPosts(posts.data))
+  }, [])
   return (
     <>
       <Header headerType='General' />
       <Container>
 
-        <SideCard/>
+        <SideCard />
         <Content className='content'>
-          <PostCard/>
-          <PostCard/>
-          <PostCard/>
+
+          { 
+            posts.map(post => {              
+              return <PostCard 
+                key={post.id}
+                area='natureza'
+                description={post.description}
+                title={post.title}
+                user={{
+                  id: post.user.id,
+                  name: post.user.name,
+                  lastName: post.user.lastName,
+                  username: post.user.username
+                }}
+              />
+            })
+          }
         </Content>
         <UserList/>
        
