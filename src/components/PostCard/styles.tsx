@@ -50,6 +50,8 @@ display: flex;
 flex-direction: column;
 gap: 20px;
 text-align: justify;
+word-wrap: break-word;
+word-break: break-all;
 `
 
 export const Actions = styled.div`

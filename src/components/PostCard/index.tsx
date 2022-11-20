@@ -5,8 +5,12 @@ import { Card, CardHeader, UserImage, Texts, Nome, Username, CardBody, Actions, 
 
 import Careca from '../../assets/Images/Feed/Careca.png'
 import Imagem from '../../assets/Images/Feed/imagem_feed.jpg'
+import { PostCardInterface } from '../../utils/feed/PostCardInterface'
 
-const PostCard: React.FC = () => {
+
+const PostCard: React.FC<PostCardInterface> = ({ id, area, description, title, user }) => {
+  
+
   return (
     <Card className='card'>
       <CardHeader>
@@ -14,13 +18,14 @@ const PostCard: React.FC = () => {
           <Image  src={Careca} alt="Foto do usuário" />
         </UserImage>
         <Texts className='texts'>
-          <Nome href='https://www.google.com'>Paulo Battistella</Nome>
-          <Username>@pbattistella#2021</Username>
+          <Nome>{user.name} {user.lastName}</Nome>
+          <Username>@{user.username}#0{user.id}</Username>
         </Texts>
       </CardHeader>
       <CardBody className='cardBody'>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem fuga doloremque quis, obcaecati libero tenetur delectus assumenda sapiente amet, incidunt temporibus perspiciatis iste eligendi aperiam ex magnam voluptatum, iure aut? Cum consectetur similique accusantium aliquid eveniet, quo a at est sapiente nulla fuga, totam nam, illum deserunt molestias dolor ullam quam. Provident! Cum consectetur similique accusantium aliquid eveniet, quo a at est sapiente nulla fuga, totam nam, illum deserunt molestias dolor ullam quam. Provident! Cum consectetur similique accusantium aliquid eveniet, quo a at est sapiente nulla fuga, totam nam, illum deserunt molestias dolor ullam quam. Provident!
+        <h3>{title}</h3>
+        <p style={{}}>
+          {description}
         </p>
         <Image src={Imagem} width="1000" alt='Oi'/>
         <Actions>
