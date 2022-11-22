@@ -1,20 +1,19 @@
 import styled from 'styled-components'
 
 export const Main = styled.div`
-  height: calc(100vh- 100px);
+  min-height: 85vh;
+  max-height: calc(100vh - 100px);
+  padding: 0 10%;
+  padding-top: 200px;
+  margin-top: auto;
   width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10%;
-
-  @media screen and (max-width: 1400px) {
-    padding: 0 3%;
-  }
 
   @media screen and (max-width: 992px) {
-    height: auto;
+    padding-top: 125px;
     flex-direction: column;
     .hidden {
       display: none;
