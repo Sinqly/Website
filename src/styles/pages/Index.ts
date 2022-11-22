@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const WelcomeContainer = styled.div`
   width: 80%;
   padding-top: 100px;
-  min-height: 600px;
+  min-height: 85vh;
   margin: 0 auto;
   margin-top: 25px;
   display: flex;
@@ -127,7 +127,7 @@ export const SocialContainer = styled.div`
   margin: auto;
   padding-top: 100px;
   width: 80%;
-  min-height: 500px;
+  min-height: 85vh;
   position: relative;
   z-index: 0;
   display: flex;
@@ -199,7 +199,7 @@ export const FunctionContainer = styled.section`
   padding-top: 125px;
   margin-top: 5rem;
   width: 100%;
-  min-height: 60vh;
+  min-height: 85vh;
   background-color: var(--dark-purple);
   display: flex;
   align-items: center;
@@ -214,7 +214,7 @@ export const FunctionContainer = styled.section`
 
 export const FunctionLeftCol = styled.div`
   width: 35%;
-  min-height: 600px;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -268,8 +268,9 @@ export const FunctionRightCol = styled.div`
 
 export const LoreAreas = styled.section`
   padding: 0 15%;
+  padding-top: 50px;
   width: 100%;
-  min-height: 500px;
+  min-height: 85vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -390,8 +391,9 @@ export const AreasContainer = styled.div`
 
 export const RegisterContainer = styled.section`
   width: 80%;
+  min-height: 40vh;
   margin: auto;
-  padding-top: 125px;
+  padding-top: 200px;
 
   h2 {
     font-size: 2.4rem;
@@ -416,7 +418,7 @@ export const RegisterContainer = styled.section`
 
   @media screen and (max-width: 575px) {
     width: 90%;
-
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
