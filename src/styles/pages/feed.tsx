@@ -5,9 +5,7 @@ export const Container = styled.div`
 
   grid-template-columns: 27% auto 300px;
   grid-template-rows: 100%;
-  grid-template-areas: 
-    'SideCard Content UserList'
-  ;
+  grid-template-areas: 'SideCard Content UserList';
 
   position: absolute;
   top: 100px;
@@ -15,68 +13,65 @@ export const Container = styled.div`
   width: 100vw;
   height: 100%;
 
-  @media screen and (max-width: 1400px){
-    .sideCard{
+  @media screen and (max-width: 1400px) {
+    .sideCard {
       font-size: 0.78rem;
     }
   }
 
-  @media screen and (max-width: 1200px){
+  @media screen and (max-width: 1200px) {
     grid-template-columns: 30% 70%;
-    grid-template-areas: 
+    grid-template-areas:
       'SideCard Content'
-      'Empty    Content'
-    ;
+      'Empty    Content';
 
-    .sideCard{
+    .sideCard {
       width: 30%;
     }
 
-    .userList{
+    .userList {
       display: none;
     }
 
-    .card{
+    .card {
       min-width: 0;
       width: 90%;
       font-size: 1.2rem;
     }
   }
 
-  @media screen and (max-width: 900px){
+  @media screen and (max-width: 900px) {
     grid-template-columns: 100%;
-    grid-template-areas: 
+    grid-template-areas:
       'Content'
-      'Content'
-    ;
+      'Content';
 
-    .sideCard{
+    .sideCard {
       display: none;
     }
-    
-    .card{
+
+    .card {
       min-width: none;
     }
   }
 
-  @media screen and (max-width: 650px){
+  @media screen and (max-width: 650px) {
     top: 70px;
 
-    .texts{
-      font-size:1.5rem;
+    .texts {
+      font-size: 1.5rem;
       margin-left: 10px;
     }
 
-    .card{
+    .card {
       width: 100%;
     }
 
-    .cardBody{
+    .cardBody {
       gap: 5px;
     }
   }
 `
-
 
 export const EMPTY = styled.div`
   grid-area: Empty;

@@ -210,7 +210,7 @@ export const Back = styled.div`
   align-items: center;
   position: absolute;
   right: 48px;
-  
+
   & > a {
     text-decoration: none;
     font-size: 18px;

@@ -5,18 +5,18 @@ export const Container = styled.div`
   position: fixed;
   top: 150px;
   left: 2%;
-  
+
   font-size: 0.9rem;
 
   width: 25%;
   padding: 40px 3% 100px 3%;
   border-radius: 5%;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  hr{
+
+  hr {
     height: 3px;
     width: 100%;
     background-color: var(--dark-purple);
@@ -24,10 +24,10 @@ export const Container = styled.div`
     border: none;
     margin: 22.5px 0;
   }
-  
+
   -webkit-box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
-` 
+`
 
 export const SideCardHeader = styled.div`
   display: flex;
@@ -47,7 +47,7 @@ export const SideCardTitle = styled.div`
 
 export const SideCardImage = styled.div`
   width: 30%;
-  img{
+  img {
     border-radius: 100%;
   }
 `
@@ -72,5 +72,4 @@ export const Place = styled.div`
   & > span {
     margin-left: 15px;
   }
-
 `

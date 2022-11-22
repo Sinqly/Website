@@ -37,6 +37,10 @@ import Link from 'next/link'
 
 interface indexProps {}
 
+export const teste = () => {
+  return 'testando'
+}
+
 const Index: React.FC<indexProps> = () => {
   return (
     <Container>

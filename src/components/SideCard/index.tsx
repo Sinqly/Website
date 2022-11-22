@@ -1,19 +1,24 @@
 import Image from 'next/image'
 import React from 'react'
 
-import { Container, SideCardHeader, SideCardTitle, SideCardImage, Informations, Place } from './styles'
+import {
+  Container,
+  SideCardHeader,
+  SideCardTitle,
+  SideCardImage,
+  Informations,
+  Place,
+} from './styles'
 import Careca from '../../assets/Images/Feed/Careca.png'
 import Igor from '../../assets/Images/Feed/Eu.png'
 
 const SideCardHome = () => {
   return (
-    <Container className='sideCard'>
+    <Container className="sideCard">
       <SideCardHeader>
         <SideCardTitle>
           Paulo Battistella
-          <span>
-            Desenvolvedor Fullstack
-          </span>
+          <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
           <Image src={Careca} alt="Foto do usuário" />
@@ -51,13 +56,11 @@ const SideCardHome = () => {
 
 const SideCardVisitant = () => {
   return (
-    <Container className='sideCard'>
+    <Container className="sideCard">
       <SideCardHeader>
         <SideCardTitle>
           Igor Ribeiro
-          <span>
-            Desenvolvedor Fullstack
-          </span>
+          <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
           <Image src={Igor} alt="Foto do usuário" />
@@ -101,12 +104,11 @@ const SideCardVisitant = () => {
   )
 }
 
-
 interface SideCardProps {
   sideCardType?: string
 }
 
-const SideCard: React.FC<SideCardProps> = ({ sideCardType = "Home" }) => {
+const SideCard: React.FC<SideCardProps> = ({ sideCardType = 'Home' }) => {
   const SideCardColection = {
     Home: SideCardHome(),
     Visitant: SideCardVisitant(),
@@ -115,4 +117,4 @@ const SideCard: React.FC<SideCardProps> = ({ sideCardType = "Home" }) => {
   return SideCardColection[sideCardType as keyof typeof SideCardColection]
 }
 
-export default SideCard;
+export default SideCard
