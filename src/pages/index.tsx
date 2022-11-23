@@ -6,12 +6,21 @@ import Feed from './feed'
 interface indexProps {}
 
 const Index: React.FC<indexProps> = () => {
-  const logged = true
+  let logged;
 
-  if (!!logged) {
-    return <IndexPage />
-  } else {
+  function getStorageValue() {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem("loggedStatusVariable")
+      logged = !!saved
+    }
+  }
+
+  getStorageValue()
+
+  if (logged) {
     return <Feed />
+  } else {
+    return <IndexPage />
   }
 }
 

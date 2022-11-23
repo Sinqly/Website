@@ -2,6 +2,7 @@
 import { Formik } from 'formik'
 import React from 'react'
 import * as yup from 'yup'
+import { useSignInPost } from '../../services/Login/useSignIn'
 import {
   Button,
   ButtonDiv,
@@ -13,15 +14,16 @@ import {
   PasswordIcon,
 } from './styles'
 
+import { UserInfoSignIn } from '../../utils/Login/UserSign'
+
 interface formProps {}
 
 const LoginForm: React.FC<formProps> = () => {
   const yupValidationSchema = yup.object().shape({
     email: yup.string().email('Email inválido!').required('Email Obrigatório'),
-
     password: yup
       .string()
-      .min(6, 'A senha deve possuir pelo menos 6 caracteres')
+      .min(3, 'A senha deve possuir pelo menos 6 caracteres')
       .required('Senha obrigatória!'),
   })
 
@@ -30,8 +32,9 @@ const LoginForm: React.FC<formProps> = () => {
     password: '',
   }
 
-  const handleSubmitForm = ({ email, password }): void => {
-    alert(email + ': ' + password)
+  const handleSubmitForm = (data: UserInfoSignIn) => {
+    useSignInPost(data)
+    console.log(data);
   }
 
   const handleFocusInput = (id: string): void => {
