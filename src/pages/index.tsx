@@ -6,7 +6,7 @@ import Feed from './feed'
 interface indexProps {}
 
 const Index: React.FC<indexProps> = () => {
-  const logged = false
+  const logged = true
 
   if (!!logged) {
     return <IndexPage />
