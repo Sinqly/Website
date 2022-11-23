@@ -22,6 +22,7 @@ import {
 import Logo from '../../assets/Images/Logo.png'
 import UserDropdown from '../UserDropdown'
 import { InputSearch } from '../Input'
+import { useLogout } from '../../services/Login/useLogout'
 
 interface HeaderProps {
   headerType?: string
@@ -44,24 +45,16 @@ const RenderIndex = () => {
 
         <Menu id={'menu'}>
           <li>
-            <Link href={'/'}>
-              Início
-            </Link>
+            <Link href={'/'}>Início</Link>
           </li>
           <li>
-            <Link href={'#resume'}>
-              Resumo
-            </Link>
+            <Link href={'#resume'}>Resumo</Link>
           </li>
           <li>
-            <Link href={'#about'}>
-              Sobre
-            </Link>
+            <Link href={'#about'}>Sobre</Link>
           </li>
           <li>
-            <Link href={'#areas'}>
-              Áreas
-            </Link>
+            <Link href={'#areas'}>Áreas</Link>
           </li>
         </Menu>
       </Nav>
@@ -87,9 +80,7 @@ const RenderSignInSignUp = () => {
       </ImageView>
       <Back className="back">
         <ArrowLeft className={'arrow-left'} />
-        <Link href={'/'}>
-          Voltar
-        </Link>
+        <Link href={'/'}>Voltar</Link>
       </Back>
     </SignInSignUpContainer>
   )
@@ -121,6 +112,7 @@ const RenderGeneral = () => {
       </InputDiv>
 
       <ImageDiv>
+        <button onClick={useLogout}></button>
         <Image src={Logo} alt="Logo" />
       </ImageDiv>
 
