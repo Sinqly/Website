@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
+import { useRouter } from 'next/router'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const router = useRouter()
+
+  useEffect(() => {
+    const user = localStorage.getItem('loggedStatusVariable')
+    if (!!user) {
+      router.push('/feed')
+    }
+  }, [router])
+
   return (
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />

@@ -39,98 +39,107 @@ interface indexProps {}
 
 const IndexPage: React.FC<indexProps> = () => {
   return (
-    <Container>
-      <Header headerType="Index" />
-      <WelcomeContainer id="resume">
-        <TextContainer>
-          <h2>Rede social de Portfólios</h2>
-          <h4>
-            Plataforma que possibilita a conexão de estudante a partir de seus
-            projetos e portfólios.
-          </h4>
-          <p>Faça parte dessa comunidade!</p>
+    <>
+      <Container>
+        <Header headerType="Index" />
+        <WelcomeContainer id="resume">
+          <TextContainer>
+            <h2>Rede social de Portfólios</h2>
+            <h4>
+              Plataforma que possibilita a conexão de estudante a partir de seus
+              projetos e portfólios.
+            </h4>
+            <p>Faça parte dessa comunidade!</p>
+            <SignUpButton>
+              <Link href={'/register'}>Cadastre-se</Link>
+              <BsArrowRightShort size={32} />
+            </SignUpButton>
+          </TextContainer>
+          <BackpackContainer>
+            <BackpackSvg />
+          </BackpackContainer>
+        </WelcomeContainer>
+        <SocialContainer id="about">
+          <SocialSvgContainer>
+            <SocialSvg />
+          </SocialSvgContainer>
+          <SocialRightCol>
+            <div>
+              <h2>Rede para conexão de estudantes</h2>
+              <h4>
+                A maior rede de conexão para estudante de todas as escolas
+              </h4>
+            </div>
+            <div>
+              <h2>Compartilhamento de projetos estudantis</h2>
+              <h4>
+                A maior rede de conexão para estudante de todas as escolas
+              </h4>
+            </div>
+          </SocialRightCol>
+        </SocialContainer>
+        <FunctionContainer>
+          <FunctionLeftCol>
+            <div>
+              <h2>Publique</h2>
+              <p>
+                Realize publicações de seus projetos e construa seu portfólio
+              </p>
+            </div>
+            <div>
+              <h2>Compartilhe</h2>
+              <p>Compartilhe suas publicações para toda a nossa rede</p>
+            </div>
+            <div>
+              <h2>Visualize</h2>
+              <p>Visualize projetos de todos os outros usuários</p>
+            </div>
+            <div>
+              <h2>Conecte-se</h2>
+              <p>
+                Conecte-se com a rede de sua escola e acesse o que seus colegas
+                estão produzindo
+              </p>
+            </div>
+            <div>
+              <h2>Comente</h2>
+              <p>
+                Interaja com outras publicações e usuários através de
+                comentários
+              </p>
+            </div>
+          </FunctionLeftCol>
+          <FunctionRightCol>
+            <GraphSvg />
+          </FunctionRightCol>
+        </FunctionContainer>
+        <LoreAreas id="areas">
+          <CircleSvgContainer>
+            <CircleSvg />
+          </CircleSvgContainer>
+          <AreasContainer>
+            <h2>Áreas de conhecimento</h2>
+            <div>
+              <Svg1 />
+              <Svg2 />
+              <Svg3 />
+              <Svg4 />
+              <Svg5 />
+              <Svg6 />
+            </div>
+          </AreasContainer>
+        </LoreAreas>
+        <RegisterContainer>
+          <h2>Junte-se a nós</h2>
+          <p>Faça parte da maior plataforma de conectividade estudantil!</p>
           <SignUpButton>
             <Link href={'/register'}>Cadastre-se</Link>
             <BsArrowRightShort size={32} />
           </SignUpButton>
-        </TextContainer>
-        <BackpackContainer>
-          <BackpackSvg />
-        </BackpackContainer>
-      </WelcomeContainer>
-      <SocialContainer id="about">
-        <SocialSvgContainer>
-          <SocialSvg />
-        </SocialSvgContainer>
-        <SocialRightCol>
-          <div>
-            <h2>Rede para conexão de estudantes</h2>
-            <h4>A maior rede de conexão para estudante de todas as escolas</h4>
-          </div>
-          <div>
-            <h2>Compartilhamento de projetos estudantis</h2>
-            <h4>A maior rede de conexão para estudante de todas as escolas</h4>
-          </div>
-        </SocialRightCol>
-      </SocialContainer>
-      <FunctionContainer>
-        <FunctionLeftCol>
-          <div>
-            <h2>Publique</h2>
-            <p>Realize publicações de seus projetos e construa seu portfólio</p>
-          </div>
-          <div>
-            <h2>Compartilhe</h2>
-            <p>Compartilhe suas publicações para toda a nossa rede</p>
-          </div>
-          <div>
-            <h2>Visualize</h2>
-            <p>Visualize projetos de todos os outros usuários</p>
-          </div>
-          <div>
-            <h2>Conecte-se</h2>
-            <p>
-              Conecte-se com a rede de sua escola e acesse o que seus colegas
-              estão produzindo
-            </p>
-          </div>
-          <div>
-            <h2>Comente</h2>
-            <p>
-              Interaja com outras publicações e usuários através de comentários
-            </p>
-          </div>
-        </FunctionLeftCol>
-        <FunctionRightCol>
-          <GraphSvg />
-        </FunctionRightCol>
-      </FunctionContainer>
-      <LoreAreas id="areas">
-        <CircleSvgContainer>
-          <CircleSvg />
-        </CircleSvgContainer>
-        <AreasContainer>
-          <h2>Áreas de conhecimento</h2>
-          <div>
-            <Svg1 />
-            <Svg2 />
-            <Svg3 />
-            <Svg4 />
-            <Svg5 />
-            <Svg6 />
-          </div>
-        </AreasContainer>
-      </LoreAreas>
-      <RegisterContainer>
-        <h2>Junte-se a nós</h2>
-        <p>Faça parte da maior plataforma de conectividade estudantil!</p>
-        <SignUpButton>
-          <Link href={'/register'}>Cadastre-se</Link>
-          <BsArrowRightShort size={32} />
-        </SignUpButton>
-      </RegisterContainer>
-      <Footer footerType="Index" />
-    </Container>
+        </RegisterContainer>
+        <Footer footerType="Index" />
+      </Container>
+    </>
   )
 }
 

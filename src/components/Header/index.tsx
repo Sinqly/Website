@@ -45,22 +45,22 @@ const RenderIndex = () => {
         <Menu id={'menu'}>
           <li>
             <Link href={'/'}>
-              <a>Início</a>
+              Início
             </Link>
           </li>
           <li>
             <Link href={'#resume'}>
-              <a>Resumo</a>
+              Resumo
             </Link>
           </li>
           <li>
             <Link href={'#about'}>
-              <a>Sobre</a>
+              Sobre
             </Link>
           </li>
           <li>
             <Link href={'#areas'}>
-              <a>Áreas</a>
+              Áreas
             </Link>
           </li>
         </Menu>
@@ -88,7 +88,7 @@ const RenderSignInSignUp = () => {
       <Back className="back">
         <ArrowLeft className={'arrow-left'} />
         <Link href={'/'}>
-          <a className={'go-back-link'}>Voltar</a>
+          Voltar
         </Link>
       </Back>
     </SignInSignUpContainer>

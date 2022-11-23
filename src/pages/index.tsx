@@ -1,27 +1,21 @@
 /* eslint @typescript-eslint/no-empty-interface: "off" */
 
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import IndexPage from './indexPage'
 import Feed from './feed'
+import { useRouter } from 'next/router'
 interface indexProps {}
 
 const Index: React.FC<indexProps> = () => {
-  let logged;
+  const router = useRouter()
+  useEffect(() => {
+    let user = localStorage.getItem('loggedStatusVariable')
 
-  function getStorageValue() {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem("loggedStatusVariable")
-      logged = !!saved
+    if (!!user) {
+      router.push('/feed')
     }
-  }
-
-  getStorageValue()
-
-  if (logged) {
-    return <Feed />
-  } else {
-    return <IndexPage />
-  }
+  }, [])
+  return <IndexPage />
 }
 
 export default Index
