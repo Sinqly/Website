@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import {
   Container,
@@ -11,13 +11,17 @@ import {
 } from './styles'
 import Careca from '../../assets/Images/Feed/Careca.png'
 import Igor from '../../assets/Images/Feed/Eu.png'
+import { getUserData } from '../../services/User/getUserData'
+import { useUserContext } from '../../context/UserContext'
 
 const SideCardHome = () => {
+  const { UserInfo } = useUserContext()
+
   return (
     <Container className="sideCard">
       <SideCardHeader>
         <SideCardTitle>
-          Paulo Battistella
+          {UserInfo?.name}
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
