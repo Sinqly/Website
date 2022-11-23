@@ -14,6 +14,10 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     if (!!user) {
       router.push('/feed')
     }
+
+    else if(router.pathname === '/feed' && !!!user){
+      router.push('/login')
+    }
   }, [router])
 
   return (

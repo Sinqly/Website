@@ -22,6 +22,7 @@ export function useSignInPost(UserInfo: UserInfoSignIn) {
             localStorage.setItem('loggedStatusVariable', JSON.stringify(response.data.status))
             console.log(response.data);
             localStorage.setItem('loggedUserId', JSON.stringify(response.data.user[0].id))
+            window.location.reload();
             return response;
         }, (error) => {
             return error.response;
