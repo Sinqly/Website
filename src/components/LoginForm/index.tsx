@@ -34,7 +34,7 @@ const LoginForm: React.FC<formProps> = () => {
 
   const handleSubmitForm = (data: UserInfoSignIn) => {
     useSignInPost(data)
-    console.log(data);
+    console.log(data)
   }
 
   const handleFocusInput = (id: string): void => {
