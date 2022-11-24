@@ -3,6 +3,7 @@ import { Formik } from 'formik'
 import { useRouter } from 'next/router'
 import React from 'react'
 import * as yup from 'yup'
+import { useSignUpPost } from '../../services/Register/useSignUp'
 import {
   Button,
   ButtonDiv,
@@ -54,9 +55,10 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
 
   const router = useRouter()
 
-  const handleSubmitForm = (props): void => {
+  const handleSubmitForm = async (props) => {
     localStorage.setItem('registerSecondData', JSON.stringify(props))
-    router.push('/register/continue')
+    await useSignUpPost()
+    router.push('/feed')
   }
 
   const handleFocusInput = (id: string): void => {
@@ -79,7 +81,17 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
         handleBlur,
         handleSubmit,
       }) => (
-        <form onSubmit={handleSubmit} style={{ width: '100%', minHeight: '85vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
+        <form
+          onSubmit={handleSubmit}
+          style={{
+            width: '100%',
+            minHeight: '85vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+          }}
+        >
           <InputGroup>
             <div>
               <InputField className="double">

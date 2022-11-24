@@ -1,5 +1,8 @@
+import { useRouter } from "next/router"
+
 export const useLogout = () => {
   localStorage.removeItem('loggedStatusVariable')
   localStorage.removeItem('loggedUserId')
-  window.location.reload()
+  const router = useRouter()
+  router.push('/')
 }
