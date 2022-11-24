@@ -2,27 +2,29 @@ import React, { useEffect, useState } from 'react'
 
 import Header from '../components/Header'
 import PostCard from '../components/PostCard'
-import SideCard from '../components/SideCard'
+import { SideCardHome } from '../components/SideCard'
 import UserList from '../components/UserList'
 import { api } from '../config/Axios'
 
 import { Container, Content } from '../styles/pages/feed'
+
 import { PostCardInterface } from '../utils/feed/PostCardInterface'
-// interface feedProps {}
 
 const Feed: React.FC = () => {
+  const [posts, setPosts] = useState<PostCardInterface[]>([])
 
-  // useEffect(() => {
-  //   // api.get('/users')
-  //   //   .then(users => console.log(users))
-  // }, [])
+  
+  useEffect(() => {
+    api.get('/posts')
+      .then(posts => setPosts(posts.data))
+  }, [])
   return (
     <>
       <Header headerType="General" />
       <Container>
-        <SideCard />
+        <SideCardHome />
         <Content className="content">
-          {/* { 
+          { 
            posts.map(post => {              
               return <PostCard 
                 key={post.id}
@@ -37,7 +39,7 @@ const Feed: React.FC = () => {
                 }}
               />
             })
-          } */}
+          }
         </Content>
         <UserList />
       </Container>
