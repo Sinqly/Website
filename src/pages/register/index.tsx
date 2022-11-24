@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-empty-interface: "off" */
 import React from 'react'
-import RegisterImage from '../assets/Images/Register/RegisterImage.svg'
+import RegisterImage from '../../assets/Images/Register/RegisterImage.svg'
 
 import {
   Main,
@@ -8,11 +8,11 @@ import {
   Texts,
   SectionRight,
   NoAccount,
-} from '../styles/pages/SignInSignUp'
+} from '../../styles/pages/SignInSignUp'
 import Link from 'next/link'
 
-import Header from '../components/Header'
-import RegisterForm from '../components/RegisterForm'
+import Header from '../../components/Header'
+import RegisterForm from '../../components/RegisterForm'
 
 interface loginProps {}
 

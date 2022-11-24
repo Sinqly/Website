@@ -23,6 +23,8 @@ import Logo from '../../assets/Images/Logo.png'
 import UserDropdown from '../UserDropdown'
 import { InputSearch } from '../Input'
 import { useLogout } from '../../services/Login/useLogout'
+import { useRouter } from 'next/router'
+import { useResetRouter } from '../../services/resetRoute'
 
 interface HeaderProps {
   headerType?: string
@@ -100,6 +102,13 @@ const RenderGeneral = () => {
     maxWidth: '500px',
   }
 
+  const router = useRouter()
+
+  const logout = () => {
+    useLogout()
+    router.push('/').then(() => useResetRouter())
+  }
+
   return (
     <ContainerGeneral>
       <InputDiv className={'input-div'} active={active}>
@@ -112,7 +121,7 @@ const RenderGeneral = () => {
       </InputDiv>
 
       <ImageDiv>
-        <button onClick={useLogout}></button>
+        <button onClick={logout}></button>
         <Image src={Logo} alt="Logo" />
       </ImageDiv>
 

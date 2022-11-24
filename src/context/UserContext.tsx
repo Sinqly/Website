@@ -42,8 +42,11 @@ export const UserProvider: React.FC<PropsWithChildren<Props>> = ({
   }, [loggedUserId])
 
   useEffect(() => {
-    const status = localStorage.getItem('loggedStatusVariable')
+    const status = JSON.parse(
+      localStorage.getItem('loggedStatusVariable') || '{}'
+    )
     const loggedUserIdData = localStorage.getItem('loggedUserId')
+
     setLoggedUserId(loggedUserIdData)
     setLoggedStatus(!!status)
     if (loggedUserId == null) {

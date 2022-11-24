@@ -79,8 +79,21 @@ export const EMPTY = styled.div`
 
 export const Content = styled.div`
   grid-area: Content;
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+  `
+
+  export const ButtonModalCreate = styled.button`
+    border: none;
+    background-color: var(--dark-purple);
+    color: var(--white);
+  
+    outline: none;
+    margin-top: 50px;
+
+    width: 80%;
+    height: 7%;
+    border-radius: 15px;
+  `

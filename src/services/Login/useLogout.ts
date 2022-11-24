@@ -1,5 +1,4 @@
-export const useLogout = () => {
+export function useLogout() {
   localStorage.removeItem('loggedStatusVariable')
   localStorage.removeItem('loggedUserId')
-  window.location.reload()
 }
