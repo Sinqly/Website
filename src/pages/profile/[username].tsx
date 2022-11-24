@@ -1,74 +1,82 @@
+import { GetStaticPaths, GetStaticProps } from 'next'
 import React, { useEffect, useState } from 'react'
-
 import Header from '../../components/Header'
 import PostCard from '../../components/PostCard'
-import { SideCardVisitant } from '../../components/SideCard'
+import { SideCardHome, SideCardVisitant } from '../../components/SideCard'
 import UserList from '../../components/UserList'
+
 import { api } from '../../config/Axios'
-import { getCurrentUserFeedId } from '../../services/Feed/getUserData'
-
 import { Container, Content } from '../../styles/pages/feed'
-
 import { PostCardInterface } from '../../utils/feed/PostCardInterface'
 import { User } from '../../utils/UserInterface'
 
-const CurrentFeed: React.FC = () => {
-  const [posts, setPosts] = useState<PostCardInterface[]>([])
-  const [currentUserFeed, setCurrentUserFeed] = useState<User>({
-    id: 0,
-    name: "",
-    lastName: "",
-    username: "",
-    email: "",
-    password: "",
-    phone: "",
-    cpf: "",
-    biography: "",
-    profileImage: ""
-  })
-  
-  const getUserData = async () => {
-    // GET CURRENT USER
-    const currentUserFeed = await getCurrentUserFeedId()
-    setCurrentUserFeed(currentUserFeed)
 
-    // GET POSTS FROM CURRENT USER
-    const id = localStorage.getItem("currentUserFeedId")
-    await api.get(`/posts/user/${id}`)
-      .then(posts => setPosts(posts.data))
-  }
-
-  useEffect(() => {
-    getUserData()
-  }, [])
+export default function CurrentFeed(user){
+    const currentUserFeed = user.user
+    console.log(currentUserFeed);
+    
+    const { username } = user.user
+    
+    const [posts, setPosts] = useState<PostCardInterface[]>([])
   
-  return (
-    <>
-      <Header headerType="General" />
-      <Container>
-        <SideCardVisitant user={currentUserFeed}/>
-        <Content className="content">
-          { 
-           posts.map(post => {              
-              return <PostCard 
-                key={post.id}
-                area='natureza'
-                description={post.description}
-                title={post.title}
-                user={{
-                  id:  post.user.id,
-                  name: post.user.name,
-                  lastName: post.user.lastName,
-                  username: post.user.username
-                }}
-              />
-            })
-          }
-        </Content>
-        <UserList />
-      </Container>
-    </>
-  )
+    const getUserPosts = async () => {
+      await api.get(`/posts/user/${currentUserFeed.id}`)
+        .then(posts => setPosts(posts.data))
+    }
+
+    useEffect(() => {
+      getUserPosts()
+    }, [])
+    return (
+      <>
+        <Header headerType="General" />
+        <Container>
+          <SideCardVisitant user={currentUserFeed} />
+          <Content className="content">
+            { posts.length == 0 ? <h1 style={{marginTop:50}}>O Usuário ainda não possui posts</h1> : null }
+            { 
+              posts.map(post => {              
+                return <PostCard
+                  key={post.id}
+                  area='natureza'
+                  description={post.description}
+                  title={post.title}
+                  user={currentUserFeed}
+                />
+              })
+            }
+          </Content>
+          <UserList />
+        </Container>
+      </>
+    )
 }
 
-export default CurrentFeed;
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  
+  const username = params?.username
+
+  const res = await api.get(`/users/findUsername/${username}`)
+  const user = await res.data
+
+  return {
+    props: {
+      user: user,
+    },
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const users: User[] = await api.get(`/users`)
+    .then(users => users.data)
+  
+  const paths = users.map((user) => ({
+    params: {username: user.username}
+  }))
+
+  console.log(paths); 
+  
+
+  return { paths, fallback: false }
+}
