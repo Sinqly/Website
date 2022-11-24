@@ -55,7 +55,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
   const router = useRouter()
 
   const handleSubmitForm = (props): void => {
-    localStorage.setItem('registerFirstData', JSON.stringify(props))
+    localStorage.setItem('registerSecondData', JSON.stringify(props))
     router.push('/register/continue')
   }
 
