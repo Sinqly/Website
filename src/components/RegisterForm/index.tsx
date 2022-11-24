@@ -26,7 +26,7 @@ const RegisterForm: React.FC<formProps> = () => {
       .required('Nome obrigatório')
       .matches(NameAndSurnameRegex, 'Nome inválido'),
 
-    surname: yup
+    lastname: yup
       .string()
       .required('Sobrenome obrigatório')
       .matches(NameAndSurnameRegex, 'Sobrenome inválido'),
@@ -46,7 +46,7 @@ const RegisterForm: React.FC<formProps> = () => {
 
   const initialValues = {
     name: '',
-    surname: '',
+    lastname: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -110,16 +110,16 @@ const RegisterForm: React.FC<formProps> = () => {
                       />
                       <Input
                         type="text"
-                        name="surname"
+                        name="lastname"
                         onBlur={handleBlur}
-                        value={values.surname}
+                        value={values.lastname}
                         onChange={handleChange}
                         placeholder={'Sobrenome'}
                         id={'inputSurname'}
                       />
                     </InputField>
                     <small className="error">
-                      {errors.surname && touched.surname && errors.surname}
+                      {errors.lastname && touched.lastname && errors.lastname}
                     </small>
                   </InputAndError>
                 </InputField>
