@@ -59,6 +59,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
     localStorage.setItem('registerSecondData', JSON.stringify(props))
     await useSignUpPost()
     router.push('/feed')
+    window.location.reload()
   }
 
   const handleFocusInput = (id: string): void => {
