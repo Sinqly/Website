@@ -14,23 +14,32 @@ const Feed: React.FC = () => {
   const [posts, setPosts] = useState<PostCardInterface[]>([])
   const [active, setActive] = useState<boolean>(false)
 
-
   const toggleMenu = () => {
-    console.log(active);
+    console.log(active)
     if (active === true) setActive(false)
     else setActive(true)
   }
-  
+
   useEffect(() => {
-    api.get('/posts')
-      .then(posts => setPosts(posts.data))      
+    api.get('/posts').then((posts) => setPosts(posts.data))
   }, [])
 
   return (
     <>
-      {
-        active ? <div style={{position: "absolute", width: "100vw", height: "calc(100vh)", backgroundColor: "red", zIndex: 800}}> buceta preta</div> : null
-      }
+      {active ? (
+        <div
+          style={{
+            position: 'absolute',
+            width: '100vw',
+            height: 'calc(100vh)',
+            backgroundColor: 'red',
+            zIndex: 800,
+          }}
+        >
+          {' '}
+          buceta preta
+        </div>
+      ) : null}
       <Header headerType="General" />
       <Container>
         <SideCardHome />
@@ -38,9 +47,9 @@ const Feed: React.FC = () => {
           <ButtonModalCreate onClick={toggleMenu}>
             Cria Novo Post
           </ButtonModalCreate>
-          { 
-           posts.map(post => {              
-              return <PostCard 
+          {posts.map((post) => {
+            return (
+              <PostCard
                 key={post.id}
                 area="natureza"
                 description={post.description}
@@ -52,8 +61,8 @@ const Feed: React.FC = () => {
                   username: post.user.username,
                 }}
               />
-            })
-          }
+            )
+          })}
         </Content>
         <UserList />
       </Container>
