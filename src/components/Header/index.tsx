@@ -24,6 +24,7 @@ import UserDropdown from '../UserDropdown'
 import { InputSearch } from '../Input'
 import { useLogout } from '../../services/Login/useLogout'
 import { useRouter } from 'next/router'
+import { useResetRouter } from '../../services/resetRoute'
 
 interface HeaderProps {
   headerType?: string
@@ -105,8 +106,7 @@ const RenderGeneral = () => {
 
   const logout = () => {
     useLogout()
-    router.push('/')
-    window.location.reload()
+    router.push('/').then(() => useResetRouter())
   }
 
   return (
