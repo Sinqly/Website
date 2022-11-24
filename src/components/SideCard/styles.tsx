@@ -47,7 +47,14 @@ export const SideCardTitle = styled.div`
 
 export const SideCardImage = styled.div`
   width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   img {
+    width: 12rem;
+    height: 12rem;
+    aspect-ratio: 16 9;
     border-radius: 100%;
   }
 `
