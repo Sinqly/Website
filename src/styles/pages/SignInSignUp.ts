@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Main = styled.div`
   min-height: 85vh;
   max-height: calc(100vh - 100px);
-  padding: 0 10%;
+  padding: 0 5%;
   padding-top: 200px;
   margin-top: auto;
   width: 100%;
@@ -44,8 +44,8 @@ export const SectionLeft = styled.section`
   align-items: flex-start;
 
   width: 50%;
-  height: 100%;
-  padding: 5%;
+  min-height: 85vh;
+  padding: 2.5%;
 `
 
 export const Texts = styled.div`

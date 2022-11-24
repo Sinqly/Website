@@ -1,5 +1,6 @@
 /* eslint @typescript-eslint/no-empty-interface: "off" */
 import { Formik } from 'formik'
+import { useRouter } from 'next/router'
 import React from 'react'
 import * as yup from 'yup'
 import {
@@ -52,8 +53,11 @@ const RegisterForm: React.FC<formProps> = () => {
     confirmPassword: '',
   }
 
+  const router = useRouter()
+
   const handleSubmitForm = (props): void => {
-    console.log(props)
+    localStorage.setItem('registerFirstData', JSON.stringify(props))
+    router.push('/register/continue')
   }
 
   const handleFocusInput = (id: string): void => {
@@ -68,135 +72,129 @@ const RegisterForm: React.FC<formProps> = () => {
       initialValues={initialValues}
       validationSchema={yupValidationSchema}
     >
-      {
-        // Chave para manipular tsx
-        ({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        }) => (
-          <form
-            onSubmit={handleSubmit}
-            style={{ width: '100%', maxWidth: 557 }}
-          >
-            <InputGroup>
-              <div>
-                <InputField className="double">
-                  <InputAndError>
-                    <InputField>
-                      <UserIcon onClick={() => handleFocusInput('inputName')} />
-                      <Input
-                        type="text"
-                        name="name"
-                        onBlur={handleBlur}
-                        value={values.name}
-                        onChange={handleChange}
-                        placeholder={'Nome'}
-                        id={'inputName'}
-                      />
-                    </InputField>
-                    <small className="error">
-                      {errors.name && touched.name && errors.name}
-                    </small>
-                  </InputAndError>
-                  <InputAndError>
-                    <InputField>
-                      <UserIcon
-                        onClick={() => handleFocusInput('inputSurname')}
-                        className={'input-right'}
-                      />
-                      <Input
-                        type="text"
-                        name="lastname"
-                        onBlur={handleBlur}
-                        value={values.lastname}
-                        onChange={handleChange}
-                        placeholder={'Sobrenome'}
-                        id={'inputSurname'}
-                      />
-                    </InputField>
-                    <small className="error">
-                      {errors.lastname && touched.lastname && errors.lastname}
-                    </small>
-                  </InputAndError>
-                </InputField>
-              </div>
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+      }) => (
+        <form onSubmit={handleSubmit} style={{ width: '100%', maxWidth: 557 }}>
+          <InputGroup>
+            <div>
+              <InputField className="double">
+                <InputAndError>
+                  <InputField>
+                    <UserIcon onClick={() => handleFocusInput('inputName')} />
+                    <Input
+                      type="text"
+                      name="name"
+                      onBlur={handleBlur}
+                      value={values.name}
+                      onChange={handleChange}
+                      placeholder={'Nome'}
+                      id={'inputName'}
+                    />
+                  </InputField>
+                  <small className="error">
+                    {errors.name && touched.name && errors.name}
+                  </small>
+                </InputAndError>
+                <InputAndError>
+                  <InputField>
+                    <UserIcon
+                      onClick={() => handleFocusInput('inputSurname')}
+                      className={'input-right'}
+                    />
+                    <Input
+                      type="text"
+                      name="lastname"
+                      onBlur={handleBlur}
+                      value={values.lastname}
+                      onChange={handleChange}
+                      placeholder={'Sobrenome'}
+                      id={'inputSurname'}
+                    />
+                  </InputField>
+                  <small className="error">
+                    {errors.lastname && touched.lastname && errors.lastname}
+                  </small>
+                </InputAndError>
+              </InputField>
+            </div>
 
-              <InputAndError>
-                <InputField>
-                  <EmailIcon onClick={() => handleFocusInput('inputEmail')} />
-                  <Input
-                    type="text"
-                    name="email"
-                    onBlur={handleBlur}
-                    value={values.email}
-                    onChange={handleChange}
-                    placeholder={'Insira seu E-mail'}
-                    id={'inputEmail'}
-                  />
-                </InputField>
-                <small className="error">
-                  {errors.email && touched.email && errors.email}
-                </small>
-              </InputAndError>
+            <InputAndError>
+              <InputField>
+                <EmailIcon onClick={() => handleFocusInput('inputEmail')} />
+                <Input
+                  type="text"
+                  name="email"
+                  onBlur={handleBlur}
+                  value={values.email}
+                  onChange={handleChange}
+                  placeholder={'Insira seu E-mail'}
+                  id={'inputEmail'}
+                />
+              </InputField>
+              <small className="error">
+                {errors.email && touched.email && errors.email}
+              </small>
+            </InputAndError>
 
-              <InputAndError>
-                <InputField>
-                  <PasswordIcon
-                    onClick={() => handleFocusInput('inputPassword')}
-                  />
-                  <Input
-                    type="password"
-                    name="password"
-                    onBlur={handleBlur}
-                    value={values.password}
-                    onChange={handleChange}
-                    placeholder={'Insira sua Senha'}
-                    id={'inputPassword'}
-                  />
-                </InputField>
-                <small className="error">
-                  {errors.password && touched.password && errors.password}
-                </small>
-                {/* <Link href={"https://www.google.com.br"}>Esqueceu a senha?</Link> */}
-              </InputAndError>
+            <InputAndError>
+              <InputField>
+                <PasswordIcon
+                  onClick={() => handleFocusInput('inputPassword')}
+                />
+                <Input
+                  type="password"
+                  name="password"
+                  onBlur={handleBlur}
+                  value={values.password}
+                  onChange={handleChange}
+                  placeholder={'Insira sua Senha'}
+                  id={'inputPassword'}
+                />
+              </InputField>
+              <small className="error">
+                {errors.password && touched.password && errors.password}
+              </small>
+              {/* <Link href={"https://www.google.com.br"}>Esqueceu a senha?</Link> */}
+            </InputAndError>
 
-              <InputAndError>
-                <InputField>
-                  <PasswordIcon
-                    onClick={() => handleFocusInput('inputConfirmPassword')}
-                  />
-                  <Input
-                    type="password"
-                    name="confirmPassword"
-                    onBlur={handleBlur}
-                    value={values.confirmPassword}
-                    onChange={handleChange}
-                    placeholder={'Confirme sua Senha'}
-                    id={'inputConfirmPassword'}
-                  />
-                </InputField>
-                <small className="error">
-                  {errors.confirmPassword &&
-                    touched.confirmPassword &&
-                    errors.confirmPassword}
-                </small>
-                {/* <Link href={"https://www.google.com.br"}>Esqueceu a senha?</Link> */}
-              </InputAndError>
-            </InputGroup>
+            <InputAndError>
+              <InputField>
+                <PasswordIcon
+                  onClick={() => handleFocusInput('inputConfirmPassword')}
+                />
+                <Input
+                  type="password"
+                  name="confirmPassword"
+                  onBlur={handleBlur}
+                  value={values.confirmPassword}
+                  onChange={handleChange}
+                  placeholder={'Confirme sua Senha'}
+                  id={'inputConfirmPassword'}
+                />
+              </InputField>
+              <small className="error">
+                {errors.confirmPassword &&
+                  touched.confirmPassword &&
+                  errors.confirmPassword}
+              </small>
+              {/* <Link href={"https://www.google.com.br"}>Esqueceu a senha?</Link> */}
+            </InputAndError>
+          </InputGroup>
 
-            <ButtonDiv>
-              <Button type="submit">
-                Continuar
-                <ArrowRight />
-              </Button>
-            </ButtonDiv>
-          </form>
-        )
-      }
+          <ButtonDiv>
+            <Button type="submit">
+              Continuar
+              <ArrowRight />
+            </Button>
+          </ButtonDiv>
+        </form>
+      )}
     </Formik>
   )
 }
