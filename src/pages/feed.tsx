@@ -1,16 +1,21 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 import Header from '../components/Header'
 import PostCard from '../components/PostCard'
 import SideCard from '../components/SideCard'
 import UserList from '../components/UserList'
+import { api } from '../config/Axios'
 
 import { Container, Content } from '../styles/pages/feed'
 import { PostCardInterface } from '../utils/feed/PostCardInterface'
 // interface feedProps {}
 
 const Feed: React.FC = () => {
+
+  // useEffect(() => {
+  //   // api.get('/users')
+  //   //   .then(users => console.log(users))
+  // }, [])
   return (
     <>
       <Header headerType="General" />
@@ -18,14 +23,14 @@ const Feed: React.FC = () => {
         <SideCard />
         <Content className="content">
           {/* { 
-            posts.map(post => {              
+           posts.map(post => {              
               return <PostCard 
                 key={post.id}
                 area='natureza'
                 description={post.description}
                 title={post.title}
                 user={{
-                  id: post.user.id,
+                  id:  post.user.id,
                   name: post.user.name,
                   lastName: post.user.lastName,
                   username: post.user.username
