@@ -5,7 +5,6 @@ import { Container, Users, Online, UserCard, Avatar, Name } from './styles'
 import Careca from '../../assets/Images/Feed/Careca.png'
 import { useUserContext } from '../../context/UserContext'
 
-
 const UserList: React.FC = () => {
   const { UserInfo } = useUserContext()
 

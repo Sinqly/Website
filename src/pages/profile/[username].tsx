@@ -16,54 +16,53 @@ const CurrentFeed: React.FC = () => {
   const [posts, setPosts] = useState<PostCardInterface[]>([])
   const [currentUserFeed, setCurrentUserFeed] = useState<User>({
     id: 0,
-    name: "",
-    lastName: "",
-    username: "",
-    email: "",
-    password: "",
-    phone: "",
-    cpf: "",
-    biography: "",
-    profileImage: ""
+    name: '',
+    lastName: '',
+    username: '',
+    email: '',
+    password: '',
+    phone: '',
+    cpf: '',
+    biography: '',
+    profileImage: '',
   })
-  
+
   const getUserData = async () => {
     // GET CURRENT USER
     const currentUserFeed = await getCurrentUserFeedId()
     setCurrentUserFeed(currentUserFeed)
 
     // GET POSTS FROM CURRENT USER
-    const id = localStorage.getItem("currentUserFeedId")
-    await api.get(`/posts/user/${id}`)
-      .then(posts => setPosts(posts.data))
+    const id = localStorage.getItem('currentUserFeedId')
+    await api.get(`/posts/user/${id}`).then((posts) => setPosts(posts.data))
   }
 
   useEffect(() => {
     getUserData()
   }, [])
-  
+
   return (
     <>
       <Header headerType="General" />
       <Container>
-        <SideCardVisitant user={currentUserFeed}/>
+        <SideCardVisitant user={currentUserFeed} />
         <Content className="content">
-          { 
-           posts.map(post => {              
-              return <PostCard 
+          {posts.map((post) => {
+            return (
+              <PostCard
                 key={post.id}
-                area='natureza'
+                area="natureza"
                 description={post.description}
                 title={post.title}
                 user={{
-                  id:  post.user.id,
+                  id: post.user.id,
                   name: post.user.name,
                   lastName: post.user.lastName,
-                  username: post.user.username
+                  username: post.user.username,
                 }}
               />
-            })
-          }
+            )
+          })}
         </Content>
         <UserList />
       </Container>
@@ -71,4 +70,4 @@ const CurrentFeed: React.FC = () => {
   )
 }
 
-export default CurrentFeed;
+export default CurrentFeed

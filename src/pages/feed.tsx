@@ -13,10 +13,8 @@ import { PostCardInterface } from '../utils/feed/PostCardInterface'
 const Feed: React.FC = () => {
   const [posts, setPosts] = useState<PostCardInterface[]>([])
 
-  
   useEffect(() => {
-    api.get('/posts')
-      .then(posts => setPosts(posts.data))
+    api.get('/posts').then((posts) => setPosts(posts.data))
   }, [])
   return (
     <>
@@ -24,22 +22,22 @@ const Feed: React.FC = () => {
       <Container>
         <SideCardHome />
         <Content className="content">
-          { 
-           posts.map(post => {              
-              return <PostCard 
+          {posts.map((post) => {
+            return (
+              <PostCard
                 key={post.id}
-                area='natureza'
+                area="natureza"
                 description={post.description}
                 title={post.title}
                 user={{
-                  id:  post.user.id,
+                  id: post.user.id,
                   name: post.user.name,
                   lastName: post.user.lastName,
-                  username: post.user.username
+                  username: post.user.username,
                 }}
               />
-            })
-          }
+            )
+          })}
         </Content>
         <UserList />
       </Container>

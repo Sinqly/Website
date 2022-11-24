@@ -10,14 +10,14 @@ import GlobalContext from '../context'
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
 
-  // useEffect(() => {
-  //   const user = localStorage.getItem('loggedStatusVariable')
-  //   if (!!user) {
-  //     router.push('/feed')
-  //   } else if (router.pathname === '/feed' && !!!user) {
-  //     router.push('/')
-  //   }
-  // }, [router])
+  useEffect(() => {
+    const user = localStorage.getItem('loggedStatusVariable')
+    if (!!user) {
+      router.push('/feed')
+    } else if (router.pathname === '/feed' && !!!user) {
+      router.push('/')
+    }
+  }, [router])
 
   return (
     <ThemeProvider theme={theme}>
