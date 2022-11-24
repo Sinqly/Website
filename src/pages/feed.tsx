@@ -52,8 +52,8 @@ const Feed: React.FC = () => {
                   username: post.user.username,
                 }}
               />
-            )
-          })}
+            })
+          }
         </Content>
         <UserList />
       </Container>
