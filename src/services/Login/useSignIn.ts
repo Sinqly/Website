@@ -1,7 +1,7 @@
 import { api } from '../../config/Axios'
 import { UserInfoSignIn } from '../../utils/Login/UserSign'
 
-var config = {
+const config = {
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
     Accept: 'Token',
@@ -9,7 +9,7 @@ var config = {
   },
 }
 
-export function useSignInPost(UserInfo: UserInfoSignIn) {
+export function UseSignInPost(UserInfo: UserInfoSignIn) {
   const data = {
     email: UserInfo.email,
     password: UserInfo.password,

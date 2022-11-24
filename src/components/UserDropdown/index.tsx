@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { api } from '../../config/Axios'
-import { User } from '../../utils/UserInterface'
+import React from 'react'
 import {
   BellIcon,
   DropdownIcon,
@@ -11,7 +9,7 @@ import {
   UserPlace,
 } from './styles'
 
-import { getUserData } from '../../services/User/getUserData'
+// import { getUserData } from '../../services/User/getUserData'
 import { useUserContext } from '../../context/UserContext'
 
 export interface UserDropdownProps {

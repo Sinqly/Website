@@ -2,7 +2,7 @@
 import { Formik } from 'formik'
 import React from 'react'
 import * as yup from 'yup'
-import { useSignInPost } from '../../services/Login/useSignIn'
+import { UseSignInPost } from '../../services/Login/useSignIn'
 import {
   Button,
   ButtonDiv,
@@ -33,7 +33,7 @@ const LoginForm: React.FC<formProps> = () => {
   }
 
   const handleSubmitForm = (data: UserInfoSignIn) => {
-    useSignInPost(data)
+    UseSignInPost(data)
     console.log(data)
   }
 

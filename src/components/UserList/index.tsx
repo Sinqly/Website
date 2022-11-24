@@ -5,11 +5,8 @@ import { Container, Users, Online, UserCard, Avatar, Name } from './styles'
 import Careca from '../../assets/Images/Feed/Careca.png'
 import { useUserContext } from '../../context/UserContext'
 
-export interface UserDropdownProps {
-  styles?: object
-}
 
-const UserList: React.FC<UserDropdownProps> = ({ styles }) => {
+const UserList: React.FC = () => {
   const { UserInfo } = useUserContext()
 
   const users = () => {

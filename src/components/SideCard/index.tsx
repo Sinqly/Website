@@ -1,5 +1,5 @@
+import React from 'react'
 import Image from 'next/image'
-import React, { useEffect } from 'react'
 
 import {
   Container,
@@ -11,11 +11,11 @@ import {
 } from './styles'
 import Careca from '../../assets/Images/Feed/Careca.png'
 import Igor from '../../assets/Images/Feed/Eu.png'
-import { getUserData } from '../../services/User/getUserData'
 import { useUserContext } from '../../context/UserContext'
+import { User } from '../../utils/UserInterface'
 
-const SideCardHome = () => {
-  const { UserInfo } = useUserContext()
+export const SideCardHome = () => {
+  const { UserInfo } = useUserContext()  
 
   return (
     <Container className="sideCard">
@@ -58,12 +58,16 @@ const SideCardHome = () => {
   )
 }
 
-const SideCardVisitant = () => {
+interface SideCardVisitantInterface {
+  user: User
+}
+
+export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({ user }) => {
   return (
     <Container className="sideCard">
       <SideCardHeader>
         <SideCardTitle>
-          Igor Ribeiro
+          {user.name} {user.lastName}
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
@@ -107,18 +111,3 @@ const SideCardVisitant = () => {
     </Container>
   )
 }
-
-interface SideCardProps {
-  sideCardType?: string
-}
-
-const SideCard: React.FC<SideCardProps> = ({ sideCardType = 'Home' }) => {
-  const SideCardColection = {
-    Home: SideCardHome(),
-    Visitant: SideCardVisitant(),
-  }
-
-  return SideCardColection[sideCardType as keyof typeof SideCardColection]
-}
-
-export default SideCard

@@ -9,7 +9,7 @@ interface indexProps {}
 const Index: React.FC<indexProps> = () => {
   const router = useRouter()
   useEffect(() => {
-    let user = localStorage.getItem('loggedStatusVariable')
+    const user = localStorage.getItem('loggedStatusVariable')
 
     if (!!user) {
       router.push('/feed')

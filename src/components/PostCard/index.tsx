@@ -13,7 +13,6 @@ import {
   Like,
   Comments,
   Save,
-  NotLike,
 } from './styles'
 
 import Careca from '../../assets/Images/Feed/Careca.png'
@@ -21,8 +20,6 @@ import Imagem from '../../assets/Images/Feed/imagem_feed.jpg'
 import { PostCardInterface } from '../../utils/feed/PostCardInterface'
 
 const PostCard: React.FC<PostCardInterface> = ({
-  id,
-  area,
   description,
   title,
   user,
@@ -34,7 +31,9 @@ const PostCard: React.FC<PostCardInterface> = ({
           <Image src={Careca} alt="Foto do usuário" />
         </UserImage>
         <Texts className="texts">
-          <Nome>
+          <Nome href={`/profile/${user.username}`} onClick={() => {
+            localStorage.setItem("currentUserFeedId", user.id)
+          }}>
             {user.name} {user.lastName}
           </Nome>
           <Username>
