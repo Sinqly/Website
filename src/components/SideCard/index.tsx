@@ -15,7 +15,7 @@ import { useUserContext } from '../../context/UserContext'
 import { User } from '../../utils/UserInterface'
 
 export const SideCardHome = () => {
-  const { UserInfo } = useUserContext()  
+  const { UserInfo } = useUserContext()
 
   return (
     <Container className="sideCard">
@@ -62,7 +62,9 @@ interface SideCardVisitantInterface {
   user: User
 }
 
-export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({ user }) => {
+export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({
+  user,
+}) => {
   return (
     <Container className="sideCard">
       <SideCardHeader>

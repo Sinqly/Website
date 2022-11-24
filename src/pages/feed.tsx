@@ -42,18 +42,18 @@ const Feed: React.FC = () => {
            posts.map(post => {              
               return <PostCard 
                 key={post.id}
-                area='natureza'
+                area="natureza"
                 description={post.description}
                 title={post.title}
                 user={{
-                  id:  post.user.id,
+                  id: post.user.id,
                   name: post.user.name,
                   lastName: post.user.lastName,
-                  username: post.user.username
+                  username: post.user.username,
                 }}
               />
-            })
-          }
+            )
+          })}
         </Content>
         <UserList />
       </Container>

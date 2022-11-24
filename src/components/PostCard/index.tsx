@@ -31,9 +31,12 @@ const PostCard: React.FC<PostCardInterface> = ({
           <Image src={Careca} alt="Foto do usuário" />
         </UserImage>
         <Texts className="texts">
-          <Nome href={`/profile/${user.username}`} onClick={() => {
-            localStorage.setItem("currentUserFeedId", user.id)
-          }}>
+          <Nome
+            href={`/profile/${user.username}`}
+            onClick={() => {
+              localStorage.setItem('currentUserFeedId', user.id)
+            }}
+          >
             {user.name} {user.lastName}
           </Nome>
           <Username>
