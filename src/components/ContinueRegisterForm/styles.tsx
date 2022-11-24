@@ -72,9 +72,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
 `
-export const InputAndError = styled.div`
-  
-`
+export const InputAndError = styled.div``
 
 export const InputField = styled.div`
   width: 100%;

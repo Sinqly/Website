@@ -23,10 +23,7 @@ export function useSignUpPost() {
   return api.post(`users`, data, config).then(
     (response) => {
       localStorage.setItem('loggedStatusVariable', JSON.stringify(true))
-      localStorage.setItem(
-        'loggedUserId',
-        JSON.stringify(response.data.id)
-      )
+      localStorage.setItem('loggedUserId', JSON.stringify(response.data.id))
       return response
     },
     (error) => {
