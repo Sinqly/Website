@@ -12,7 +12,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   useEffect(() => {
     const user = localStorage.getItem('loggedStatusVariable')
-    if (!!user) {
+    if (router.pathname === '/' && !!user) {
       router.push('/feed')
     } else if (router.pathname === '/feed' && !!!user) {
       router.push('/')
