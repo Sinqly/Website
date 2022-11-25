@@ -1,7 +1,7 @@
 /* eslint @typescript-eslint/no-empty-interface: "off" */
 import { Formik } from 'formik'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useState } from 'react'
 import * as yup from 'yup'
 import { useSignUpPost } from '../../services/Register/useSignUp'
 import {
@@ -19,6 +19,9 @@ import {
   BiographyInputField,
 } from './styles'
 
+import { storage } from '../../libs/firebase.conf'
+import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage'
+
 interface formProps {}
 
 const ContinueRegisterForm: React.FC<formProps> = () => {
@@ -30,20 +33,19 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
   const yupValidationSchema = yup.object().shape({
     telephone: yup
       .string()
-      .required('Telefone obrigatório')
+      // .required('Telefone obrigatório')
       .matches(TelephoneRegex, 'Telefone inválido'),
 
-    birthDate: yup.string().required('Data de nascimento obrigatória'),
+    birthDate: yup.string(),
+    // .required('Data de nascimento obrigatória'),
 
     cpf: yup
       .string()
-      .required('CPF obrigatório')
+      // .required('CPF obrigatório')
       .matches(cpfRegex, 'Cpf inválido'),
 
-    biography: yup
-      .string()
-      .min(25, 'Minimo de 25 caractres')
-      .required('Biografia obrigatória'),
+    biography: yup.string().min(25, 'Minimo de 25 caractres'),
+    // .required('Biografia obrigatória'),
   })
 
   const initialValues = {
@@ -54,17 +56,33 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
   }
 
   const router = useRouter()
+  const [file, setFile] = useState<object>()
 
   const handleSubmitForm = async (props) => {
-    localStorage.setItem('registerSecondData', JSON.stringify(props))
+    if (!file) return
+
+    const storageRef = ref(
+      storage,
+      `images/${new Date().getTime() + '_' + file.name}`
+    )
+
+    const uploadTask = uploadBytesResumable(storageRef, file).then(() => {
+      getDownloadURL(storageRef).then(function (url) {
+        localStorage.setItem('imgURLActual', JSON.stringify(url))
+        console.log(url)
+      })
+      localStorage.setItem('registerSecondData', JSON.stringify(props))
+    })
     await useSignUpPost()
-    router.push('/feed')
-    window.location.reload()
+    // router.push('/feed')
+    // window.location.reload()
   }
 
   const handleFocusInput = (id: string): void => {
     document.getElementById(id)?.focus()
   }
+
+  const [imgURL, setImgURL] = useState('')
 
   return (
     <Formik
@@ -83,6 +101,9 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
         handleSubmit,
       }) => (
         <form
+          onChange={(e) => {
+            setFile(e.target.files[0])
+          }}
           onSubmit={handleSubmit}
           style={{
             width: '100%',
@@ -93,6 +114,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
             alignItems: 'center',
           }}
         >
+          <input type="file" />
           <InputGroup>
             <div>
               <InputField className="double">

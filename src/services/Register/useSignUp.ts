@@ -16,11 +16,15 @@ export function useSignUpPost() {
     localStorage.getItem('registerSecondData') || '{}'
   )
 
+  const imgUrl = JSON.parse(localStorage.getItem('imgURLActual') || '{}')
+  const ImgObject = {
+    profileImage: imgUrl,
+  }
+
   const data = Object.assign(firstDataObject, secondDataObject)
+  const finalData = Object.assign(data, ImgObject)
 
-  console.log(data)
-
-  return api.post(`users`, data, config).then(
+  return api.post(`users`, finalData, config).then(
     (response) => {
       localStorage.setItem('loggedStatusVariable', JSON.stringify(true))
       localStorage.setItem('loggedUserId', JSON.stringify(response.data.id))
