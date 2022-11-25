@@ -1,3 +1,5 @@
+
+
 export interface User {
   id: number
   name: string
@@ -8,5 +10,5 @@ export interface User {
   phone: string
   cpf: string
   biography: string
-  profileImage: string
+  profileImage: string | undefined
 }

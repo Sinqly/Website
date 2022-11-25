@@ -47,7 +47,7 @@ const PostCard: React.FC<PostCardInterface> = ({
       <CardBody className="cardBody">
         <h3>{title}</h3>
         <p style={{}}>{description}</p>
-        <Image src={Imagem} width="1000" alt="Oi" />
+        <Image src={user.profileImage} width="1000" alt="Oi" />
         <Actions>
           <div>
             <Like />

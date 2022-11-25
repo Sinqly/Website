@@ -9,5 +9,6 @@ export interface PostCardInterface {
     name: string
     lastName: string
     username: string
+    profileImage: string
   }
 }

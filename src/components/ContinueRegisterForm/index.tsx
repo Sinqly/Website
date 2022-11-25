@@ -101,9 +101,6 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
         handleSubmit,
       }) => (
         <form
-          onChange={(e) => {
-            setFile(e.target.files[0])
-          }}
           onSubmit={handleSubmit}
           style={{
             width: '100%',
@@ -114,7 +111,12 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
             alignItems: 'center',
           }}
         >
-          <input type="file" />
+          <input
+            type="file"
+            onChange={(e) => {
+              setFile(e)
+            }}
+          />
           <InputGroup>
             <div>
               <InputField className="double">
