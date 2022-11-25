@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import React from 'react'
 import Image from 'next/image'
 
@@ -10,7 +11,6 @@ import {
   Place,
 } from './styles'
 import Careca from '../../assets/Images/Feed/Careca.png'
-import Igor from '../../assets/Images/Feed/Eu.png'
 import { useUserContext } from '../../context/UserContext'
 import { User } from '../../utils/UserInterface'
 
@@ -21,11 +21,16 @@ export const SideCardHome = () => {
     <Container className="sideCard">
       <SideCardHeader>
         <SideCardTitle>
-          {UserInfo?.name}
+          {UserInfo?.name} {UserInfo?.lastName}
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
-          <Image src={UserInfo?.profileImage!} width={1000} height={1000} alt="Foto do usuário" />
+          {
+            UserInfo?.profileImage ? (
+              <Image src={UserInfo?.profileImage!} width={1000} height={1000} alt="Foto do usuário" />
+            ) : <Image src={Careca} width={1000} height={1000} alt="Foto do usuário" />
+          }
+          
         </SideCardImage>
       </SideCardHeader>
 
@@ -65,6 +70,7 @@ interface SideCardVisitantInterface {
 export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({
   user,
 }) => {
+  
   return (
     <Container className="sideCard">
       <SideCardHeader>
@@ -73,7 +79,11 @@ export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
-          <Image src={Igor} alt="Foto do usuário" />
+          {
+            user.profileImage ? (
+              <Image src={user.profileImage} width={1000} height={1000} alt="Foto do usuário" />
+            ) : <Image src={Careca} width={1000} height={1000} alt="Foto do usuário" />
+          }
         </SideCardImage>
       </SideCardHeader>
 

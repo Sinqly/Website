@@ -7,7 +7,7 @@ import UserList from '../../components/UserList'
 
 import { api } from '../../config/Axios'
 import { Container, Content } from '../../styles/pages/feed'
-import { PostCardInterface } from '../../utils/feed/PostCardInterface'
+import { PostInterface } from '../../utils/feed/PostCardInterface'
 import { User } from '../../utils/UserInterface'
 
 export default function CurrentFeed(user) {
@@ -16,7 +16,7 @@ export default function CurrentFeed(user) {
 
   const { username } = user.user
 
-  const [posts, setPosts] = useState<PostCardInterface[]>([])
+  const [posts, setPosts] = useState<PostInterface[]>([])
 
   const getUserPosts = async () => {
     await api
@@ -40,10 +40,8 @@ export default function CurrentFeed(user) {
             return (
               <PostCard
                 key={post.id}
-                area="natureza"
-                description={post.description}
-                title={post.title}
-                user={currentUserFeed}
+                post={post}
+                user={post.user}
               />
             )
           })}
@@ -73,8 +71,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = users.map((user) => ({
     params: { username: user.username },
   }))
-
-  console.log(paths)
-
+  
   return { paths, fallback: false }
 }

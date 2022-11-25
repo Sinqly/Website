@@ -1,4 +1,4 @@
-export function useResetRouter() {
+export function UseResetRouter() {
   const windowReload = function () {
     window.location.reload()
   }

@@ -22,9 +22,9 @@ import {
 import Logo from '../../assets/Images/Logo.png'
 import UserDropdown from '../UserDropdown'
 import { InputSearch } from '../Input'
-import { useLogout } from '../../services/Login/useLogout'
+import { UseLogout } from '../../services/Login/useLogout'
 import { useRouter } from 'next/router'
-import { useResetRouter } from '../../services/resetRoute'
+import { UseResetRouter } from '../../services/resetRoute'
 
 interface HeaderProps {
   headerType?: string
@@ -105,8 +105,8 @@ const RenderGeneral = () => {
   const router = useRouter()
 
   const logout = () => {
-    useLogout()
-    router.push('/').then(() => useResetRouter())
+    UseLogout()
+    router.push('/').then(() => UseResetRouter())
   }
 
   return (

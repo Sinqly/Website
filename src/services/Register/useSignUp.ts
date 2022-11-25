@@ -1,6 +1,6 @@
 import { api } from '../../config/Axios'
 
-var config = {
+const config = {
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
     Accept: 'Token',
@@ -8,7 +8,7 @@ var config = {
   },
 }
 
-export function useSignUpPost() {
+export function UseSignUpPost() {
   const firstDataObject = JSON.parse(
     localStorage.getItem('registerFirstData') || '{}'
   )

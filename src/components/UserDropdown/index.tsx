@@ -11,6 +11,7 @@ import {
 
 // import { getUserData } from '../../services/User/getUserData'
 import { useUserContext } from '../../context/UserContext'
+import Link from 'next/link'
 
 export interface UserDropdownProps {
   styles?: object
@@ -18,11 +19,12 @@ export interface UserDropdownProps {
 
 const UserDropdown: React.FC<UserDropdownProps> = ({ styles }) => {
   const { UserInfo } = useUserContext()
-
   return (
     <Container style={styles}>
       <div className={'icons-user'}>
-        <HomeIcon />
+        <Link href={'/feed'}>
+          <HomeIcon/>
+        </Link>
         <BellIcon />
       </div>
 

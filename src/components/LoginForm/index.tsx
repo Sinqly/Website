@@ -15,6 +15,7 @@ import {
 } from './styles'
 
 import { UserInfoSignIn } from '../../utils/Login/UserSign'
+import { useRouter } from 'next/router'
 
 interface formProps {}
 
@@ -32,9 +33,10 @@ const LoginForm: React.FC<formProps> = () => {
     password: '',
   }
 
+  const router = useRouter()
   const handleSubmitForm = (data: UserInfoSignIn) => {
     UseSignInPost(data)
-    console.log(data)
+    router.push('/feed')
   }
 
   const handleFocusInput = (id: string): void => {

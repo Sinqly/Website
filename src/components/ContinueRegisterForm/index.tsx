@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import * as yup from 'yup'
-import { useSignUpPost } from '../../services/Register/useSignUp'
+import { UseSignUpPost } from '../../services/Register/useSignUp'
 import {
   Button,
   ButtonDiv,
@@ -31,33 +31,41 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
     /^([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})$/i
 
   const yupValidationSchema = yup.object().shape({
-    telephone: yup
+    phone: yup
       .string()
-      // .required('Telefone obrigatório')
+      .required('Telefone obrigatório')
       .matches(TelephoneRegex, 'Telefone inválido'),
 
-    birthDate: yup.string(),
-    // .required('Data de nascimento obrigatória'),
+    birthDate: yup.string()
+      .required('Data de nascimento obrigatória'),
+
+    username: yup.string()
+      .min(3, "Mínimo de 3 caracteres")
+      .required('Username obrigatório'),
+
 
     cpf: yup
       .string()
-      // .required('CPF obrigatório')
+      .required('CPF obrigatório')
       .matches(cpfRegex, 'Cpf inválido'),
 
-    biography: yup.string().min(25, 'Minimo de 25 caractres'),
-    // .required('Biografia obrigatória'),
+    biography: yup.string()
+      .min(25, 'Minimo de 25 caractres')
+      .required('Biografia obrigatória'),
   })
 
   const initialValues = {
-    telephone: '',
+    phone: '',
     birthDate: '',
     cpf: '',
     biography: '',
+    username: '',
   }
 
   const router = useRouter()
-  const [file, setFile] = useState<object>()
-
+  const [file, setFile] = useState<File>()
+  console.log(file);
+  
   const handleSubmitForm = async (props) => {
     if (!file) return
 
@@ -66,23 +74,21 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
       `images/${new Date().getTime() + '_' + file.name}`
     )
 
-    const uploadTask = uploadBytesResumable(storageRef, file).then(() => {
+    uploadBytesResumable(storageRef, file).then(() => {
       getDownloadURL(storageRef).then(function (url) {
         localStorage.setItem('imgURLActual', JSON.stringify(url))
         console.log(url)
       })
       localStorage.setItem('registerSecondData', JSON.stringify(props))
     })
-    await useSignUpPost()
-    // router.push('/feed')
-    // window.location.reload()
+    await UseSignUpPost()
+    router.push('/feed')
+    window.location.reload()
   }
 
   const handleFocusInput = (id: string): void => {
     document.getElementById(id)?.focus()
   }
-
-  const [imgURL, setImgURL] = useState('')
 
   return (
     <Formik
@@ -111,32 +117,28 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
             alignItems: 'center',
           }}
         >
-          <input
-            type="file"
-            onChange={(e) => {
-              setFile(e)
-            }}
-          />
+          
           <InputGroup>
             <div>
               <InputField className="double">
                 <InputAndError>
                   <InputField>
-                    <UserIcon onClick={() => handleFocusInput('inputTel')} />
+                    <UserIcon onClick={() => handleFocusInput('inputPhone')} />
                     <Input
                       type="text"
-                      name="telephone"
+                      name="phone"
                       onBlur={handleBlur}
-                      value={values.telephone}
+                      value={values.phone}
                       onChange={handleChange}
                       placeholder={'Telefone'}
-                      id={'inputTel'}
+                      id={'inputPhone'}
                     />
                   </InputField>
                   <small className="error">
-                    {errors.telephone && touched.telephone && errors.telephone}
+                    {errors.phone && touched.phone && errors.phone}
                   </small>
                 </InputAndError>
+                
                 <InputAndError>
                   <InputField>
                     <UserIcon
@@ -158,6 +160,43 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
                 </InputAndError>
               </InputField>
             </div>
+
+            <InputAndError>
+              <InputField>
+                <UserIcon
+                  onClick={() => handleFocusInput('inputUsername')}
+                />
+                <Input
+                  type="text"
+                  name="username"
+                  onBlur={handleBlur}
+                  value={values.username}
+                  onChange={handleChange}
+                  placeholder={'Username'}
+                  id={'inputUsername'}
+                />
+              </InputField>
+              <small className="error">
+                {errors.username && touched.username && errors.username}
+              </small>
+            </InputAndError>
+
+            <InputAndError>
+              <InputField>
+                <UserIcon
+                  onClick={() => handleFocusInput('inputBirthDate')}
+                />
+                <Input
+                  type="file"
+                  onChange={(e) => {
+                    setFile(e.target.files[0])
+                  }}
+                />
+              </InputField>
+              <small className="error">
+                {errors.birthDate && touched.birthDate && errors.birthDate}
+              </small>
+            </InputAndError>
 
             <InputAndError>
               <InputField>

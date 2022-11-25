@@ -15,20 +15,18 @@ import {
   Save,
 } from './styles'
 
-import Careca from '../../assets/Images/Feed/Careca.png'
-import Imagem from '../../assets/Images/Feed/imagem_feed.jpg'
 import { PostCardInterface } from '../../utils/feed/PostCardInterface'
 
 const PostCard: React.FC<PostCardInterface> = ({
-  description,
-  title,
+  post,
   user,
 }) => {
+  
   return (
     <Card className="card">
       <CardHeader>
         <UserImage>
-          <Image src={Careca} alt="Foto do usuário" />
+          <Image src={user?.profileImage} height={100} width={100} alt="Oi" />
         </UserImage>
         <Texts className="texts">
           <Nome
@@ -45,9 +43,17 @@ const PostCard: React.FC<PostCardInterface> = ({
         </Texts>
       </CardHeader>
       <CardBody className="cardBody">
-        <h3>{title}</h3>
-        <p style={{}}>{description}</p>
-        <Image src={user.profileImage} width="1000" alt="Oi" />
+        <h3>{post.title}</h3>
+        <p>{post.description}</p>
+        
+        {
+          post?.image ? (
+          <div style={{ minWidth: "300px", minHeight: "300px" }}>
+            <Image src={post?.image} width={1000} height={500} alt="imagem"/> 
+          </div> 
+          ) : null
+        }
+
         <Actions>
           <div>
             <Like />
