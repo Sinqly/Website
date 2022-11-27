@@ -37,13 +37,7 @@ export default function CurrentFeed(user) {
             <h1 style={{ marginTop: 50 }}>O Usuário ainda não possui posts</h1>
           ) : null}
           {posts.map((post) => {
-            return (
-              <PostCard
-                key={post.id}
-                post={post}
-                user={post.user}
-              />
-            )
+            return <PostCard key={post.id} post={post} user={post.user} />
           })}
         </Content>
         <UserList />
@@ -71,6 +65,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = users.map((user) => ({
     params: { username: user.username },
   }))
-  
+
   return { paths, fallback: false }
 }

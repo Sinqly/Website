@@ -2,12 +2,10 @@ import { MdOutlineSubtitles, MdOutlineDescription } from 'react-icons/md'
 import { VscChromeClose } from 'react-icons/vsc'
 import { BsUpload } from 'react-icons/bs'
 
-
 import styled from 'styled-components'
 export const Container = styled.div`
   @import url(//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css);
   @import url(//assets.locaweb.com.br/locastyle/2.0.6/stylesheets/locastyle.css);
-
 
   display: grid;
 
@@ -20,8 +18,8 @@ export const Container = styled.div`
 
   width: 100vw;
   height: 100%;
-  
-  .show-modal{
+
+  .show-modal {
     display: block;
   }
 
@@ -109,12 +107,12 @@ export const ButtonModalCreate = styled.button`
   min-height: 60px;
   border-radius: 15px;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `
 
-export const ModalBackground =  styled.div`
+export const ModalBackground = styled.div`
   position: fixed;
   width: 100vw;
   height: calc(100vh - 100px);
@@ -127,7 +125,7 @@ export const ModalBackground =  styled.div`
   justify-content: center;
 `
 
-export const Modal =  styled.div`
+export const Modal = styled.div`
   width: 50vw;
   height: 80vh;
   background-color: var(--white);
@@ -142,7 +140,7 @@ export const Modal =  styled.div`
   color: var(--white);
 `
 
-export const ModalHeader =  styled.header`
+export const ModalHeader = styled.header`
   width: 100%;
   height: 50px;
 
@@ -156,33 +154,31 @@ export const ModalHeader =  styled.header`
   -webkit-border-top-left-radius: 20px;
   -webkit-border-top-right-radius: 20px;
 
-  span{
+  span {
     width: 6%;
   }
 
-  span:hover{
+  span:hover {
     cursor: pointer;
   }
-
 `
 
-export const CloseModalIcon =  styled(VscChromeClose)`
+export const CloseModalIcon = styled(VscChromeClose)`
   min-width: 30px;
   min-height: 30px;
   width: 100%;
   height: 100%;
 
-  &:hover{
+  &:hover {
     background-color: var(--light-purple);
     padding: 10%;
     border-radius: 10px;
   }
 `
 
-export const ModalBody =  styled.section`
+export const ModalBody = styled.section`
   height: 100%;
   width: 100%;
-
 `
 
 export const InputGroup = styled.div`
@@ -190,7 +186,7 @@ export const InputGroup = styled.div`
   height: 100%;
 
   color: var(--dark-purple);
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,7 +230,6 @@ export const UploadIcon = styled(BsUpload)`
   height: 400px;
   width: 40px;
   padding: 18px 6px;
-
 `
 
 export const Input = styled.input`
@@ -247,10 +242,9 @@ export const Input = styled.input`
   outline: none;
   border: 1px solid var(--dark-purple);
   border-left: 0;
-  
+
   -webkit-border-top-right-radius: 30px;
   -webkit-border-bottom-right-radius: 30px;
-  
 
   font-size: 1em;
   color: var(--dark-purple);
@@ -267,15 +261,15 @@ export const Input = styled.input`
 export const ButtonUploadFile = styled.button`
   height: 100%;
   width: 100%;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   outline: none;
   border: 1px solid var(--dark-purple);
   border-radius: 30px;
-  
+
   color: var(--dark-purple);
   background: none;
 
@@ -286,8 +280,7 @@ export const PostButton = styled.button`
   height: 100%;
   background-color: var(--dark-purple);
   outline: none;
-  border:none;
+  border: none;
   border-radius: 10px;
   color: var(--white);
 `
-

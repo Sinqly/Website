@@ -36,20 +36,20 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
       .required('Telefone obrigatório')
       .matches(TelephoneRegex, 'Telefone inválido'),
 
-    birthDate: yup.string()
-      .required('Data de nascimento obrigatória'),
+    birthDate: yup.string().required('Data de nascimento obrigatória'),
 
-    username: yup.string()
-      .min(3, "Mínimo de 3 caracteres")
+    username: yup
+      .string()
+      .min(3, 'Mínimo de 3 caracteres')
       .required('Username obrigatório'),
-
 
     cpf: yup
       .string()
       .required('CPF obrigatório')
       .matches(cpfRegex, 'Cpf inválido'),
 
-    biography: yup.string()
+    biography: yup
+      .string()
       .min(25, 'Minimo de 25 caractres')
       .required('Biografia obrigatória'),
   })
@@ -64,8 +64,8 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
 
   const router = useRouter()
   const [file, setFile] = useState<File>()
-  console.log(file);
-  
+  console.log(file)
+
   const handleSubmitForm = async (props) => {
     if (!file) return
 
@@ -117,7 +117,6 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
             alignItems: 'center',
           }}
         >
-          
           <InputGroup>
             <div>
               <InputField className="double">
@@ -138,7 +137,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
                     {errors.phone && touched.phone && errors.phone}
                   </small>
                 </InputAndError>
-                
+
                 <InputAndError>
                   <InputField>
                     <UserIcon
@@ -163,9 +162,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
 
             <InputAndError>
               <InputField>
-                <UserIcon
-                  onClick={() => handleFocusInput('inputUsername')}
-                />
+                <UserIcon onClick={() => handleFocusInput('inputUsername')} />
                 <Input
                   type="text"
                   name="username"
@@ -183,9 +180,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
 
             <InputAndError>
               <InputField>
-                <UserIcon
-                  onClick={() => handleFocusInput('inputBirthDate')}
-                />
+                <UserIcon onClick={() => handleFocusInput('inputBirthDate')} />
                 <Input
                   type="file"
                   onChange={(e) => {

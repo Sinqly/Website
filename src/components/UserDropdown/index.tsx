@@ -23,7 +23,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ styles }) => {
     <Container style={styles}>
       <div className={'icons-user'}>
         <Link href={'/feed'}>
-          <HomeIcon/>
+          <HomeIcon />
         </Link>
         <BellIcon />
       </div>

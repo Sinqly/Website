@@ -8,16 +8,14 @@ const config = {
   },
 }
 
-export const CreatePost = async (data) =>  {
-  
+export const CreatePost = async (data) => {
   // const currentPostData =  JSON.parse(localStorage.getItem('currentPostData') || `{}`)
 
-  
-    
-    console.log(data);
-    
-  return await api.post(`posts`, data)
-    .then(res => res.data)
-    .then(post => console.log(post))
+  console.log(data)
+
+  return await api
+    .post(`posts`, data)
+    .then((res) => res.data)
+    .then((post) => console.log(post))
     .then(() => window.location.reload())
 }

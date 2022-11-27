@@ -25,12 +25,21 @@ export const SideCardHome = () => {
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
-          {
-            UserInfo?.profileImage ? (
-              <Image src={UserInfo?.profileImage!} width={1000} height={1000} alt="Foto do usuário" />
-            ) : <Image src={Careca} width={1000} height={1000} alt="Foto do usuário" />
-          }
-          
+          {UserInfo?.profileImage ? (
+            <Image
+              src={UserInfo?.profileImage!}
+              width={1000}
+              height={1000}
+              alt="Foto do usuário"
+            />
+          ) : (
+            <Image
+              src={Careca}
+              width={1000}
+              height={1000}
+              alt="Foto do usuário"
+            />
+          )}
         </SideCardImage>
       </SideCardHeader>
 
@@ -70,7 +79,6 @@ interface SideCardVisitantInterface {
 export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({
   user,
 }) => {
-  
   return (
     <Container className="sideCard">
       <SideCardHeader>
@@ -79,11 +87,21 @@ export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
-          {
-            user.profileImage ? (
-              <Image src={user.profileImage} width={1000} height={1000} alt="Foto do usuário" />
-            ) : <Image src={Careca} width={1000} height={1000} alt="Foto do usuário" />
-          }
+          {user.profileImage ? (
+            <Image
+              src={user.profileImage}
+              width={1000}
+              height={1000}
+              alt="Foto do usuário"
+            />
+          ) : (
+            <Image
+              src={Careca}
+              width={1000}
+              height={1000}
+              alt="Foto do usuário"
+            />
+          )}
         </SideCardImage>
       </SideCardHeader>
 

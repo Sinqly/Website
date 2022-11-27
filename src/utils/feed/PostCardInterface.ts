@@ -1,17 +1,22 @@
 export interface PostCardInterface {
   post: {
-    id?: string
+    id: string
     title: string
     description: string
     area: string
     image: string
-  }
-  user: {
-    id: string
-    name: string
-    lastName: string
-    username: string
-    profileImage: string
+    user: {
+      id: number
+      name: string
+      lastName: string
+      username: string
+      email: string
+      password: string
+      phone: string
+      cpf: string
+      biography: string
+      profileImage: string | undefined
+    }
   }
 }
 
