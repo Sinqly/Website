@@ -89,7 +89,9 @@ export const EMPTY = styled.div`
 
 export const Content = styled.div`
   grid-area: Content;
-
+  width: 70%;
+  margin-left: auto;
+  padding-top: 125px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,6 +119,7 @@ export const ModalBackground = styled.div`
   width: 100vw;
   height: calc(100vh - 100px);
   top: 100px;
+  padding-top: 125px;
   background-color: #00000069;
   z-index: 1;
 

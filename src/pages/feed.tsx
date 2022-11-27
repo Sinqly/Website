@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import PostCard from '../components/PostCard'
 import { SideCardHome } from '../components/SideCard'
-import UserList from '../components/UserList'
 
 import { api } from '../config/Axios'
 import {
@@ -210,3 +209,5 @@ const Feed: React.FC = () => {
     </>
   )
 }
+
+export default Feed
