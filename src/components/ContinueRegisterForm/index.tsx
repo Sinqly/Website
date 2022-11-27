@@ -17,6 +17,8 @@ import {
   ArrowRight,
   BiographyInput,
   BiographyInputField,
+  CalendarIcon,
+  PhoneIcon,
 } from './styles'
 
 import { storage } from '../../libs/firebase.conf'
@@ -60,6 +62,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
     cpf: '',
     biography: '',
     username: '',
+    imageUser: ''
   }
 
   const router = useRouter()
@@ -68,6 +71,8 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
   
   const handleSubmitForm = async (props) => {
     if (!file) return
+    console.log(props);
+    
 
     const storageRef = ref(
       storage,
@@ -81,9 +86,11 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
       })
       localStorage.setItem('registerSecondData', JSON.stringify(props))
     })
-    await UseSignUpPost()
-    router.push('/feed')
-    window.location.reload()
+    .then( async () => {
+      await UseSignUpPost()
+      router.push('/feed')
+      window.location.reload()
+    })
   }
 
   const handleFocusInput = (id: string): void => {
@@ -120,10 +127,10 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
           
           <InputGroup>
             <div>
-              <InputField className="double">
+              <InputField className="double" style={{gap: "2%"}}>
                 <InputAndError>
                   <InputField>
-                    <UserIcon onClick={() => handleFocusInput('inputPhone')} />
+                    <PhoneIcon onClick= {() => handleFocusInput('inputPhone')} />
                     <Input
                       type="text"
                       name="phone"
@@ -132,6 +139,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
                       onChange={handleChange}
                       placeholder={'Telefone'}
                       id={'inputPhone'}
+                      style={{width: "100%"}}
                     />
                   </InputField>
                   <small className="error">
@@ -141,7 +149,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
                 
                 <InputAndError>
                   <InputField>
-                    <UserIcon
+                    <CalendarIcon
                       onClick={() => handleFocusInput('inputBirthDate')}
                     />
                     <Input
@@ -152,6 +160,7 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
                       onChange={handleChange}
                       placeholder={'Data de nascimento'}
                       id={'inputBirthDate'}
+                      style={{width: "100%", padding:" 0 10px"}}
                     />
                   </InputField>
                   <small className="error">
@@ -181,26 +190,27 @@ const ContinueRegisterForm: React.FC<formProps> = () => {
               </small>
             </InputAndError>
 
-            <InputAndError>
+            <InputAndError style={{display: "none"}}>
               <InputField>
                 <UserIcon
                   onClick={() => handleFocusInput('inputBirthDate')}
                 />
                 <Input
                   type="file"
+                  id='imgUser'                  
                   onChange={(e) => {
                     setFile(e.target.files[0])
                   }}
                 />
               </InputField>
               <small className="error">
-                {errors.birthDate && touched.birthDate && errors.birthDate}
+                {errors.imageUser && touched.imageUser && errors.imageUser}
               </small>
             </InputAndError>
 
             <InputAndError>
               <InputField>
-                <EmailIcon onClick={() => handleFocusInput('inputCPF')} />
+                <UserIcon onClick={() => handleFocusInput('inputCPF')} />
                 <Input
                   type="text"
                   name="cpf"

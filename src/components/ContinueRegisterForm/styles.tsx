@@ -4,6 +4,8 @@ import { IoIosLock } from 'react-icons/io'
 import { MdEmail } from 'react-icons/md'
 import { FaUserAlt } from 'react-icons/fa'
 import { ImArrowRight2 } from 'react-icons/im'
+import { BsFillCalendarDateFill, BsTelephoneFill } from 'react-icons/bs'
+
 
 export const InputGroup = styled.div`
   display: flex;
@@ -11,7 +13,6 @@ export const InputGroup = styled.div`
 
   width: 100%;
 
-  margin-bottom: 24px;
 
   & > div {
     text-align: right;
@@ -46,8 +47,13 @@ export const InputGroup = styled.div`
     .double > input {
       width: 100%;
     }
+    .input- {
+      margin: 0;
+      width: 100%;
+    }
     .input-right {
       margin: 0;
+      width: 100%;
     }
   }
 `
@@ -105,6 +111,32 @@ export const EmailIcon = styled(MdEmail)`
   min-width: 60px;
   height: 48px;
   padding: 8px 5px;
+
+  border: none;
+  border: 1px solid var(--dark-purple);
+  border-right: 0;
+  -webkit-border-top-left-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+`
+
+export const CalendarIcon = styled(BsFillCalendarDateFill)`
+  width: 15%;
+  min-width: 60px;
+  height: 48px;
+  padding: 8px 0px;
+
+  border: none;
+  border: 1px solid var(--dark-purple);
+  border-right: 0;
+  -webkit-border-top-left-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+`
+
+export const PhoneIcon = styled(BsTelephoneFill)`
+  width: 15%;
+  min-width: 60px;
+  height: 48px;
+  padding: 8px 0px;
 
   border: none;
   border: 1px solid var(--dark-purple);

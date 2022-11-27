@@ -16,7 +16,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import { storage } from '../libs/firebase.conf'
 
 const Feed: React.FC = () => {
-  
+
   const [posts, setPosts] = useState<PostInterface[]>([])
   const [active, setActive] = useState<boolean>(false)
 
@@ -26,7 +26,7 @@ const Feed: React.FC = () => {
   }
 
   const modalEvents = (e) => {
-    if(e.target.id == 'modalBg' || e.target.id == 'closeModal'){
+    if (e.target.id == 'modalBg' || e.target.id == 'closeModal') {
       toggleMenu()
     }
   }
@@ -34,50 +34,51 @@ const Feed: React.FC = () => {
   const handleFocusInput = (id: string): void => {
     document.getElementById(id)?.focus()
   }
-  
+
   const handleClickInput = (id: string): void => {
     document.getElementById(id)?.click()
   }
 
- 
-  
+
+
   const [postId, setPostId] = useState<string>('')
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
   const [area, setArea] = useState<string>('')
   const [file, setFile] = useState<File>()
   const [imgURL, setImageURL] = useState<string>()
-  
+
   const handleSubmitForm = async () => {
 
     const date = new Date()
-    const dateTime = date.toDateString() + " " + date.getHours()  + " " + date.getMinutes() + " " + date.getSeconds()
-    const currentUserId = JSON.parse(localStorage.getItem('loggedUserId') || `{}`)  
+    const dateTime = date.toDateString() + " " + date.getHours() + " " + date.getMinutes() + " " + date.getSeconds()
+    const currentUserId = JSON.parse(localStorage.getItem('loggedUserId') || `{}`)
 
     if (!file) return
-    
-    const storageRef = ref( storage, `images/${new Date().getTime() + '_' + file.name}` )
-    
+
+    const storageRef = ref(storage, `images/${new Date().getTime() + '_' + file.name}`)
+
     await uploadBytesResumable(storageRef, file).then(() => {
       getDownloadURL(storageRef).then(function (url) {
         setImageURL(url)
+        const postData: PostInterface = {
+          dateTime: dateTime,
+          image: url,
+          user: {
+            id: currentUserId,
+            name: '',
+            lastName: '',
+            username: '',
+            profileImage: ''
+          },
+          title,
+          description,
+          area
+        }
+        CreatePost(postData)
       })
     })
-    const postData: PostInterface = {
-      dateTime: dateTime,
-      image: imgURL,
-      user: {
-        id: currentUserId,
-        name: '',
-        lastName: '',
-        username: '',
-        profileImage: ''
-      },
-      title,
-      description,
-      area
-    }
-    CreatePost(postData)
+
   }
 
   useEffect(() => {
@@ -90,39 +91,39 @@ const Feed: React.FC = () => {
         <ModalBackground id="modalBg" onClick={modalEvents}>
           <Modal id='modal'>
             <ModalHeader>
-              Criar Novo Post <span><CloseModalIcon id='closeModal'/> </span>
+              Criar Novo Post <span><CloseModalIcon id='closeModal' /> </span>
             </ModalHeader>
             <InputGroup>
 
               <InputField>
-                <TitleIcon onClick={() => handleFocusInput('title')}/>
-                <Input id='title' value={title} placeholder='Título' onChange={e => setTitle(e.target.value)}/>
+                <TitleIcon onClick={() => handleFocusInput('title')} />
+                <Input id='title' value={title} placeholder='Título' onChange={e => setTitle(e.target.value)} />
               </InputField>
 
               <InputField>
-                <DescriptionIcon onClick={() => handleFocusInput('description')}/>
-                <Input id='description' value={description} placeholder='Description' onChange={e => setDescription(e.target.value)}/>
+                <DescriptionIcon onClick={() => handleFocusInput('description')} />
+                <Input id='description' value={description} placeholder='Description' onChange={e => setDescription(e.target.value)} />
               </InputField>
 
               <InputField>
                 <ButtonUploadFile onClick={() => handleClickInput('uploadPostImage')}>
-                  { file ? file.name : "Faça o download de uma foto"}
+                  {file ? file.name : "Faça o download de uma foto"}
                   <UploadIcon />
                 </ButtonUploadFile>
 
-                <Input 
+                <Input
                   id='uploadPostImage'
-                  onChange={(e) => {                    
+                  onChange={(e) => {
                     setFile(e?.target?.files[0])
                   }}
-                  placeholder='Faço o upload de um arquivo' 
-                  type={'file'} 
-                  accept={"image/*"}  
-                  style={{display:"none"}}/>
+                  placeholder='Faço o upload de um arquivo'
+                  type={'file'}
+                  accept={"image/*"}
+                  style={{ display: "none" }} />
 
               </InputField>
-              <div style={{display: "flex", alignItems:"flex-start", justifyContent: "space-between", width: "80%", height: "12%"}}>
-                <select style={{overflowY: "scroll", fontSize: ".8em"}} onChange={e => setArea(e.target.value)}>
+              <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", width: "80%", height: "12%" }}>
+                <select style={{ overflowY: "scroll", fontSize: ".8em" }} onChange={e => setArea(e.target.value)}>
                   <option value="">Escolha a Área</option>
                   <option value="MTM">Matemática</option>
                   <option value="NAT">Natureza</option>
@@ -136,7 +137,7 @@ const Feed: React.FC = () => {
           </Modal>
         </ModalBackground>
       ) : null}
-      
+
       <Header headerType="General" />
       <Container>
         <SideCardHome />
@@ -144,10 +145,10 @@ const Feed: React.FC = () => {
           <ButtonModalCreate onClick={toggleMenu}>
             Criar Novo Post
           </ButtonModalCreate>
-          {posts.map((post) => {            
+          {posts.map((post) => {
             return (
               <PostCard
-                key={post.id}
+                key={post?.id}
                 post={post}
                 user={post.user}
               />
