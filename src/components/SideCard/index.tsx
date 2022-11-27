@@ -17,6 +17,8 @@ import { User } from '../../utils/UserInterface'
 export const SideCardHome = () => {
   const { UserInfo } = useUserContext()
 
+  console.log(UserInfo)
+
   return (
     <Container className="sideCard">
       <SideCardHeader>

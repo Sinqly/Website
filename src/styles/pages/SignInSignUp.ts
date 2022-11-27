@@ -23,14 +23,20 @@ export const Main = styled.div`
       margin-top: 3%;
       align-items: center;
       text-align: center;
+      width: 100%;
       gap: 10px;
+
+      & > input {
+        height: 60px;
+      }
     }
     .section-right {
       align-items: center;
       height: 100%;
       width: 100%;
       gap: 50px;
-      & > p {
+      & > img {
+        z-index: 0;
         font-size: 1.3em;
       }
     }
@@ -76,8 +82,7 @@ export const Texts = styled.div`
 export const SectionRight = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 20%;
+  justify-content: center;
 
   width: 50%;
   height: calc(100vh - 100px);

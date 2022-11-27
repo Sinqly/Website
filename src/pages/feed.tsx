@@ -5,32 +5,34 @@ import PostCard from '../components/PostCard'
 import { SideCardHome } from '../components/SideCard'
 import UserList from '../components/UserList'
 
-import {
-  Container,
-  Content,
-  ButtonModalCreate,
-  ModalBackground,
-  ModalHeader,
-  Modal,
-  CloseModalIcon,
-  Input,
-  InputField,
-  TitleIcon,
-  InputGroup,
-  DescriptionIcon,
-  UploadIcon,
-  PostButton,
-  ButtonUploadFile,
-} from '../styles/pages/feed'
-
 import { api } from '../config/Axios'
 import {
-  PostInterface,
   PostCardInterface,
+  PostInterface,
 } from '../utils/feed/PostCardInterface'
 import { CreatePost } from '../services/feed/createPost'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import { storage } from '../libs/firebase.conf'
+import {
+  InputGroup,
+  InputField,
+  Input,
+} from '../components/ContinueRegisterForm/styles'
+import {
+  ModalBackground,
+  Modal,
+  ModalHeader,
+  CloseModalIcon,
+  TitleIcon,
+  DescriptionIcon,
+  ButtonUploadFile,
+  UploadIcon,
+  PostButton,
+  Content,
+  ButtonModalCreate,
+} from '../styles/pages/feed'
+import { Container } from '../styles/pages/Index'
+import Index from '.'
 
 const Feed: React.FC = () => {
   const [posts, setPosts] = useState<PostCardInterface[]>([])
@@ -88,7 +90,7 @@ const Feed: React.FC = () => {
         setImageURL(url)
         const postData: PostInterface = {
           dateTime: dateTime,
-          image: url,
+          image: imgURL,
           user: {
             id: currentUserId,
             name: '',
@@ -107,8 +109,6 @@ const Feed: React.FC = () => {
 
   useEffect(() => {
     api.get('posts').then((posts) => {
-      console.log(posts)
-
       setPosts(posts.data)
     })
   }, [])
@@ -203,17 +203,10 @@ const Feed: React.FC = () => {
             Criar Novo Post
           </ButtonModalCreate>
           {posts.map((post, index) => {
-            console.log('aqui no map: ')
-            console.log(post)
-            return (
-              <PostCard key={index} post={post} />
-            )
+            return <PostCard key={index} post={post} />
           })}
         </Content>
-        <UserList />
       </Container>
     </>
   )
 }
-
-export default Feed

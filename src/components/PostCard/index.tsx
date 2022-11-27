@@ -52,17 +52,17 @@ const PostCard: React.FC<PostCardInterface> = ({ post }) => {
 
           <div
             style={{
-              maxWidth: "100%",
-              minHeight: "300px",
-              height: "auto",
+              maxWidth: '100%',
+              minHeight: '300px',
+              height: 'auto',
               position: 'relative',
-              display: "block"
+              display: 'block',
             }}
           >
             <Image
               src={post.image}
               layout="fill"
-              objectFit='contain'
+              objectFit="contain"
               alt="imagem"
             />
           </div>

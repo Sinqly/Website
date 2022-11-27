@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-empty-interface: "off" */
 import React from 'react'
-import RegisterImage from '../../assets/Images/Register/RegisterImage.svg'
+import UploadFileImage from '../../assets/Images/Register/vector.png'
 
 import {
   Main,
@@ -10,6 +10,7 @@ import {
 
 import Header from '../../components/Header'
 import ContinueRegisterForm from '../../components/ContinueRegisterForm'
+import Image from 'next/image'
 
 interface loginProps {}
 
@@ -23,7 +24,11 @@ const ContinueRegister: React.FC<loginProps> = () => {
         </SectionLeft>
 
         <SectionRight className={'section-right'}>
-          <RegisterImage />
+          <Image
+            src={UploadFileImage}
+            style={{ width: '100%', height: '100%' }}
+            onClick={() => document.getElementById('imgUser').click()}
+          />
         </SectionRight>
       </Main>
     </>
