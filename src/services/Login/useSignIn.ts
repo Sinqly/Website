@@ -26,7 +26,6 @@ export function UseSignInPost(UserInfo: UserInfoSignIn) {
         'loggedUserId',
         JSON.stringify(response.data.user[0].id)
       )
-      window.location.reload()
       return response
     },
     (error) => {

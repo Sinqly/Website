@@ -46,10 +46,25 @@ export const SideCardTitle = styled.div`
 `
 
 export const SideCardImage = styled.div`
-  width: 30%;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 100%;
+    width: 100%;
+    
+    border-radius: 100%;
+    background-color: red;
+    color: #fff;
+    font-size: 4em;
+  }
 
   img {
     width: 12rem;

@@ -15,7 +15,6 @@ import { storage } from '../libs/firebase.conf'
 import {
   InputGroup,
   InputField,
-  Input,
 } from '../components/ContinueRegisterForm/styles'
 import {
   ModalBackground,
@@ -29,9 +28,9 @@ import {
   PostButton,
   Content,
   ButtonModalCreate,
+  Input
 } from '../styles/pages/feed'
 import { Container } from '../styles/pages/Index'
-import Index from '.'
 
 const Feed: React.FC = () => {
   const [posts, setPosts] = useState<PostCardInterface[]>([])
@@ -118,9 +117,9 @@ const Feed: React.FC = () => {
         <ModalBackground id="modalBg" onClick={modalEvents}>
           <Modal id="modal">
             <ModalHeader>
-              Criar Novo Post{' '}
+              Criar Novo Post
               <span>
-                <CloseModalIcon id="closeModal" />{' '}
+                <CloseModalIcon id="closeModal" />
               </span>
             </ModalHeader>
             <InputGroup>

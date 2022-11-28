@@ -15,16 +15,48 @@ export const CardHeader = styled.header`
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  & > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .ch-right{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: 2em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `
 
 export const UserImage = styled.div`
   width: 40%;
+  height: 80px;
+
   max-width: 80px;
   max-height: 80px;
+  
   border-radius: 100%;
 
   img {
     border-radius: 100%;
+  }
+  div {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+    color: var(--white);
+    font-size: 3em;
   }
 `
 

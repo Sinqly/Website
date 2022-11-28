@@ -4,8 +4,6 @@ import { BsUpload } from 'react-icons/bs'
 
 import styled from 'styled-components'
 export const Container = styled.div`
-  @import url(//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css);
-  @import url(//assets.locaweb.com.br/locastyle/2.0.6/stylesheets/locastyle.css);
 
   display: grid;
 
@@ -117,8 +115,8 @@ export const ButtonModalCreate = styled.button`
 export const ModalBackground = styled.div`
   position: fixed;
   width: 100vw;
-  height: calc(100vh - 100px);
-  top: 100px;
+  height: 100vh;
+  top: 50px;
   padding-top: 125px;
   background-color: #00000069;
   z-index: 1;
@@ -129,8 +127,12 @@ export const ModalBackground = styled.div`
 `
 
 export const Modal = styled.div`
+  position: absolute;
+  margin-top: 5%;
+  top: 0;
+  
   width: 50vw;
-  height: 80vh;
+  height: 75vh;
   background-color: var(--white);
   z-index: 1000;
   border-radius: 30px;
@@ -171,6 +173,7 @@ export const CloseModalIcon = styled(VscChromeClose)`
   min-height: 30px;
   width: 100%;
   height: 100%;
+  transition: all 200ms;
 
   &:hover {
     background-color: var(--light-purple);
@@ -185,23 +188,19 @@ export const ModalBody = styled.section`
 `
 
 export const InputGroup = styled.div`
-  width: 100%;
-  height: 100%;
-
-  color: var(--dark-purple);
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3%;
-
-  padding: 2%;
+  width: 100%;
+  margin: 15px 0;
+  gap: 30px;
 `
+
 export const InputField = styled.div`
   display: flex;
   align-items: center;
   width: 80%;
-  height: 10%;
+  height: 100%;
   font-size: 1.5rem;
 `
 
@@ -237,20 +236,22 @@ export const UploadIcon = styled(BsUpload)`
 
 export const Input = styled.input`
   height: 100%;
-  width: 85%;
-  background: none;
+  width: 95%;
 
-  display: flex;
-  align-items: center;
+  -webkit-border-top-right-radius: 30px;
+  -webkit-border-bottom-right-radius: 30px;
   outline: none;
   border: 1px solid var(--dark-purple);
   border-left: 0;
 
-  -webkit-border-top-right-radius: 30px;
-  -webkit-border-bottom-right-radius: 30px;
-
   font-size: 1em;
   color: var(--dark-purple);
+
+  background: transparent;
+
+  &:-webkit-autofill {
+    -webkit-background-clip: text;
+  }
 
   &::placeholder {
     color: var(--dark-purple);
@@ -277,13 +278,23 @@ export const ButtonUploadFile = styled.button`
   background: none;
 
   padding: 0 6% 0 4%;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
 `
 export const PostButton = styled.button`
   width: 50%;
   height: 100%;
+  
   background-color: var(--dark-purple);
   outline: none;
   border: none;
   border-radius: 10px;
+
   color: var(--white);
+
+  &:hover {
+    cursor: pointer;
+  }
 `

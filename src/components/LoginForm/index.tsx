@@ -36,7 +36,9 @@ const LoginForm: React.FC<formProps> = () => {
   const router = useRouter()
   const handleSubmitForm = (data: UserInfoSignIn) => {
     UseSignInPost(data)
-    router.push('/feed')
+    setTimeout(() => {
+      router.push('/feed')
+    }, 2000)
   }
 
   const handleFocusInput = (id: string): void => {

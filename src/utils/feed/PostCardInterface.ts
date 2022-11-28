@@ -15,7 +15,7 @@ export interface PostCardInterface {
       phone: string
       cpf: string
       biography: string
-      profileImage: string | undefined
+      profileImage?: string | undefined
     }
   }
 }
@@ -32,6 +32,6 @@ export interface PostInterface {
     name: string
     lastName: string
     username: string
-    profileImage: string
+    profileImage?: string
   }
 }

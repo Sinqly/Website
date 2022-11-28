@@ -27,21 +27,16 @@ export const SideCardHome = () => {
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
-          {UserInfo?.profileImage ? (
+          {/* {UserInfo?.profileImage && UserInfo?.profileImage != "{}" ? (
             <Image
-              src={UserInfo?.profileImage!}
+              src={UserInfo?.profileImage}
               width={1000}
               height={1000}
               alt="Foto do usuário"
             />
           ) : (
-            <Image
-              src={Careca}
-              width={1000}
-              height={1000}
-              alt="Foto do usuário"
-            />
-          )}
+            <div>{UserInfo?.name[0]}{UserInfo?.lastName[0]}</div>
+          )} */}
         </SideCardImage>
       </SideCardHeader>
 
@@ -81,6 +76,8 @@ interface SideCardVisitantInterface {
 export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({
   user,
 }) => {
+  console.log(user);
+  
   return (
     <Container className="sideCard">
       <SideCardHeader>
@@ -89,20 +86,16 @@ export const SideCardVisitant: React.FC<SideCardVisitantInterface> = ({
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
-          {user.profileImage ? (
+          {user.profileImage != undefined || user.profileImage != "{}" ?  
+          (
             <Image
-              src={user.profileImage}
+              src={user?.profileImage}
               width={1000}
               height={1000}
               alt="Foto do usuário"
             />
           ) : (
-            <Image
-              src={Careca}
-              width={1000}
-              height={1000}
-              alt="Foto do usuário"
-            />
+            <div>{user.name[0]}{user?.lastName[0]}</div>
           )}
         </SideCardImage>
       </SideCardHeader>

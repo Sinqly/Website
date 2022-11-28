@@ -8,5 +8,5 @@ export interface User {
   phone: string
   cpf: string
   biography: string
-  profileImage: string
+  profileImage?: string
 }

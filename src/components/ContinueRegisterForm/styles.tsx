@@ -9,11 +9,14 @@ import { BsFillCalendarDateFill, BsTelephoneFill } from 'react-icons/bs'
 export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
-
+  align-items: center;
   width: 100%;
-
+  margin: 15px 0;
+  gap: 30px;
   & > div {
     text-align: right;
+    width: 80%;
+    height: 10%;
   }
 
   & > div > a {

@@ -19,32 +19,46 @@ import { PostCardInterface } from '../../utils/feed/PostCardInterface'
 
 const PostCard: React.FC<PostCardInterface> = ({ post }) => {
   if (!!post) {
-    console.log(post)
+    // console.log(post)
     const user = post.user
-    console.log(user)
 
     return (
       <Card className="card">
         <CardHeader>
-          <UserImage>
-            <Image src={user.profileImage!} height={100} width={100} alt="Oi" />
-          </UserImage>
-          <Texts className="texts">
-            <Nome
-              href={`/profile/${user?.username}`}
-              onClick={() => {
-                localStorage.setItem(
-                  'currentUserFeedId',
-                  JSON.stringify(user?.id)
+          <div>
+            <UserImage>
+              {
+                user?.profileImage != "{}" ? 
+                (
+                  <Image src={user?.profileImage} height={100} width={100} alt="Oi" />
+                ) : 
+                (
+                  <div>{user.name[0]}{user?.lastName[0]}</div>
                 )
-              }}
-            >
-              {user?.name} {user?.lastName}
-            </Nome>
-            <Username>
-              @{user?.username}#0{user?.id}
-            </Username>
-          </Texts>
+              }
+            </UserImage>
+            <Texts className="texts">
+              <Nome
+                href={`/profile/${user?.username}`}
+                onClick={() => {
+                  localStorage.setItem(
+                    'currentUserFeedId',
+                    JSON.stringify(user?.id)
+                  )
+                }}
+              >
+                {user?.name} {user?.lastName}
+              </Nome>
+              <Username>
+                @{user?.username}#0{user?.id}
+              </Username>
+            </Texts>
+          </div>
+          <div className='ch-right' onClick={() => {
+            console.log('OI')
+          }}>
+            ...
+          </div>
         </CardHeader>
         <CardBody className="cardBody">
           <h3>{post.title}</h3>
@@ -59,12 +73,17 @@ const PostCard: React.FC<PostCardInterface> = ({ post }) => {
               display: 'block',
             }}
           >
-            <Image
-              src={post.image}
-              layout="fill"
-              objectFit="contain"
-              alt="imagem"
-            />
+            {post?.image != undefined || post.image != "{}" ? 
+              (
+                <Image
+                  src={post?.image}
+                  layout="fill"
+                  objectFit="contain"
+                  alt="imagem"
+                />
+              ) : 
+              <div>OI</div>
+            }
           </div>
 
           <Actions>
