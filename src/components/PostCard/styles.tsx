@@ -46,7 +46,7 @@ export const UserImage = styled.div`
     border-radius: 100%;
   }
   div {
-    background-color: red;
+    background-color: var(--dark-purple);
     width: 100%;
     height: 100%;
 

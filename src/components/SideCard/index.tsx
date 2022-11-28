@@ -27,7 +27,7 @@ export const SideCardHome = () => {
           <span>Desenvolvedor Fullstack</span>
         </SideCardTitle>
         <SideCardImage>
-          {/* {UserInfo?.profileImage && UserInfo?.profileImage != "{}" ? (
+          {UserInfo?.profileImage && UserInfo?.profileImage != "{}" ? (
             <Image
               src={UserInfo?.profileImage}
               width={1000}
@@ -36,7 +36,7 @@ export const SideCardHome = () => {
             />
           ) : (
             <div>{UserInfo?.name[0]}{UserInfo?.lastName[0]}</div>
-          )} */}
+          )}
         </SideCardImage>
       </SideCardHeader>
 

@@ -61,7 +61,7 @@ export const SideCardImage = styled.div`
     width: 100%;
     
     border-radius: 100%;
-    background-color: red;
+    background-color: var(--dark-purple);
     color: #fff;
     font-size: 4em;
   }
